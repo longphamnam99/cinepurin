@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
     --blue: #1999FF;
 }
@@ -9,6 +5,52 @@
 html {
     font-family: sans-serif;
     scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "avantgarde";
+    src: url(../fonts/avantg.woff) format("truetype");
+}
+
+@font-face {
+    font-family: "avantgarde-demi";
+    src: url(../fonts/avantgdemi.woff) format("truetype");
+
+}
+
+@font-face {
+    font-family: "MyriadLight";
+    src: url(../fonts/myriadpro-light.woff) format("truetype");
+}
+
+@font-face {
+    font-family: "MyriadItalic";
+    src: url(../fonts/myriadpro-italic.woff) format("truetype");
+}
+
+@font-face {
+    font-family: "MyriadBold";
+    src: url(../fonts/myriadpro-semibold.woff) format("truetype");
+}
+
+@font-face {
+    font-family: "MyriadCondensed";
+    src: url(../fonts/myriadpro-cond.woff) format("truetype");
+}
+
+@font-face {
+    font-family: "MyriadRegular";
+    src: url(../fonts/myriadpro-regular.woff) format("truetype");
+}
+
+@font-face {
+    font-family: "Futurab";
+    src: url(../fonts/futurab.woff) format("truetype");
+}
+
+@font-face {
+    font-family: "Futurab-bold";
+    src: url(../fonts/futurab-bold.woff) format("truetype");
 }
 
 article,
