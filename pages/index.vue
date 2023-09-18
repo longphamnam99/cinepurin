@@ -122,6 +122,20 @@ const handlePaneClick = (): void => {
         </div>
         <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1"></div>
     </div>
+    <div class="flex flex-wrap gap-[10px] w-full">
+        <div class="w-1/3 h-14 bg-red-400 text-white flex justify-end items-end">
+            01
+        </div>
+        <div class="w-1/3 h-14 bg-blue-400 flex justify-end items-end">
+            02
+        </div>
+        <div class="w-1/3 h-14 bg-yellow-400 flex justify-end items-end">
+            03
+        </div>
+        <div class="w-1/3 h-14 bg-green-400 flex justify-end items-end">
+            04
+        </div>
+    </div>
 </template>
 <style>
 .slideshow .carousel__pagination {
@@ -191,7 +205,7 @@ const handlePaneClick = (): void => {
 .tabs ul li {
     background-color: #f18720;
     -webkit-transition: all 0.3s ease-in-out;
-    box-shadow: 10px 0 0 rgba(0,0,0,0.1);
+    box-shadow: 10px 0 0 rgba(0, 0, 0, 0.1);
 }
 
 .tabs ul li:nth-child(1) {
