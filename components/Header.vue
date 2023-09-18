@@ -4,7 +4,7 @@ import { Modal } from 'flowbite-vue'
 
 const router = [
     {
-        path: "/",
+        path: "/cine",
         name: "Phim",
     },
     {
@@ -12,7 +12,7 @@ const router = [
         name: "Lịch chiếu",
     },
     {
-        path: "/",
+        path: "/theaters_prices",
         name: "Rạp và giá",
     },
     {
