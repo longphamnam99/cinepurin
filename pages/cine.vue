@@ -122,126 +122,188 @@ const handlePaneClick = (): void => {
         </div>
         <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1"></div>
     </div>
+    <!-- cinema -->
+    <div class="bg-yellow-100">
+        <div class="flex justify-center gap-2 pt-2">
+            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
+                <div class="flex flex-col-2 gap-2">
+                    <div>
+                        <a href="/shin-main">
+                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
+                        </a>
+                    </div>
+                    <div>
+                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                        <p class="pt-4 text-white">.............................................................</p>
+                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                        <div class="flex flex-col-2">
+                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                <a href="#">
+                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                </a>
+                                <p>Trailer</p>
+                            </button>
+                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                <a href="/shin">
+                                    <p>Mua ve</p>
+                                </a>
+                            
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
+                <div class="flex flex-col-2 gap-2">
+                    <div>
+                        <a href="#">
+                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
+                        </a>
+                    </div>
+                    <div>
+                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                        <p class="pt-4 text-white">.............................................................</p>
+                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                        <div class="flex flex-col-2">
+                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                <a href="#">
+                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                </a>
+                                <p>Trailer</p>
+                            </button>
+                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                <a href="#">
+                                    <p>Mua ve</p>
+                                </a>
+                            
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    
-    <div class="bg-red-400">
-        <div class="grid grid-cols-5 gap-x-8 max-w-6xl mx-auto pt-2">
-            <div>
-                <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
-                </div>
-                <div class="text-center">
-                    <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-            <div>
-                <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
-                </div>
-                <div class="text-center">
-                    <h3>BẾN PHÀ XÁC SỐNG</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-            <div>
-                <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
-                </div>
-                <div class="text-center">
-                    <h3>BẾN PHÀ XÁC SỐNG</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
+        <div class="flex justify-center gap-2 pt-2">
+            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
+                <div class="flex flex-col-2 gap-2">
+                    <div>
+                        <a href="#">
+                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
+                        </a>
+                    </div>
+                    <div>
+                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                        <p class="pt-4 text-white">.............................................................</p>
+                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                        <div class="flex flex-col-2">
+                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                <a href="#">
+                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                </a>
+                                <p>Trailer</p>
+                            </button>
+                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                <a href="#">
+                                    <p>Mua ve</p>
+                                </a>
+                            
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
-                </div>
-                <div class="text-center">
-                    <h3>BẾN PHÀ XÁC SỐNG</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-            <div>
-                <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
-                </div>
-                <div class="text-center">
-                    <h3>BẾN PHÀ XÁC SỐNG</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
+            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
+                <div class="flex flex-col-2 gap-2">
+                    <div>
+                        <a href="#">
+                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
+                        </a>
+                    </div>
+                    <div>
+                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                        <p class="pt-4 text-white">.............................................................</p>
+                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                        <div class="flex flex-col-2">
+                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                <a href="#">
+                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                </a>
+                                <p>Trailer</p>
+                            </button>
+                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                <a href="#">
+                                    <p>Mua ve</p>
+                                </a>
+                            
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- uu dai -->
-    <div class="bg-yellow-200 ">       
-        <div class="flex flex-cols-3 gap-x-8 max-w-5xl mx-auto pt-2">
-            <div>
-                <div class="h-75 md-5 pt-3">
-                    <h1 class="text-4xl text-green-600"><strong>ƯU ĐÃI</strong></h1>
-                    <img src="../public/images/icon-promotion.png" alt="" class="w-20 h-34 rounded-lg object-cover">
-                </div>
-            </div>
-            <div>
-                <div class="h-75 md-5">
-                    <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
-                </div>
-            </div>
-            <div>
-                <div class="h-75 md-5">
-                    <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
-                </div>
-            </div>
 
-            <div>
-                <div class="h-75 md-5"> 
-                    <a href="#">
-                        <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
-                    </a> 
+        <div class="flex justify-center gap-2 pt-2">
+            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
+                <div class="flex flex-col-2 gap-2">
+                    <div>
+                        <a href="#">
+                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
+                        </a>
+                    </div>
+                    <div>
+                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                        <p class="pt-4 text-white">.............................................................</p>
+                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                        <div class="flex flex-col-2">
+                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                <a href="#">
+                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                </a>
+                                <p>Trailer</p>
+                            </button>
+                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                <a href="#">
+                                    <p>Mua ve</p>
+                                </a>
+                            
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
-    </div>
-    <!--  tin tuc-->
-    <div class="bg-red-400 w-auto pb-2">
-        <div >  
-            <h1 class="flex justify-center text-center pt-2 text-5xl">
-                <img src="/images/icon-promotion.png" alt="" class="h-16 w-16">TIN TUC</h1>
-            <div class="flex gap-1 max-w-6xl mx-auto pt-2 justify-center"> 
-                <a href="#" class="items-center">
+            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
+                <div class="flex flex-col-2 gap-2">
                     <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tl-lg">
+                        <a href="#">
+                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
+                        </a>
                     </div>
-                </a>
-                <a href="#" class="items-center">
                     <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tr-lg">
+                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                        <p class="pt-4 text-white">.............................................................</p>
+                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                        <div class="flex flex-col-2">
+                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                <a href="#">
+                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                </a>
+                                <p>Trailer</p>
+                            </button>
+                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                <a href="#">
+                                    <p>Mua ve</p>
+                                </a>
+                            
+                            </button>
+                        </div>
                     </div>
-                </a>
-            </div>
-        </div>
-        <div >  
-            <div class="flex gap-1 max-w-6xl mx-auto pt-1 justify-center"> 
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-bl-lg ">
-                    </div>
-                </a>
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-br-lg">
-                    </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
@@ -404,6 +466,7 @@ const handlePaneClick = (): void => {
         </div>
     </div>
 </template>
+
 <style>
 .slideshow .carousel__pagination {
     gap: 10px;

@@ -87,35 +87,22 @@ const handlePaneClick = (): void => {
         <div>
 
         </div>
-        <div class="flex justify-center items-center gap-x-10 py-10">
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/dolby.png')" :alt="useAsset('images/home/dolby.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/christie.png')" :alt="useAsset('images/home/christie.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/2d.png')" :alt="useAsset('images/home/2d.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/3d3.png')" :alt="useAsset('images/home/3d3.png')">
-            </nuxt-link>
-        </div>
-        <div class="relative z-10 tabs">
+
+        <div class="relative z-10 tabs pt-2">
             <tabs v-model="activeTab">
                 <tab name="first" title="Phim đang chiếu" class="!text-[#000]">
                     <div class="bg-red-400">
-                        Lorem...
+                       
                     </div>
                 </tab>
                 <tab name="second" title="Phim sắp chiếu">
                     <div class="bg-red-400">
-                        Lorem...
+                       
                     </div>
                 </tab>
                 <tab name="third" title="Suất chiếu đặc biệt">
                     <div class="bg-red-400">
-                        Lorem...
+                       
                     </div>
                 </tab>
             </tabs>
@@ -123,9 +110,71 @@ const handlePaneClick = (): void => {
         <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1"></div>
     </div>
 
-    
+    <!-- gioi thieu -->
+    <div class="flex flex-col-2 bg-[url('/public/images/film-bg.jpg')] pt-5 pb-5 gap-5">
+        <div>
+            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[550px] h-[650px] pl-14">
+        </div>
+        <div class="bg-orange-400 w-[830px] h-[650px] pt-5">
+            <h1 class="text-3xl text-white pl-5 pr-5">3DCG! SHIN CẬU BÉ BÚT CHÌ 2D LT (P): ĐẠI CHIẾN SIÊU NĂNG LỰC SUSHI BAY</h1>
+            <div class="flex flex-col-2 pt-3 gap-5 pl-5">
+                <h3 class="pt-2">khoi chieu:</h3>
+                <h3 class="bg-white w-[200px] h-[40px] text-center pt-2 rounded-xl">Từ 17/08/2023</h3>
+            </div>
+            <div class="flex flex-col-2 pt-3 gap-5 pl-5">
+                <h3 class="pt-2">the loai:</h3>
+                <h3 class="bg-white w-[200px] h-[40px] text-center pt-2 rounded-xl">Hoat hinh</h3>
+            </div>
+            <div class="flex flex-col-2 pt-3 gap-5 pl-5">
+                <h3 class="pt-2">dien vien:</h3>
+                <h3 class="bg-white w-[700px] h-[40px] text-center pt-2 rounded-xl">Yumiko Kobayashi, Miki Narahashi, Aoi Morikawa, Satomi Kourogi, Suzuki Mogura</h3>
+            </div>
+            <div class="flex flex-col-2 pt-3 gap-5 pl-5">
+                <h3 class="pt-2">dao dien:</h3>
+                <h3 class="bg-white w-[200px] h-[40px] text-center pt-2 rounded-xl">Hitoshi One</h3>
+            </div>
+            <img src="../public/images/2d.png" alt="" class="pl-5 w-20 pt-3">
+            <p class="pl-5 pt-3 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến Siêu Năng Lực ~Sushi Bay~ xoay quanh câu chuyện về hai nguồn sáng đặc biệt từ vũ trụ mang theo siêu năng lực đặc biệt tới Trái Đất. Một nguồn sáng tích cực “nhập” vào nhóc Shin, khiến cặp mông núng nính của cậu chàng trở nên nóng bỏng và có khả năng điều khiển những đồ vật xung quanh theo ý muốn.</p>
+            <div class="flex flex-col-2 pl-5 pt-3">
+                <h3>danh gia:</h3>
+                <img src="../public/images/danhgia.jpg" alt="" class="h-6 w-40 pl-5">
+            </div>
+
+            <div class="flex flex-cols-3 pt-3 pl-52 gap-3">
+                <div class="pt-6">
+                    <div class="flex flex-col-2 bg-blue-900 w-40 h-10 items-center justify-center">
+                        <a href="#" >
+                            <img src="../public/images/th.jpg" alt="" class="w-14 h-7">
+                        </a>
+                        <p>trailer</p>
+                    </div>
+                </div>
+                <div class="pt-6">
+                    <div class="flex flex-col-2 bg-blue-900 w-40 h-10 items-center justify-center">
+                        <a href="/shin" >
+                            <p>mua ve</p>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div >
+                    <div class="flex items-center justify-center">
+                        
+                        <a href="#" >
+                            <p>chia se</p>
+                            <img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="bg-red-400">
+        <h1 class="text-center text-5xl pt-2">Phim hay trong tuan</h1>
         <div class="grid grid-cols-5 gap-x-8 max-w-6xl mx-auto pt-2">
+            
             <div>
                 <div class="h-96 md-5">
                     <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
@@ -212,39 +261,9 @@ const handlePaneClick = (): void => {
             </div>
         </div>
     </div>
-    <!--  tin tuc-->
-    <div class="bg-red-400 w-auto pb-2">
-        <div >  
-            <h1 class="flex justify-center text-center pt-2 text-5xl">
-                <img src="/images/icon-promotion.png" alt="" class="h-16 w-16">TIN TUC</h1>
-            <div class="flex gap-1 max-w-6xl mx-auto pt-2 justify-center"> 
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tl-lg">
-                    </div>
-                </a>
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tr-lg">
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div >  
-            <div class="flex gap-1 max-w-6xl mx-auto pt-1 justify-center"> 
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-bl-lg ">
-                    </div>
-                </a>
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-br-lg">
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+
+
+
     <!-- gach -->
     <div class="">
         <img src="/images/background-header.png" alt="">
@@ -404,6 +423,7 @@ const handlePaneClick = (): void => {
         </div>
     </div>
 </template>
+
 <style>
 .slideshow .carousel__pagination {
     gap: 10px;

@@ -79,112 +79,56 @@ const handlePaneClick = (): void => {
                     ]" placeholder="Chọn suất chiếu" />
             </div>
         </div>
+    </div>
+    <div class="grid justify-center items-center bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative pt-8 pb-8">
         <div>
-
+            <div class="grid grid-cols-2 gap-5 ">
+                <select-search model-value=""
+                    class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
+                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
+                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                    ]" placeholder="Chọn rạp chiếu" />
+                <select-search model-value=""
+                    class="rounded-tl-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
+                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
+                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                    ]" placeholder="Chọn thời gian" />
+            </div>
         </div>
     </div>
-    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
-        <div>
 
-        </div>
-        <div class="flex justify-center items-center gap-x-10 py-10">
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/dolby.png')" :alt="useAsset('images/home/dolby.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/christie.png')" :alt="useAsset('images/home/christie.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/2d.png')" :alt="useAsset('images/home/2d.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/3d3.png')" :alt="useAsset('images/home/3d3.png')">
-            </nuxt-link>
-        </div>
-        <div class="relative z-10 tabs">
-            <tabs v-model="activeTab">
-                <tab name="first" title="Phim đang chiếu" class="!text-[#000]">
-                    <div class="bg-red-400">
-                        Lorem...
+    <!-- lich chieu -->
+    <div class="flex justify-center bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative pt-2 pb-2">
+        <div class=" flex flex-col-2  bg-[#f37520] w-[1174px] h-[450px] gap-5">
+            <div>
+                <img src="/images/shin-cau-be-but-chi.jpg" alt="" class="w-[550px] h-[430px] pt-5 pl-5">
+            </div>
+            <div class="relative w-full h-auto overflow-hidden mb-5 pt-5">
+                <h3 class="text-3xl text-white pb-3">3DCG! SHIN CẬU BÉ BÚT CHÌ 2D LT (P): ĐẠI CHIẾN SIÊU NĂNG LỰC SUSHI BAY</h3>
+                
+                <h4 class="flex bg-yellow-300 w-[200px] h-[50px] text-xl justify-center items-center">CineStar Đà Lạt</h4>
+                <div class="flex flex-col-2">
+                    <h3 class="flex bg-yellow-300 w-[70px] h-[60px] justify-center items-center pl-2">16/09 2023 
+                    </h3>   
+                    <div class="flex flex-col-2 bg-yellow-100 w-[700px] h-[60px] pt-1 pl-5 pr-8 gap-2">
+                        <a href="/book _movie_tickets">
+                        <p class="bg-yellow-50 w-[50px] h-[50px] text-center pt-3"><button>12:30</button></p></a>
+                        <a href="#"><p class="bg-yellow-50 w-[50px] h-[50px] text-center pt-3"><button>12:30</button></p></a>
                     </div>
-                </tab>
-                <tab name="second" title="Phim sắp chiếu">
-                    <div class="bg-red-400">
-                        Lorem...
-                    </div>
-                </tab>
-                <tab name="third" title="Suất chiếu đặc biệt">
-                    <div class="bg-red-400">
-                        Lorem...
-                    </div>
-                </tab>
-            </tabs>
+                </div>
+                       
+            </div>
         </div>
-        <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1"></div>
     </div>
+    
 
     
-    <div class="bg-red-400">
-        <div class="grid grid-cols-5 gap-x-8 max-w-6xl mx-auto pt-2">
-            <div>
-                <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
-                </div>
-                <div class="text-center">
-                    <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-            <div>
-                <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
-                </div>
-                <div class="text-center">
-                    <h3>BẾN PHÀ XÁC SỐNG</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-            <div>
-                <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
-                </div>
-                <div class="text-center">
-                    <h3>BẾN PHÀ XÁC SỐNG</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-            <div>
-                <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
-                </div>
-                <div class="text-center">
-                    <h3>BẾN PHÀ XÁC SỐNG</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-            <div>
-                <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
-                </div>
-                <div class="text-center">
-                    <h3>BẾN PHÀ XÁC SỐNG</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- uu dai -->
-    <div class="bg-yellow-200 ">       
+    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">       
         <div class="flex flex-cols-3 gap-x-8 max-w-5xl mx-auto pt-2">
             <div>
                 <div class="h-75 md-5 pt-3">
@@ -209,39 +153,6 @@ const handlePaneClick = (): void => {
                         <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
                     </a> 
             </div>
-            </div>
-        </div>
-    </div>
-    <!--  tin tuc-->
-    <div class="bg-red-400 w-auto pb-2">
-        <div >  
-            <h1 class="flex justify-center text-center pt-2 text-5xl">
-                <img src="/images/icon-promotion.png" alt="" class="h-16 w-16">TIN TUC</h1>
-            <div class="flex gap-1 max-w-6xl mx-auto pt-2 justify-center"> 
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tl-lg">
-                    </div>
-                </a>
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tr-lg">
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div >  
-            <div class="flex gap-1 max-w-6xl mx-auto pt-1 justify-center"> 
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-bl-lg ">
-                    </div>
-                </a>
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-br-lg">
-                    </div>
-                </a>
             </div>
         </div>
     </div>
