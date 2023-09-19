@@ -230,10 +230,10 @@ const handlePaneClick = (): void => {
                <a href="#"> <h1>Quay Lại</h1></a>
             </div>
             <div class="bg-red-300 w-[150px] h-[40px] text-center pt-2 rounded-xl">
-               <a href="#"> <h1>Chọn đồ ăn</h1></a>
+               <a href="/eat"> <h1>Chọn đồ ăn</h1></a>
             </div>
             <div class="bg-red-300 w-[150px] h-[40px] text-center pt-2 rounded-xl">
-               <a href="#"> <h1>Thanh Toán</h1></a>
+               <a href="/pay"> <h1>Thanh Toán</h1></a>
             </div>
         </div>
     </div>
