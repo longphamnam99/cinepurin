@@ -1,0 +1,625 @@
+<script setup lang="ts">
+import useAsset from "@/helpers/useAsset"
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css'
+import { ref } from 'vue'
+import { Tabs, Tab } from 'flowbite-vue'
+const activeTab = ref('first')
+
+useHead({ title: "Trang chủ" })
+const pictures = [
+    {
+        'src': useAsset('images/home/z2161740555616_cf6d683f88aa9447af57b89917e84acb.jpg'),
+        'alt': 'Picture 1',
+    },
+    {
+        'src': useAsset('images/home/z2161740555387_88fc044837bea7695ee9ec8320a39cef.jpg'),
+        'alt': 'Picture 2',
+    },
+]
+const handlePaneClick = (): void => {
+    console.log("Click!")
+}
+</script>
+
+<template>
+    <carousel :autoplay="3000" :wrap-around="true" class="relative slideshow" ref="slideshow">
+        <slide v-for="(item, index) in pictures" :key="index">
+            <img :src="item.src" :alt="item.alt" class="carousel-image" />
+        </slide>
+        <template #addons>
+            <navigation />
+            <pagination class="sm:block hidden" />
+        </template>
+    </carousel>
+    <div
+        class="relative bg-[url('/images/pattern.png')] bg-repeat bg-top max-w-full flex flex-wrap items-center justify-center">
+        <div class="relative w-full">
+            <img src="/images/background-header.png" alt="Top header">
+        </div>
+        <div class="flex flex-wrap lg:gap-x-32 gap-5 justify-center items-center py-5">
+            <div class="flex items-center justify-between gap-x-10 relative">
+                <div class="w-[114px] h-[130px] sm:block hidden">
+                    <img class="absolute -top-10 left-0" :src="useAsset('images/home/icon-ticket.png')" alt="ticket banner">
+                </div>
+                <h2
+                    class="uppercase font-bold text-[#e00d7a] leading-[32px] text-[32px] text-shadow-xs text-shadow font-Futurab">
+                    mua vé <br>
+                    online
+                </h2>
+            </div>
+            <div class="grid grid-cols-2 gap-5">
+                <select-search model-value=""
+                    class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
+                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
+                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                    ]" placeholder="Chọn phim" />
+                <select-search model-value=""
+                    class="rounded-tl-[24px] rounded-bl-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
+                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
+                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                    ]" placeholder="Chọn rạp" />
+                <select-search model-value=""
+                    class="rounded-tl-[24px] rounded-tr-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
+                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
+                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                    ]" placeholder="Chọn ngày" />
+                <select-search model-value=""
+                    class="rounded-tl-[24px] rounded-tr-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
+                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
+                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                    ]" placeholder="Chọn suất chiếu" />
+            </div>
+        </div>
+    </div>
+    <div class="grid justify-center items-center bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative pt-8 pb-8">
+        <div>
+            <div class="grid grid-cols-2 gap-5 ">
+                <select-search model-value=""
+                    class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
+                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
+                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                    ]" placeholder="Chọn rạp chiếu" />
+                <select-search model-value=""
+                    class="rounded-tl-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
+                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
+                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                    ]" placeholder="Chọn thời gian" />
+            </div>
+        </div>
+    </div>
+
+    <!-- lich chieu -->
+    <div class="bg-purple-400 px-12">
+        <div class="flex px-3 pt-3 pb-3">
+            <div class="flex bg-orange-500 w-[400px] h-[315px]">
+                <div class="w-[200px]">
+                    <div>
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                    </div>
+                </div>
+                <div class="w-[200px] pt-3">
+                    <div>
+                        <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[115px]">
+                <div class="bg-yellow-300 w-[90px] h-[90px]">
+                    <div>
+                        <h3 class="text-center pt-6 font-semibold">21/09 <br> 2023</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[117.5px]">
+                <div class="flex bg-violet-300 w-[800px] h-[85px]">
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex px-3 pt-3 pb-3">
+            <div class="flex bg-orange-500 w-[400px] h-[315px]">
+                <div class="w-[200px]">
+                    <div>
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                    </div>
+                </div>
+                <div class="w-[200px] pt-3">
+                    <div>
+                        <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[115px]">
+                <div class="bg-yellow-300 w-[90px] h-[90px]">
+                    <div>
+                        <h3 class="text-center pt-6 font-semibold">21/09 <br> 2023</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[117.5px]">
+                <div class="flex bg-violet-300 w-[800px] h-[85px]">
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex px-3 pt-3 pb-3">
+            <div class="flex bg-orange-500 w-[400px] h-[315px]">
+                <div class="w-[200px]">
+                    <div>
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                    </div>
+                </div>
+                <div class="w-[200px] pt-3">
+                    <div>
+                        <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[115px]">
+                <div class="bg-yellow-300 w-[90px] h-[90px]">
+                    <div>
+                        <h3 class="text-center pt-6 font-semibold">21/09 <br> 2023</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[117.5px]">
+                <div class="flex bg-violet-300 w-[800px] h-[85px]">
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex px-3 pt-3 pb-3">
+            <div class="flex bg-orange-500 w-[400px] h-[315px]">
+                <div class="w-[200px]">
+                    <div>
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                    </div>
+                </div>
+                <div class="w-[200px] pt-3">
+                    <div>
+                        <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[115px]">
+                <div class="bg-yellow-300 w-[90px] h-[90px]">
+                    <div>
+                        <h3 class="text-center pt-6 font-semibold">21/09 <br> 2023</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[117.5px]">
+                <div class="flex bg-violet-300 w-[800px] h-[85px]">
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex px-3 pt-3 pb-3">
+            <div class="flex bg-orange-500 w-[400px] h-[315px]">
+                <div class="w-[200px]">
+                    <div>
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                    </div>
+                </div>
+                <div class="w-[200px] pt-3">
+                    <div>
+                        <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[115px]">
+                <div class="bg-yellow-300 w-[90px] h-[90px]">
+                    <div>
+                        <h3 class="text-center pt-6 font-semibold">21/09 <br> 2023</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[117.5px]">
+                <div class="flex bg-violet-300 w-[800px] h-[85px]">
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex px-3 pt-3 pb-3">
+            <div class="flex bg-orange-500 w-[400px] h-[315px]">
+                <div class="w-[200px]">
+                    <div>
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                    </div>
+                </div>
+                <div class="w-[200px] pt-3">
+                    <div>
+                        <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[115px]">
+                <div class="bg-yellow-300 w-[90px] h-[90px]">
+                    <div>
+                        <h3 class="text-center pt-6 font-semibold">21/09 <br> 2023</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-[117.5px]">
+                <div class="flex bg-violet-300 w-[800px] h-[85px]">
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                    <div class="pt-2 px-2">
+                        <a href="#"><h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3></a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- uu dai -->
+    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">       
+        <div class="flex flex-cols-3 gap-x-8 max-w-5xl mx-auto pt-2">
+            <div>
+                <div class="h-75 md-5 pt-3">
+                    <h1 class="text-4xl text-green-600"><strong>ƯU ĐÃI</strong></h1>
+                    <img src="../public/images/icon-promotion.png" alt="" class="w-20 h-34 rounded-lg object-cover">
+                </div>
+            </div>
+            <div>
+                <div class="h-75 md-5">
+                    <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
+                </div>
+            </div>
+            <div>
+                <div class="h-75 md-5">
+                    <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
+                </div>
+            </div>
+
+            <div>
+                <div class="h-75 md-5"> 
+                    <a href="#">
+                        <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
+                    </a> 
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- gach -->
+    <div class="">
+        <img src="/images/background-header.png" alt="">
+    </div>
+    <!-- chan trang -->
+    <div class="bg-red-400 mb-2">
+        <div class="flex justify-center pt-2">
+            <!-- logo -->
+            <img src="/images/logo.png" alt="" class="w-50 h-20">
+        </div>
+        <div class="grid grid-cols-4 w-[1280px] text-center justify-center pt-4">
+            <div>
+                <h2 class="text-xl">LIÊN KẾT</h2>
+                <div class="flex justify-center items-center pt-2 gap-2" >
+                    <a href="#">
+                        <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
+                    </a>
+                    <a href="#">
+                        <img src="/images/th.jpg" alt="" class="w-10 h-10 ">
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h2>HỆ THỐNG RẠP</h2>
+                <div>
+                    <div>
+                        <a href="#">
+                            <H3>CINE CINE</H3>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <H3>CINE CINE</H3>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <H3>CINE CINE</H3>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <H3>CINE CINE</H3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>CINEPURIN</h2>
+                <div>
+                    <div>
+                        <a href="#">
+                            <h3>phim dang chieu</h3>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <h3>phim dang chieu</h3>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <h3>phim dang chieu</h3>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <h3>phim dang chieu</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>THÔNG TIN</h2>
+                <div>
+                    <div>
+                        <a href="#"> <h3> Giới thiệu</h3></a>
+                    </div>
+                    <div>
+                        <a href="#"> <h3> Tin tức</h3></a>
+                    </div>
+                    <div>
+                        <a href="#"> <h3> Hỏi và đáp</h3></a>
+                    </div>
+                    <div>
+                        <a href="#"> <h3> Liên hệ</h3></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col-5 justify-center items-center pt-5 gap-4">
+            <div>
+                <a href="#">
+                    <img src="../public/images/dolby2.png" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="../public/images/crhistie.png" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="../public/images/2d.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="../public/images/3d.png" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="../public/images/cinestar-coffee-02.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="flex bg-[#552463] text-center justify-center items-center text-white pt-2 pb-2">
+        <div>
+            <h2>Chấp Nhận Thanh Toán</h2>           
+            <div class="flex flex-col-4 gap-2 pt-2" >
+                <div>
+                    <a href="#">
+                        <img src="../public/images/napas-40.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="../public/images/momo.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="../public/images/payment-mastercard.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="../public/images/payment-visa.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex bg-black justify-center">
+        <div>
+            <a href="#" class="flex justify-center items-center">
+                <img src="../public/images/dathongbao.png" alt="">
+            </a>
+            <div><p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO <br>
+                ĐỊA CHỈ: 135 HAI BÀ TRƯNG, PHƯỜNG BẾN NGHÉ, QUẬN 1, TP.HCM <br>
+                GIẤY CNĐKDN SỐ: 0312742744, ĐĂNG KÝ LẦN ĐẦU NGÀY 18/04/2014, ĐĂNG KÝ THAY ĐỔI LẦN THỨ 2 NGÀY 15/09/2014, CẤP BỞI SỞ KH&ĐT TP.HCM
+                <br>
+                <br>2015 © CINESTAR. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </div>
+</template>
+<style>
+.slideshow .carousel__pagination {
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.slideshow .carousel__prev,
+.slideshow .carousel__next {
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    display: none;
+}
+
+.slideshow .carousel__pagination-button--active {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    transform: translateY(0);
+}
+
+.slideshow .carousel__pagination-button::after {
+    background-color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+}
+
+@media all and (max-width: 1024px) {
+    .slideshow .carousel__pagination {
+        right: auto;
+        bottom: 10%;
+        top: auto;
+        left: 10px;
+        transform: none;
+    }
+
+    .slideshow .carousel__pagination-button::after {
+        height: 10px;
+        width: 10px;
+    }
+}
+
+.slideshow .carousel__pagination {
+    display: flex;
+}
+
+@media all and (max-width: 767px) {
+    .slideshow .carousel__pagination {
+        display: none;
+    }
+
+    .slideshow .carousel__prev,
+    .slideshow .carousel__next {
+        display: flex;
+    }
+}
+
+.tabs ul {
+    justify-content: center;
+}
+
+.tabs ul li {
+    background-color: #f18720;
+    -webkit-transition: all 0.3s ease-in-out;
+    box-shadow: 10px 0 0 rgba(0,0,0,0.1);
+}
+
+.tabs ul li:nth-child(1) {
+    border-radius: 30px 50px 50px 0;
+    -webkit-border-radius: 30px 50px 50px 0;
+}
+
+.tabs li:nth-child(2) {
+    border-radius: 0 50px 50px 0;
+    -webkit-border-radius: 0 50px 50px 0;
+    padding-left: 55px;
+    margin-left: -80px;
+}
+
+.tabs ul li:nth-child(3) {
+    padding-left: 55px;
+    margin-left: -80px;
+    border-radius: 0 30px 0 0;
+    -webkit-border-radius: 0 30px 0 0;
+}
+
+.tabs ul li div {
+    font-family: 'avantgarde-demi';
+    font-weight: normal;
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 74px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    padding: 0 45px;
+}
+</style>
+
+<style scoped>
+.text-shadow {
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+</style>

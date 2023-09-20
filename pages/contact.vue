@@ -123,65 +123,22 @@ const handlePaneClick = (): void => {
         <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1"></div>
     </div>
 
-    
-    <div class="bg-red-400">
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 max-w-6xl mx-auto pt-2 px-4">
-            <div>
-                <div class="flex justify-center md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="h-96 rounded-lg object-cover">
+    <!-- contact -->
+    <div>
+        <div class="bg-purple-800 h-[350px]">
+            <div class="text-center text-lg lg:text-4xl font-sm lg:font-sans pt-12">
+                <h1 class="">Mọi Thắc Mắc Xin Liên Hệ:</h1>
+                <h2 class="">CinePurin</h2>
+                <h1>địa chỉ: HCM</h1>
+                <div class="flex justify-center">
+                    <a href="facebook.com/Shu1906.cn"><img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-16"> </a>
+                    <h1 class="pt-2">FB CinePurin</h1>
                 </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                    <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-center md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                    <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
+                <div class="flex justify-center">
+                    <a href="#"><img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-16"> </a>
+                    <h1 class="pt-2">Gmail</h1>
                 </div>
             </div>
-            <div>
-                <div class="flex justify-center md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                    <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-center md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                    <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-            <div>
-                <div class="flex justify-center md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                    <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                    <p>2D</p>
-                </div>
-            </div>
-            
         </div>
     </div>
     <!-- uu dai -->

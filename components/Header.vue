@@ -8,7 +8,7 @@ const router = [
         name: "Phim",
     },
     {
-        path: "/",
+        path: "/showtimes",
         name: "Lịch chiếu",
     },
     {
@@ -32,7 +32,7 @@ const router = [
         name: "Giới thiệu",
     },
     {
-        path: "/",
+        path: "/contact",
         name: "Liên hệ",
     },
 ]
