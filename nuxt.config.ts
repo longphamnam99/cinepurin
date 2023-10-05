@@ -21,5 +21,4 @@ export default defineNuxtConfig({
       ['defineStore', 'definePiniaStore'],
     ],
   },
-  buildDir: 'dist',
 })
