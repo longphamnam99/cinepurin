@@ -115,7 +115,7 @@ const handlePaneClick = (): void => {
                     <h3 class="flex bg-yellow-300 w-[70px] h-[60px] justify-center items-center pl-2">16/09 2023 
                     </h3>   
                     <div class="flex flex-col-2 bg-yellow-100 w-[700px] h-[60px] pt-1 pl-5 pr-8 gap-2">
-                        <a href="/book _movie_tickets">
+                        <a href="/book_movie_tickets">
                         <p class="bg-yellow-50 w-[50px] h-[50px] text-center pt-3"><button>12:30</button></p></a>
                         <a href="#"><p class="bg-yellow-50 w-[50px] h-[50px] text-center pt-3"><button>12:30</button></p></a>
                     </div>
