@@ -315,10 +315,10 @@ const handlePaneClick = (): void => {
     <div>
         <div class="flex flex-col-2 gap-4 pt-3 text-center justify-center">
             <div class=" bg-orange-400 w-[100px] h-[30px]  rounded-xl pt-1">
-                <a href="/book_tables">Hủy</a>
+                <nuxt-link to="/book_tables">Hủy</nuxt-link>
             </div>
             <div class="bg-pink-400 w-[100px] h-[30px]  rounded-xl pt-1">
-                <a href="#">Đồng Ý</a>
+                <nuxt-link to="/book_tables">Đồng Ý</nuxt-link>
             </div>
         </div>
     </div>

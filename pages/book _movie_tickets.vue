@@ -118,13 +118,11 @@ const handlePaneClick = (): void => {
     </div>
     <div>
         <div class="flex flex-col-2 gap-4 justify-center pt-3">
-            <div>
-                <a href="/shin">
-                <h2 class="bg-orange-600 w-[140px] h-[40px] text-center pt-2 rounded-xl">Quay lại</h2></a>
+            <div class="bg-orange-600 w-[140px] h-[40px] text-center pt-2 rounded-xl">
+                <nuxt-link to="/shin">Quay lại</nuxt-link>
             </div>
-            <div>
-                <a href="/book_tables">
-                <h2 class="bg-orange-600 w-[140px] h-[40px] text-center pt-2 rounded-xl">Chọn ghế</h2></a>
+            <div class="bg-orange-600 w-[140px] h-[40px] text-center pt-2 rounded-xl">
+                <nuxt-link to="/book_tables">Chọn ghế</nuxt-link>
             </div>
         </div>
     </div>

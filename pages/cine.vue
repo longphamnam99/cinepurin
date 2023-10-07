@@ -53,30 +53,30 @@ const handlePaneClick = (): void => {
                 <select-search model-value=""
                     class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                     :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
                     ]" placeholder="Chọn phim" />
                 <select-search model-value=""
                     class="rounded-tl-[24px] rounded-bl-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                     :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
                     ]" placeholder="Chọn rạp" />
                 <select-search model-value=""
                     class="rounded-tl-[24px] rounded-tr-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                     :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
                     ]" placeholder="Chọn ngày" />
                 <select-search model-value=""
                     class="rounded-tl-[24px] rounded-tr-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                     :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
                     ]" placeholder="Chọn suất chiếu" />
             </div>
         </div>
@@ -105,19 +105,18 @@ const handlePaneClick = (): void => {
         <div class="relative z-10 tabs">
             <tabs v-model="activeTab">
                 <tab name="first" title="Phim đang chiếu" class="!text-[#000]">
-                    <div class="bg-red-400">
-                        Lorem...
-                    </div>
+                    <!-- <div class="bg-red-400">
+                    </div> -->
                 </tab>
                 <tab name="second" title="Phim sắp chiếu">
-                    <div class="bg-red-400">
+                    <!-- <div class="bg-red-400">
                         Lorem...
-                    </div>
+                    </div> -->
                 </tab>
                 <tab name="third" title="Suất chiếu đặc biệt">
-                    <div class="bg-red-400">
+                    <!-- <div class="bg-red-400">
                         Lorem...
-                    </div>
+                    </div> -->
                 </tab>
             </tabs>
         </div>
@@ -129,9 +128,9 @@ const handlePaneClick = (): void => {
             <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
                 <div class="flex flex-col-2 gap-2">
                     <div>
-                        <a href="/shin-main">
+                        <nuxt-link to="/shin-main">
                             <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </a>
+                        </nuxt-link>
                     </div>
                     <div>
                         <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
@@ -140,16 +139,15 @@ const handlePaneClick = (): void => {
                         <img src="../public/images/2d.png" alt="" class="w-10 h-10">
                         <div class="flex flex-col-2">
                             <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <a href="#">
+                                <nuxt-link to="#">
                                     <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </a>
+                                </nuxt-link>
                                 <p>Trailer</p>
                             </button>
                             <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <a href="/shin">
-                                    <p>Mua ve</p>
-                                </a>
-                            
+                                <nuxt-link to="/shin">
+                                    Mua Vé
+                                </nuxt-link>
                             </button>
                         </div>
                     </div>
@@ -158,9 +156,9 @@ const handlePaneClick = (): void => {
             <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
                 <div class="flex flex-col-2 gap-2">
                     <div>
-                        <a href="#">
+                        <nuxt-link to="#">
                             <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </a>
+                        </nuxt-link>
                     </div>
                     <div>
                         <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
@@ -169,77 +167,15 @@ const handlePaneClick = (): void => {
                         <img src="../public/images/2d.png" alt="" class="w-10 h-10">
                         <div class="flex flex-col-2">
                             <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <a href="#">
+                                <nuxt-link to="#">
                                     <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </a>
+                                </nuxt-link>
                                 <p>Trailer</p>
                             </button>
                             <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <a href="#">
-                                    <p>Mua ve</p>
-                                </a>
-                            
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex justify-center gap-2 pt-2">
-            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
-                <div class="flex flex-col-2 gap-2">
-                    <div>
-                        <a href="#">
-                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </a>
-                    </div>
-                    <div>
-                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
-                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
-                        <p class="pt-4 text-white">.............................................................</p>
-                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
-                        <div class="flex flex-col-2">
-                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <a href="#">
-                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </a>
-                                <p>Trailer</p>
-                            </button>
-                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <a href="#">
-                                    <p>Mua ve</p>
-                                </a>
-                            
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
-                <div class="flex flex-col-2 gap-2">
-                    <div>
-                        <a href="#">
-                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </a>
-                    </div>
-                    <div>
-                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
-                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
-                        <p class="pt-4 text-white">.............................................................</p>
-                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
-                        <div class="flex flex-col-2">
-                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <a href="#">
-                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </a>
-                                <p>Trailer</p>
-                            </button>
-                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <a href="#">
-                                    <p>Mua ve</p>
-                                </a>
-                            
+                                <nuxt-link to="/shin">
+                                    Mua Vé
+                                </nuxt-link>
                             </button>
                         </div>
                     </div>
@@ -251,9 +187,9 @@ const handlePaneClick = (): void => {
             <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
                 <div class="flex flex-col-2 gap-2">
                     <div>
-                        <a href="#">
+                        <nuxt-link to="/shin-main">
                             <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </a>
+                        </nuxt-link>
                     </div>
                     <div>
                         <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
@@ -262,16 +198,15 @@ const handlePaneClick = (): void => {
                         <img src="../public/images/2d.png" alt="" class="w-10 h-10">
                         <div class="flex flex-col-2">
                             <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <a href="#">
+                                <nuxt-link to="#">
                                     <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </a>
+                                </nuxt-link>
                                 <p>Trailer</p>
                             </button>
                             <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <a href="#">
-                                    <p>Mua ve</p>
-                                </a>
-                            
+                                <nuxt-link to="/shin">
+                                    Mua Vé
+                                </nuxt-link>
                             </button>
                         </div>
                     </div>
@@ -280,9 +215,9 @@ const handlePaneClick = (): void => {
             <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
                 <div class="flex flex-col-2 gap-2">
                     <div>
-                        <a href="#">
+                        <nuxt-link to="#">
                             <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </a>
+                        </nuxt-link>
                     </div>
                     <div>
                         <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
@@ -291,16 +226,74 @@ const handlePaneClick = (): void => {
                         <img src="../public/images/2d.png" alt="" class="w-10 h-10">
                         <div class="flex flex-col-2">
                             <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <a href="#">
+                                <nuxt-link to="#">
                                     <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </a>
+                                </nuxt-link>
                                 <p>Trailer</p>
                             </button>
                             <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <a href="#">
-                                    <p>Mua ve</p>
-                                </a>
-                            
+                                <nuxt-link to="/shin">
+                                    Mua Vé
+                                </nuxt-link>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center gap-2 pt-2">
+            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
+                <div class="flex flex-col-2 gap-2">
+                    <div>
+                        <nuxt-link to="#">
+                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                        <p class="pt-4 text-white">.............................................................</p>
+                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                        <div class="flex flex-col-2">
+                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                <nuxt-link to="#">
+                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                </nuxt-link>
+                                <p>Trailer</p>
+                            </button>
+                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                <nuxt-link to="/shin">
+                                    Mua Vé
+                                </nuxt-link>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
+                <div class="flex flex-col-2 gap-2">
+                    <div>
+                        <nuxt-link to="#">
+                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                        <p class="pt-4 text-white">.............................................................</p>
+                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                        <div class="flex flex-col-2">
+                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                <nuxt-link to="#">
+                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                </nuxt-link>
+                                <p>Trailer</p>
+                            </button>
+                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                <nuxt-link to="/shin">
+                                    Mua Vé
+                                </nuxt-link>
                             </button>
                         </div>
                     </div>
@@ -319,110 +312,120 @@ const handlePaneClick = (): void => {
             <img src="/images/logo.png" alt="" class="w-50 h-20">
         </div>
         <div class="grid grid-cols-4 w-[1280px] text-center justify-center pt-4">
-            <div>
-                <h2 class="text-xl">LIÊN KẾT</h2>
-                <div class="flex justify-center items-center pt-2 gap-2" >
-                    <a href="#">
-                        <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
-                    </a>
-                    <a href="#">
-                        <img src="/images/th.jpg" alt="" class="w-10 h-10 ">
-                    </a>
+            <div class="">
+                <h2 class="">LIÊN KẾT</h2>
+                <div class="pt-2">
+                    <div class="flex justify-center items-center pt-2 gap-2" >
+                        <nuxt-link to="#">
+                            <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
+                        </nuxt-link>
+                        <nuxt-link to="#">
+                            <img src="/images/th.jpg" alt="" class="w-10 h-10 ">
+                        </nuxt-link>
+                    </div>
                 </div>
             </div>
             <div>
                 <h2>HỆ THỐNG RẠP</h2>
-                <div>
+                <div class="pt-2">
                     <div>
-                        <a href="#">
-                            <H3>CINE CINE</H3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Dương</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <H3>CINE CINE</H3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Phước</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <H3>CINE CINE</H3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>CINE Đồng Tháp</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <H3>CINE CINE</H3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>CINE Hồ Chí Minh</H3>
+                        </nuxt-link>
                     </div>
                 </div>
             </div>
             <div>
                 <h2>CINEPURIN</h2>
-                <div>
+                <div class="pt-2">
                     <div>
-                        <a href="#">
-                            <h3>phim dang chieu</h3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>Phim Đang Chiếu</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <h3>phim dang chieu</h3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>Phim Sắp Chiếu</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <h3>phim dang chieu</h3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>Xuất Chiếu Đặc Biệt</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <h3>phim dang chieu</h3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Dương</H3>
+                        </nuxt-link>
                     </div>
                 </div>
             </div>
             <div>
                 <h2>THÔNG TIN</h2>
-                <div>
+                <div class="pt-2">
                     <div>
-                        <a href="#"> <h3> Giới thiệu</h3></a>
+                        <nuxt-link to="#">
+                            <H3>Giới Thiệu</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#"> <h3> Tin tức</h3></a>
+                        <nuxt-link to="#">
+                            <H3>Tin Tức</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#"> <h3> Hỏi và đáp</h3></a>
+                        <nuxt-link to="#">
+                            <H3>Hỏi và Đáp</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#"> <h3> Liên hệ</h3></a>
+                        <nuxt-link to="#">
+                            <H3>Liên Hệ</H3>
+                        </nuxt-link>
                     </div>
                 </div>
             </div>
         </div>
         <div class="flex flex-col-5 justify-center items-center pt-5 gap-4">
             <div>
-                <a href="#">
+                <nuxt-link to="#">
                     <img src="../public/images/dolby2.png" alt="">
-                </a>
+                </nuxt-link>
             </div>
             <div>
-                <a href="#">
+                <nuxt-link to="#">
                     <img src="../public/images/crhistie.png" alt="">
-                </a>
+                </nuxt-link>
             </div>
             <div>
-                <a href="#">
+                <nuxt-link to="#">
                     <img src="../public/images/2d.jpg" alt="">
-                </a>
+                </nuxt-link>
             </div>
             <div>
-                <a href="#">
+                <nuxt-link to="#">
                     <img src="../public/images/3d.png" alt="">
-                </a>
-            </div>
+                </nuxt-link>
+            </div>    
             <div>
-                <a href="#">
+                <nuxt-link to="#">
                     <img src="../public/images/cinestar-coffee-02.png" alt="">
-                </a>
+                </nuxt-link>
             </div>
         </div>
     </div>
@@ -431,38 +434,35 @@ const handlePaneClick = (): void => {
             <h2>Chấp Nhận Thanh Toán</h2>           
             <div class="flex flex-col-4 gap-2 pt-2" >
                 <div>
-                    <a href="#">
+                    <nuxt-link to="#">
                         <img src="../public/images/napas-40.png" alt="">
-                    </a>
+                    </nuxt-link>
                 </div>
                 <div>
-                    <a href="#">
+                    <nuxt-link to="#">
                         <img src="../public/images/momo.jpg" alt="">
-                    </a>
+                    </nuxt-link>
                 </div>
                 <div>
-                    <a href="#">
+                    <nuxt-link to="#">
                         <img src="../public/images/payment-mastercard.png" alt="">
-                    </a>
+                    </nuxt-link>
                 </div>
                 <div>
-                    <a href="#">
+                    <nuxt-link to="#">
                         <img src="../public/images/payment-visa.png" alt="">
-                    </a>
+                    </nuxt-link>
                 </div>
             </div>
         </div>
     </div>
     <div class="flex bg-black justify-center">
         <div>
-            <a href="#" class="flex justify-center items-center">
-                <img src="../public/images/dathongbao.png" alt="">
-            </a>
-            <div><p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO <br>
-                ĐỊA CHỈ: 135 HAI BÀ TRƯNG, PHƯỜNG BẾN NGHÉ, QUẬN 1, TP.HCM <br>
+            <div><p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO <br> </p>
+                <!-- ĐỊA CHỈ: 135 HAI BÀ TRƯNG, PHƯỜNG BẾN NGHÉ, QUẬN 1, TP.HCM <br>
                 GIẤY CNĐKDN SỐ: 0312742744, ĐĂNG KÝ LẦN ĐẦU NGÀY 18/04/2014, ĐĂNG KÝ THAY ĐỔI LẦN THỨ 2 NGÀY 15/09/2014, CẤP BỞI SỞ KH&ĐT TP.HCM
                 <br>
-                <br>2015 © CINESTAR. ALL RIGHTS RESERVED.</p>
+                <br>2015 © CINESTAR. ALL RIGHTS RESERVED.</p> -->
             </div>
         </div>
     </div>

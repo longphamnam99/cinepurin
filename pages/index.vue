@@ -51,33 +51,33 @@ const handlePaneClick = (): void => {
       </div>
       <div class="grid grid-cols-2 gap-5">
         <select-search model-value=""
-                       class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                       :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
-                    ]" placeholder="Chọn phim"/>
-        <select-search model-value=""
-                       class="rounded-tl-[24px] rounded-bl-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                       :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
-                    ]" placeholder="Chọn rạp"/>
-        <select-search model-value=""
-                       class="rounded-tl-[24px] rounded-tr-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                       :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
-                    ]" placeholder="Chọn ngày"/>
-        <select-search model-value=""
-                       class="rounded-tl-[24px] rounded-tr-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                       :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
-                    ]" placeholder="Chọn suất chiếu"/>
+                    class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
+                    ]" placeholder="Chọn phim" />
+                <select-search model-value=""
+                    class="rounded-tl-[24px] rounded-bl-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
+                    ]" placeholder="Chọn rạp" />
+                <select-search model-value=""
+                    class="rounded-tl-[24px] rounded-tr-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
+                    ]" placeholder="Chọn ngày" />
+                <select-search model-value=""
+                    class="rounded-tl-[24px] rounded-tr-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                    :options="[
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
+                    ]" placeholder="Chọn suất chiếu" />
       </div>
     </div>
     <div>
@@ -273,246 +273,237 @@ const handlePaneClick = (): void => {
     <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1"></div>
   </div>
   <!-- uu dai -->
-  <div class="bg-yellow-200 pb-4">
-    <div class="flex justify-center px-5 ">
-      <div class="flex">
-        <div class="h-75 md-5 pt-3">
-          <h1 class="text-xl lg:text-4xl  text-green-600 font-serif"><strong>ƯU ĐÃI</strong></h1>
+  <div class="bg-yellow-200 pb-4">       
+        <div class="flex justify-center px-5 ">
+            <div class="flex">
+                <div class="h-75 md-5 pt-3">
+                    <h1 class="text-xl lg:text-4xl  text-green-600 font-serif"><strong>ƯU ĐÃI</strong></h1>
+                </div>
+                <div>
+                    <nuxt-link to="#">
+                        <img src="../public/images/icon-promotion.png" alt="" class="w-10 h-17 rounded-lg object-cover">
+                    </nuxt-link>
+                </div>
+            </div>
         </div>
-        <div>
-          <a href="#">
-            <img src="/images/icon-promotion.png" alt="" class="w-10 h-17 rounded-lg object-cover"></a>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class=" bg-yellow-200 pb-2">
-    <div class="flex flex-cols-1 lg:flex flex-cols-3 gap-x-8 max-w-5xl mx-auto pt-2 px-4">
-      <div>
-        <div class="h-75 md-5">
-          <a href="#">
-            <img src="/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover"></a>
+    <div class=" bg-yellow-200 pb-2">
+        <div class="flex flex-cols-1 lg:flex flex-cols-3 gap-x-8 max-w-5xl mx-auto pt-2 px-4">
+            <div>
+                <div class="h-75 md-5">
+                    <nuxt-link to="#">
+                        <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
+                    </nuxt-link>
+                </div>
+            </div>
+            <div>
+                <div class="h-75 md-5">
+                    <nuxt-link to="#">
+                        <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
+                    </nuxt-link>
+                </div>
+            </div>
+            <div>
+                <div class="h-75 md-5"> 
+                    <nuxt-link to="#">
+                        <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
+                    </nuxt-link>
+                </div>
+            </div>
         </div>
-      </div>
-      <div>
-        <div class="h-75 md-5">
-          <a href="#">
-            <img src="/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover"></a>
-        </div>
-      </div>
-      <div>
-        <div class="h-75 md-5">
-          <a href="#">
-            <img src="/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
-          </a>
-        </div>
-      </div>
     </div>
-  </div>
   <!--  tin tuc-->
-  <div class=" bg-[#f18720] w-auto pb-2 px-2">
+  <div class=" bg-red-400 w-auto pb-2 px-2">
+        <div class="">  
+            <h1 class="flex justify-center text-center pt-2 text-5xl">
+                <img src="/images/icon-promotion.png" alt="" class="h-16 w-16">TIN TUC</h1>
+            <div class="flex gap-1 max-w-6xl mx-auto pt-2 justify-center items-center"> 
+                <div class="flex gap-1">
+                    <nuxt-link to="#">
+                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tl-lg">
+                    </nuxt-link>
+                    <nuxt-link to="#">
+                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tr-lg">
+                    </nuxt-link>
+                </div>
+            </div>
+        </div>
+        <div >  
+            <div class="flex gap-1 max-w-6xl mx-auto pt-1 justify-center"> 
+                <nuxt-link to="#">
+                    <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tl-lg">
+                </nuxt-link>
+                <nuxt-link to="#">
+                    <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tr-lg">
+                </nuxt-link>
+            </div>
+        </div>
+    </div>
+    <!-- gach -->
     <div class="">
-      <h1 class="flex justify-center text-center pt-2 text-5xl">
-        <img src="/images/icon-promotion.png" alt="" class="h-16 w-16">TIN TUC
-      </h1>
-      <div class="flex gap-1 max-w-6xl mx-auto pt-2 justify-center">
-        <a href="#" class="items-center">
-          <div>
-            <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tl-lg">
-          </div>
-        </a>
-        <a href="#" class="items-center">
-          <div>
-            <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tr-lg">
-          </div>
-        </a>
-      </div>
+        <img src="/images/background-header.png" alt="">
     </div>
-    <div>
-      <div class="flex gap-1 max-w-6xl mx-auto pt-1 justify-center">
-        <a href="#" class="items-center">
-          <div>
-            <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-bl-lg ">
-          </div>
-        </a>
-        <a href="#" class="items-center">
-          <div>
-            <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-br-lg">
-          </div>
-        </a>
-      </div>
+    <!-- chan trang -->
+    <div class="bg-red-400 mb-2">
+        <div class="flex justify-center pt-2">
+            <!-- logo -->
+            <img src="/images/logo.png" alt="" class="w-50 h-20">
+        </div>
+        <div class="grid grid-cols-4 w-[1280px] text-center justify-center pt-4">
+            <div class="">
+                <h2 class="">LIÊN KẾT</h2>
+                <div class="pt-2">
+                    <div class="flex justify-center items-center pt-2 gap-2" >
+                        <nuxt-link to="#">
+                            <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
+                        </nuxt-link>
+                        <nuxt-link to="#">
+                            <img src="/images/th.jpg" alt="" class="w-10 h-10 ">
+                        </nuxt-link>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>HỆ THỐNG RẠP</h2>
+                <div class="pt-2">
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Dương</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Phước</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>CINE Đồng Tháp</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>CINE Hồ Chí Minh</H3>
+                        </nuxt-link>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>CINEPURIN</h2>
+                <div class="pt-2">
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Phim Đang Chiếu</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Phim Sắp Chiếu</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Xuất Chiếu Đặc Biệt</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Dương</H3>
+                        </nuxt-link>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>THÔNG TIN</h2>
+                <div class="pt-2">
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Giới Thiệu</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Tin Tức</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Hỏi và Đáp</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Liên Hệ</H3>
+                        </nuxt-link>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col-5 justify-center items-center pt-5 gap-4">
+            <div>
+                <nuxt-link to="#">
+                    <img src="../public/images/dolby2.png" alt="">
+                </nuxt-link>
+            </div>
+            <div>
+                <nuxt-link to="#">
+                    <img src="../public/images/crhistie.png" alt="">
+                </nuxt-link>
+            </div>
+            <div>
+                <nuxt-link to="#">
+                    <img src="../public/images/2d.jpg" alt="">
+                </nuxt-link>
+            </div>
+            <div>
+                <nuxt-link to="#">
+                    <img src="../public/images/3d.png" alt="">
+                </nuxt-link>
+            </div>    
+            <div>
+                <nuxt-link to="#">
+                    <img src="../public/images/cinestar-coffee-02.png" alt="">
+                </nuxt-link>
+            </div>
+        </div>
     </div>
-  </div>
-  <!-- gach -->
-  <div class="w-full">
-    <img class="w-full" src="/images/background-header.png" alt="">
-  </div>
-  <!-- chan trang -->
-  <div class="bg-[#f18720] mb-2">
-    <div class="flex justify-center pt-2">
-      <!-- logo -->
-      <img src="/images/logo.png" alt="" class="w-50 h-20">
+    <div class="flex bg-[#552463] text-center justify-center items-center text-white pt-2 pb-2">
+        <div>
+            <h2>Chấp Nhận Thanh Toán</h2>           
+            <div class="flex flex-col-4 gap-2 pt-2" >
+                <div>
+                    <nuxt-link to="#">
+                        <img src="../public/images/napas-40.png" alt="">
+                    </nuxt-link>
+                </div>
+                <div>
+                    <nuxt-link to="#">
+                        <img src="../public/images/momo.jpg" alt="">
+                    </nuxt-link>
+                </div>
+                <div>
+                    <nuxt-link to="#">
+                        <img src="../public/images/payment-mastercard.png" alt="">
+                    </nuxt-link>
+                </div>
+                <div>
+                    <nuxt-link to="#">
+                        <img src="../public/images/payment-visa.png" alt="">
+                    </nuxt-link>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="grid grid-cols-4 w-[1280px] text-center justify-center pt-4">
-      <div>
-        <h2 class="text-xl">LIÊN KẾT</h2>
-        <div class="flex justify-center items-center pt-2 gap-2">
-          <a href="#">
-            <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
-          </a>
-          <a href="#">
-            <img src="/images/th.jpg" alt="" class="w-10 h-10 ">
-          </a>
-        </div>
-      </div>
-      <div>
-        <h2>HỆ THỐNG RẠP</h2>
+    <div class="flex bg-black justify-center">
         <div>
-          <div>
-            <a href="#">
-              <h3>CINE CINE</h3>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <h3>CINE CINE</h3>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <h3>CINE CINE</h3>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <h3>CINE CINE</h3>
-            </a>
-          </div>
+            <div><p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO <br> </p>
+                <!-- ĐỊA CHỈ: 135 HAI BÀ TRƯNG, PHƯỜNG BẾN NGHÉ, QUẬN 1, TP.HCM <br>
+                GIẤY CNĐKDN SỐ: 0312742744, ĐĂNG KÝ LẦN ĐẦU NGÀY 18/04/2014, ĐĂNG KÝ THAY ĐỔI LẦN THỨ 2 NGÀY 15/09/2014, CẤP BỞI SỞ KH&ĐT TP.HCM
+                <br>
+                <br>2015 © CINESTAR. ALL RIGHTS RESERVED.</p> -->
+            </div>
         </div>
-      </div>
-      <div>
-        <h2>CINEPURIN</h2>
-        <div>
-          <div>
-            <a href="#">
-              <h3>phim dang chieu</h3>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <h3>phim dang chieu</h3>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <h3>phim dang chieu</h3>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <h3>phim dang chieu</h3>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h2>THÔNG TIN</h2>
-        <div>
-          <div>
-            <a href="#">
-              <h3> Giới thiệu</h3>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <h3> Tin tức</h3>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <h3> Hỏi và đáp</h3>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <h3> Liên hệ</h3>
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="flex flex-col-5 justify-center items-center pt-5 gap-4">
-      <div>
-        <a href="#">
-          <img src="/images/dolby2.png" alt="">
-        </a>
-      </div>
-      <div>
-        <a href="#">
-          <img src="/images/crhistie.png" alt="">
-        </a>
-      </div>
-      <div>
-        <a href="#">
-          <img src="/images/2d.jpg" alt="">
-        </a>
-      </div>
-      <div>
-        <a href="#">
-          <img src="/images/3d.png" alt="">
-        </a>
-      </div>
-      <div>
-        <a href="#">
-          <img src="/images/cinestar-coffee-02.png" alt="">
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="flex bg-[#552463] text-center justify-center items-center text-white pt-2 pb-2">
-    <div>
-      <h2>Chấp Nhận Thanh Toán</h2>
-      <div class="flex flex-col-4 gap-2 pt-2">
-        <div>
-          <a href="#">
-            <img src="/images/napas-40.png" alt="">
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            <img src="/images/momo.jpg" alt="">
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            <img src="/images/payment-mastercard.png" alt="">
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            <img src="/images/payment-visa.png" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="flex bg-black justify-center">
-    <div>
-      <a href="#" class="flex justify-center items-center">
-        <img src="/images/dathongbao.png" alt="">
-      </a>
-      <div>
-        <p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO
-          <br>
-          ĐỊA CHỈ: 135 HAI BÀ TRƯNG, PHƯỜNG BẾN NGHÉ, QUẬN 1, TP.HCM <br>
-          GIẤY CNĐKDN SỐ: 0312742744, ĐĂNG KÝ LẦN ĐẦU NGÀY 18/04/2014, ĐĂNG KÝ THAY ĐỔI LẦN THỨ 2 NGÀY 15/09/2014,
-          CẤP BỞI SỞ KH&ĐT TP.HCM
-          <br>
-          <br>2015 © CINESTAR. ALL RIGHTS RESERVED.
-        </p>
-      </div>
-    </div>
-  </div>
 </template>
 <style>
 .slideshow .carousel__pagination {
