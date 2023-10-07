@@ -121,6 +121,10 @@ const handlePaneClick = (): void => {
                         <nuxt-link to="/book _movie_tickets">
                             <p class="bg-yellow-50 w-[50px] h-[50px] text-center pt-3"><button>15:30</button></p>
                         </nuxt-link>
+                        <a href="/book_movie_tickets">
+                        <p class="bg-yellow-50 w-[50px] h-[50px] text-center pt-3"><button>12:30</button></p></a>
+                        <a href="#"><p class="bg-yellow-50 w-[50px] h-[50px] text-center pt-3"><button>12:30</button></p></a>
+
                     </div>
                 </div>
                        

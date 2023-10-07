@@ -18,13 +18,27 @@ const pictures = [
     'alt': 'Picture 2',
   },
 ]
-const handlePaneClick = (): void => {
-  console.log("Click!")
+
+const slideshowCurrent = ref(0)
+
+const actionSlide = (status: boolean): void => {
+  if (status) {
+    if (slideshowCurrent.value == 6) {
+      return
+    }
+    slideshowCurrent.value += 1
+  } else {
+    if (slideshowCurrent.value == 0) {
+      return
+    }
+    slideshowCurrent.value -= 1
+  }
 }
+
 </script>
 
 <template>
-  <carousel :autoplay="3000" :wrap-around="true" class="relative slideshow" ref="slideshow">
+  <carousel :autoplay="3000" :wrap-around="true" class="relative slideshow w-full" ref="slideshow">
     <slide v-for="(item, index) in pictures" :key="index">
       <img :src="item.src" :alt="item.alt" class="carousel-image w-full"/>
     </slide>
@@ -85,9 +99,6 @@ const handlePaneClick = (): void => {
     </div>
   </div>
   <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
-    <div>
-
-    </div>
     <div class="flex justify-center items-center gap-x-10 py-10">
       <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
         <img :src="useAsset('images/home/dolby.png')" :alt="useAsset('images/home/dolby.png')">
@@ -102,173 +113,149 @@ const handlePaneClick = (): void => {
         <img :src="useAsset('images/home/3d3.png')" :alt="useAsset('images/home/3d3.png')">
       </nuxt-link>
     </div>
-    <div class="relative z-10 tabs">
-      <tabs variant="default" v-model="activeTab">
+    <div class="relative z-10 tabs-panel">
+      <tabs ref="tabsref" variant="default" v-model="activeTab">
         <tab name="first" title="Phim đang chiếu">
-          <div class="bg-[#f18720] py-10">
-            <div class="mx-auto">
-              <carousel class="w-full" :items-to-show="8">
-                <slide v-for="(item, index) in 8" :key="index">
-                  <div>
-                    <img src="/images/ben-pha-xac-song1.jpg" alt=""
-                         class="h-96 rounded-lg object-cover">
-                    <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                      <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                    </div>
-                    <div
-                        class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                      <p>2D</p>
-                    </div>
-                  </div>
-                </slide>
-              </carousel>
+          <div class="bg-[#f18720] relative">
+            <div
+                class="absolute flex justify-between w-[70%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                      @click="actionSlide(false)">
+                <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+              </button>
+              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                      @click="actionSlide(true)">
+                <img :src="useAsset('images/home/icon-start.png')" alt="next">
+              </button>
+            </div>
+            <div class="mx-auto max-w-[1200px] py-10">
+              <CarouselProduct v-model:model-value="slideshowCurrent"/>
             </div>
           </div>
         </tab>
         <tab name="second" title="Phim sắp chiếu">
-          <div class="bg-[#f18720]">
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 max-w-6xl mx-auto pt-2 px-4">
-              <div>
-                <div class="flex justify-center md-5">
-                  <img src="/images/ben-pha-xac-song1.jpg" alt=""
-                       class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                  <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div
-                    class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                  <p>2D</p>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <img src="/images/ben-pha-xac-song1.jpg" alt=""
-                       class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                  <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div
-                    class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                  <p>2D</p>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-center md-5">
-                  <img src="/images/ben-pha-xac-song1.jpg" alt=""
-                       class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                  <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div
-                    class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                  <p>2D</p>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-center md-5">
-                  <img src="/images/ben-pha-xac-song1.jpg" alt=""
-                       class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                  <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div
-                    class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                  <p>2D</p>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-center md-5">
-                  <img src="/images/ben-pha-xac-song1.jpg" alt=""
-                       class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                  <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div
-                    class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                  <p>2D</p>
-                </div>
-              </div>
-
+          <div class="bg-[#f18720] relative">
+            <div
+                class="absolute flex justify-between w-[70%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                      @click="actionSlide(false)">
+                <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+              </button>
+              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                      @click="actionSlide(true)">
+                <img :src="useAsset('images/home/icon-start.png')" alt="next">
+              </button>
+            </div>
+            <div class="mx-auto max-w-[1200px] py-10">
+              <CarouselProduct v-model:model-value="slideshowCurrent"/>
             </div>
           </div>
         </tab>
         <tab name="third" title="Suất chiếu đặc biệt">
-          <div class="bg-[#f18720]">
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 max-w-6xl mx-auto pt-2 px-4">
-              <div>
-                <div class="flex justify-center md-5">
-                  <img src="/images/ben-pha-xac-song1.jpg" alt=""
-                       class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                  <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div
-                    class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                  <p>2D</p>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-center md-5">
-                  <img src="/images/ben-pha-xac-song1.jpg" alt=""
-                       class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                  <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div
-                    class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                  <p>2D</p>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-center md-5">
-                  <img src="/images/ben-pha-xac-song1.jpg" alt=""
-                       class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                  <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div
-                    class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                  <p>2D</p>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-center md-5">
-                  <img src="/images/ben-pha-xac-song1.jpg" alt=""
-                       class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                  <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div
-                    class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                  <p>2D</p>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-center md-5">
-                  <img src="/images/ben-pha-xac-song1.jpg" alt=""
-                       class="h-96 rounded-lg object-cover">
-                </div>
-                <div class="text-center pt-2 text-sm sm:text-base md:text-lg lg:text-xl  font-bold">
-                  <h3>BẾN PHÀ XÁC SỐNG P16</h3>
-                </div>
-                <div
-                    class="w-10 h-10 flex items-center justify-center text-[#00aefd] mx-auto my-5 border border-[#ccc] rounded-xl">
-                  <p>2D</p>
-                </div>
-              </div>
+          <div class="bg-[#f18720] relative">
+            <div
+                class="absolute flex justify-between w-[70%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                      @click="actionSlide(false)">
+                <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+              </button>
+              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                      @click="actionSlide(true)">
+                <img :src="useAsset('images/home/icon-start.png')" alt="next">
+              </button>
+            </div>
+            <div class="mx-auto max-w-[1200px] py-10">
+              <CarouselProduct v-model:model-value="slideshowCurrent"/>
             </div>
           </div>
         </tab>
       </tabs>
+      <div class="flex flex-col items-center justify-center">
+        <div class="w-[70%] flex gap-6 my-10 items-center">
+          <div class="flex flex-col w-24 h-24">
+            <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
+              ƯU ĐÃI
+            </h3>
+            <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
+          </div>
+          <div>
+            <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
+              <Slide v-for="slide in 10" :key="slide">
+                <div
+                    class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
+                  <img src="/images/c_monday.jpg" alt="" class="w-120 h-120 rounded-lg object-cover mr-[16px]">
+                </div>
+              </Slide>
+            </carousel>
+          </div>
+        </div>
+        <div class="w-[70%] flex gap-6 my-10 items-center">
+          <div class="flex flex-col w-24 h-24">
+            <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
+              Tin tức
+            </h3>
+            <img class="w-24 h-24" :src="useAsset('images/home/icon-news.png')" alt="promotion">
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
+              <div class="text-white font-MyriadRegular">
+                <h1 class="text-base mb-2">
+                  Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                </h1>
+                <p class="text-sm">
+                  Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
+                  Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                </p>
+              </div>
+              <div class="w-full h-full">
+                <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
+              </div>
+            </div>
+            <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
+              <div class="text-white font-MyriadRegular">
+                <h1 class="text-base mb-2">
+                  Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                </h1>
+                <p class="text-sm">
+                  Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
+                  Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                </p>
+              </div>
+              <div class="w-full h-full">
+                <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
+              </div>
+            </div>
+            <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
+              <div class="text-white font-MyriadRegular">
+                <h1 class="text-base mb-2">
+                  Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                </h1>
+                <p class="text-sm">
+                  Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
+                  Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                </p>
+              </div>
+              <div class="w-full h-full">
+                <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
+              </div>
+            </div>
+            <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
+              <div class="text-white font-MyriadRegular">
+                <h1 class="text-base mb-2">
+                  Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                </h1>
+                <p class="text-sm">
+                  Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
+                  Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                </p>
+              </div>
+              <div class="w-full h-full">
+                <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1"></div>
   </div>
@@ -493,6 +480,162 @@ const handlePaneClick = (): void => {
                 </div>
             </div>
         </div>
+      </div>
+  <!-- gach -->
+  <div class="w-full">
+    <img class="w-full" src="/images/background-header.png" alt="">
+  </div>
+  <!-- chan trang -->
+  <!-- chan trang -->
+  <div class="bg-red-400 mb-2">
+        <div class="flex justify-center pt-2">
+            <!-- logo -->
+            <img src="/images/logo.png" alt="" class="w-50 h-20">
+        </div>
+        <div class="grid grid-cols-4 w-[1280px] text-center justify-center pt-4">
+            <div class="">
+                <h2 class="">LIÊN KẾT</h2>
+                <div class="pt-2">
+                    <div class="flex justify-center items-center pt-2 gap-2" >
+                        <nuxt-link to="#">
+                            <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
+                        </nuxt-link>
+                        <nuxt-link to="#">
+                            <img src="/images/th.jpg" alt="" class="w-10 h-10 ">
+                        </nuxt-link>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>HỆ THỐNG RẠP</h2>
+                <div class="pt-2">
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Dương</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Phước</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>CINE Đồng Tháp</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>CINE Hồ Chí Minh</H3>
+                        </nuxt-link>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>CINEPURIN</h2>
+                <div class="pt-2">
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Phim Đang Chiếu</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Phim Sắp Chiếu</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Xuất Chiếu Đặc Biệt</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Dương</H3>
+                        </nuxt-link>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>THÔNG TIN</h2>
+                <div class="pt-2">
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Giới Thiệu</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Tin Tức</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Hỏi và Đáp</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Liên Hệ</H3>
+                        </nuxt-link>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col-5 justify-center items-center pt-5 gap-4">
+            <div>
+                <nuxt-link to="#">
+                    <img src="../public/images/dolby2.png" alt="">
+                </nuxt-link>
+            </div>
+            <div>
+                <nuxt-link to="#">
+                    <img src="../public/images/crhistie.png" alt="">
+                </nuxt-link>
+            </div>
+            <div>
+                <nuxt-link to="#">
+                    <img src="../public/images/2d.jpg" alt="">
+                </nuxt-link>
+            </div>
+            <div>
+                <nuxt-link to="#">
+                    <img src="../public/images/3d.png" alt="">
+                </nuxt-link>
+            </div>    
+            <div>
+                <nuxt-link to="#">
+                    <img src="../public/images/cinestar-coffee-02.png" alt="">
+                </nuxt-link>
+            </div>
+        </div>
+    </div>
+    <div class="flex bg-[#552463] text-center justify-center items-center text-white pt-2 pb-2">
+        <div>
+            <h2>Chấp Nhận Thanh Toán</h2>           
+            <div class="flex flex-col-4 gap-2 pt-2" >
+                <div>
+                    <nuxt-link to="#">
+                        <img src="../public/images/napas-40.png" alt="">
+                    </nuxt-link>
+                </div>
+                <div>
+                    <nuxt-link to="#">
+                        <img src="../public/images/momo.jpg" alt="">
+                    </nuxt-link>
+                </div>
+                <div>
+                    <nuxt-link to="#">
+                        <img src="../public/images/payment-mastercard.png" alt="">
+                    </nuxt-link>
+                </div>
+                <div>
+                    <nuxt-link to="#">
+                        <img src="../public/images/payment-visa.png" alt="">
+                    </nuxt-link>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="flex bg-black justify-center">
         <div>
@@ -566,26 +709,66 @@ const handlePaneClick = (): void => {
   }
 }
 
-.tabs ul {
+.tabs-panel > div > div:first-child ul {
+  justify-content: center;
   margin-bottom: 3px;
 }
 
-.tabs ul li div:hover {
-  background: transparent !important;
+.tabs-panel > div > div:first-child ul li div {
+  font-family: 'avantgarde-demi';
+  font-weight: normal;
+  color: #fff;
+  font-size: 30px;
+  text-transform: uppercase;
+  line-height: 74px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  padding: 0 45px;
 }
 
-.tabs ul li:first-child {
-  z-index: 3;
+.tabs-panel > div > div:first-child ul li {
+  background-color: #f18720;
+  -webkit-transition: all 0.3s ease-in-out;
+  box-shadow: 10px 0 0 rgba(0, 0, 0, 0.1);
 }
 
-.tabs ul li:nth-child(2) {
-  z-index: 2;
-}
-
-.tabs ul li:nth-child(3) {
-  z-index: 1;
+.tabs-panel > div > div:first-child ul li div {
+  background: #f18720;
   border-radius: 0 30px 0 0;
-  -webkit-border-radius: 0 30px 0 0;
+  -webkit-border-radius: 30px 50px 50px 0;
+}
+
+.tabs-panel > div > div:first-child ul li div:hover {
+  background: #fecf06 !important;
+  color: #020230;
+  border-radius: 0 30px 0 0;
+  -webkit-border-radius: 30px 50px 50px 0;
+}
+
+.tabs-panel > div > div:first-child ul li:first-child {
+  z-index: 3;
+  border-radius: 30px 50px 50px 0;
+  -webkit-border-radius: 30px 50px 50px 0;
+}
+
+.tabs-panel > div > div:first-child ul li:nth-child(2) {
+  z-index: 2;
+  border-radius: 0 50px 50px 0;
+  -webkit-border-radius: 0 50px 50px 0;
+  padding-left: 55px;
+  margin-left: -80px;
+}
+
+.tabs-panel > div > div:first-child ul li:nth-child(3) {
+  z-index: 1;
+  margin-left: -30px;
+  border-radius: 0 30px 0 0;
+  -webkit-border-radius: 0 50px 50px 0;
+}
+
+.slideshow .carousel__slide {
+  display: block;
+  margin-right: 16px;
 }
 </style>
 
