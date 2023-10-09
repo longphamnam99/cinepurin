@@ -227,7 +227,7 @@ const handlePaneClick = (): void => {
     <div class="flex justify-center">
         <div class="flex flex-col-3 gap-2">
             <div class="bg-red-300 w-[150px] h-[40px] text-center pt-2 rounded-xl">
-                <nuxt-link to="/book _movie_tickets">Quay Lại</nuxt-link>
+                <nuxt-link to="/book_movie_tickets">Quay Lại</nuxt-link>
             </div>
             <div class="bg-red-300 w-[150px] h-[40px] text-center pt-2 rounded-xl">
                 <nuxt-link to="/eat">Thức Ăn</nuxt-link>
