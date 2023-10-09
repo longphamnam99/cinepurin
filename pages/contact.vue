@@ -52,30 +52,30 @@ const handlePaneClick = (): void => {
                 <select-search model-value=""
                     class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                     :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
                     ]" placeholder="Chọn phim" />
                 <select-search model-value=""
                     class="rounded-tl-[24px] rounded-bl-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                     :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
                     ]" placeholder="Chọn rạp" />
                 <select-search model-value=""
                     class="rounded-tl-[24px] rounded-tr-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                     :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
                     ]" placeholder="Chọn ngày" />
                 <select-search model-value=""
                     class="rounded-tl-[24px] rounded-tr-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                     :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Shin - Cậu bé bút chì', value: '2' },
+                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
                     ]" placeholder="Chọn suất chiếu" />
             </div>
         </div>
@@ -104,19 +104,19 @@ const handlePaneClick = (): void => {
         <div class="relative z-10 tabs">
             <tabs v-model="activeTab">
                 <tab name="first" title="Phim đang chiếu" class="!text-[#000]">
-                    <div class="bg-red-400">
+                    <!-- <div class="bg-red-400">
                         Lorem...
-                    </div>
+                    </div> -->
                 </tab>
                 <tab name="second" title="Phim sắp chiếu">
-                    <div class="bg-red-400">
+                    <!-- <div class="bg-red-400">
                         Lorem...
-                    </div>
+                    </div> -->
                 </tab>
                 <tab name="third" title="Suất chiếu đặc biệt">
-                    <div class="bg-red-400">
+                    <!-- <div class="bg-red-400">
                         Lorem...
-                    </div>
+                    </div> -->
                 </tab>
             </tabs>
         </div>
@@ -131,11 +131,15 @@ const handlePaneClick = (): void => {
                 <h2 class="">CinePurin</h2>
                 <h1>địa chỉ: HCM</h1>
                 <div class="flex justify-center">
-                    <a href="facebook.com/Shu1906.cn"><img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-16"> </a>
+                    <nuxt-link to="facebook.com/Shu1906.cn">
+                        <img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-16">
+                    </nuxt-link>
                     <h1 class="pt-2">FB CinePurin</h1>
                 </div>
                 <div class="flex justify-center">
-                    <a href="#"><img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-16"> </a>
+                    <nuxt-link to="#">
+                        <img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-16">
+                    </nuxt-link>
                     <h1 class="pt-2">Gmail</h1>
                 </div>
             </div>
@@ -149,8 +153,9 @@ const handlePaneClick = (): void => {
                     <h1 class="text-xl lg:text-4xl  text-green-600 font-serif"><strong>ƯU ĐÃI</strong></h1>
                 </div>
                 <div>
-                    <a href="#">
-                    <img src="../public/images/icon-promotion.png" alt="" class="w-10 h-17 rounded-lg object-cover"></a>
+                    <nuxt-link to="#">
+                        <img src="../public/images/icon-promotion.png" alt="" class="w-10 h-17 rounded-lg object-cover">
+                    </nuxt-link>
                 </div>
             </div>
         </div>
@@ -159,21 +164,23 @@ const handlePaneClick = (): void => {
         <div class="flex flex-cols-1 lg:flex flex-cols-3 gap-x-8 max-w-5xl mx-auto pt-2 px-4">
             <div>
                 <div class="h-75 md-5">
-                    <a href="#">
-                    <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover"></a>
+                    <nuxt-link to="#">
+                        <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
+                    </nuxt-link>
                 </div>
             </div>
             <div>
                 <div class="h-75 md-5">
-                    <a href="#">
-                    <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover"></a>
+                    <nuxt-link to="#">
+                        <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
+                    </nuxt-link>
                 </div>
             </div>
             <div>
                 <div class="h-75 md-5"> 
-                    <a href="#">
-                    <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
-                    </a> 
+                    <nuxt-link to="#">
+                        <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
+                    </nuxt-link>
                 </div>
             </div>
         </div>
@@ -183,31 +190,25 @@ const handlePaneClick = (): void => {
         <div class="">  
             <h1 class="flex justify-center text-center pt-2 text-5xl">
                 <img src="/images/icon-promotion.png" alt="" class="h-16 w-16">TIN TUC</h1>
-            <div class="flex gap-1 max-w-6xl mx-auto pt-2 justify-center"> 
-                <a href="#" class="items-center">
-                    <div>
+            <div class="flex gap-1 max-w-6xl mx-auto pt-2 justify-center items-center"> 
+                <div class="flex gap-1">
+                    <nuxt-link to="#">
                         <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tl-lg">
-                    </div>
-                </a>
-                <a href="#" class="items-center">
-                    <div>
+                    </nuxt-link>
+                    <nuxt-link to="#">
                         <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tr-lg">
-                    </div>
-                </a>
+                    </nuxt-link>
+                </div>
             </div>
         </div>
         <div >  
             <div class="flex gap-1 max-w-6xl mx-auto pt-1 justify-center"> 
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-bl-lg ">
-                    </div>
-                </a>
-                <a href="#" class="items-center">
-                    <div>
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-br-lg">
-                    </div>
-                </a>
+                <nuxt-link to="#">
+                    <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tl-lg">
+                </nuxt-link>
+                <nuxt-link to="#">
+                    <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tr-lg">
+                </nuxt-link>
             </div>
         </div>
     </div>
@@ -222,110 +223,120 @@ const handlePaneClick = (): void => {
             <img src="/images/logo.png" alt="" class="w-50 h-20">
         </div>
         <div class="grid grid-cols-4 w-[1280px] text-center justify-center pt-4">
-            <div>
-                <h2 class="text-xl">LIÊN KẾT</h2>
-                <div class="flex justify-center items-center pt-2 gap-2" >
-                    <a href="#">
-                        <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
-                    </a>
-                    <a href="#">
-                        <img src="/images/th.jpg" alt="" class="w-10 h-10 ">
-                    </a>
+            <div class="">
+                <h2 class="">LIÊN KẾT</h2>
+                <div class="pt-2">
+                    <div class="flex justify-center items-center pt-2 gap-2" >
+                        <nuxt-link to="#">
+                            <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
+                        </nuxt-link>
+                        <nuxt-link to="#">
+                            <img src="/images/th.jpg" alt="" class="w-10 h-10 ">
+                        </nuxt-link>
+                    </div>
                 </div>
             </div>
             <div>
                 <h2>HỆ THỐNG RẠP</h2>
-                <div>
+                <div class="pt-2">
                     <div>
-                        <a href="#">
-                            <H3>CINE CINE</H3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Dương</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <H3>CINE CINE</H3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Phước</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <H3>CINE CINE</H3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>CINE Đồng Tháp</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <H3>CINE CINE</H3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>CINE Hồ Chí Minh</H3>
+                        </nuxt-link>
                     </div>
                 </div>
             </div>
             <div>
                 <h2>CINEPURIN</h2>
-                <div>
+                <div class="pt-2">
                     <div>
-                        <a href="#">
-                            <h3>phim dang chieu</h3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>Phim Đang Chiếu</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <h3>phim dang chieu</h3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>Phim Sắp Chiếu</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <h3>phim dang chieu</h3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>Xuất Chiếu Đặc Biệt</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#">
-                            <h3>phim dang chieu</h3>
-                        </a>
+                        <nuxt-link to="#">
+                            <H3>CINE Bình Dương</H3>
+                        </nuxt-link>
                     </div>
                 </div>
             </div>
             <div>
                 <h2>THÔNG TIN</h2>
-                <div>
+                <div class="pt-2">
                     <div>
-                        <a href="#"> <h3> Giới thiệu</h3></a>
+                        <nuxt-link to="#">
+                            <H3>Giới Thiệu</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#"> <h3> Tin tức</h3></a>
+                        <nuxt-link to="#">
+                            <H3>Tin Tức</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#"> <h3> Hỏi và đáp</h3></a>
+                        <nuxt-link to="#">
+                            <H3>Hỏi và Đáp</H3>
+                        </nuxt-link>
                     </div>
                     <div>
-                        <a href="#"> <h3> Liên hệ</h3></a>
+                        <nuxt-link to="#">
+                            <H3>Liên Hệ</H3>
+                        </nuxt-link>
                     </div>
                 </div>
             </div>
         </div>
         <div class="flex flex-col-5 justify-center items-center pt-5 gap-4">
             <div>
-                <a href="#">
+                <nuxt-link to="#">
                     <img src="../public/images/dolby2.png" alt="">
-                </a>
+                </nuxt-link>
             </div>
             <div>
-                <a href="#">
+                <nuxt-link to="#">
                     <img src="../public/images/crhistie.png" alt="">
-                </a>
+                </nuxt-link>
             </div>
             <div>
-                <a href="#">
+                <nuxt-link to="#">
                     <img src="../public/images/2d.jpg" alt="">
-                </a>
+                </nuxt-link>
             </div>
             <div>
-                <a href="#">
+                <nuxt-link to="#">
                     <img src="../public/images/3d.png" alt="">
-                </a>
-            </div>
+                </nuxt-link>
+            </div>    
             <div>
-                <a href="#">
+                <nuxt-link to="#">
                     <img src="../public/images/cinestar-coffee-02.png" alt="">
-                </a>
+                </nuxt-link>
             </div>
         </div>
     </div>
@@ -334,38 +345,35 @@ const handlePaneClick = (): void => {
             <h2>Chấp Nhận Thanh Toán</h2>           
             <div class="flex flex-col-4 gap-2 pt-2" >
                 <div>
-                    <a href="#">
+                    <nuxt-link to="#">
                         <img src="../public/images/napas-40.png" alt="">
-                    </a>
+                    </nuxt-link>
                 </div>
                 <div>
-                    <a href="#">
+                    <nuxt-link to="#">
                         <img src="../public/images/momo.jpg" alt="">
-                    </a>
+                    </nuxt-link>
                 </div>
                 <div>
-                    <a href="#">
+                    <nuxt-link to="#">
                         <img src="../public/images/payment-mastercard.png" alt="">
-                    </a>
+                    </nuxt-link>
                 </div>
                 <div>
-                    <a href="#">
+                    <nuxt-link to="#">
                         <img src="../public/images/payment-visa.png" alt="">
-                    </a>
+                    </nuxt-link>
                 </div>
             </div>
         </div>
     </div>
     <div class="flex bg-black justify-center">
         <div>
-            <a href="#" class="flex justify-center items-center">
-                <img src="../public/images/dathongbao.png" alt="">
-            </a>
-            <div><p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO <br>
-                ĐỊA CHỈ: 135 HAI BÀ TRƯNG, PHƯỜNG BẾN NGHÉ, QUẬN 1, TP.HCM <br>
+            <div><p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO <br> </p>
+                <!-- ĐỊA CHỈ: 135 HAI BÀ TRƯNG, PHƯỜNG BẾN NGHÉ, QUẬN 1, TP.HCM <br>
                 GIẤY CNĐKDN SỐ: 0312742744, ĐĂNG KÝ LẦN ĐẦU NGÀY 18/04/2014, ĐĂNG KÝ THAY ĐỔI LẦN THỨ 2 NGÀY 15/09/2014, CẤP BỞI SỞ KH&ĐT TP.HCM
                 <br>
-                <br>2015 © CINESTAR. ALL RIGHTS RESERVED.</p>
+                <br>2015 © CINESTAR. ALL RIGHTS RESERVED.</p> -->
             </div>
         </div>
     </div>

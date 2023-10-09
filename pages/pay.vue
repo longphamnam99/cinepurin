@@ -124,7 +124,9 @@ const handlePaneClick = (): void => {
                     <div><textarea name="#" id="#" cols="10" rows="1" class="rounded-xl">nhập...</textarea></div>
                 </div>
                 <div>
-                    <a href="#"><button class="w-[40px] h-[40px] rounded-xl bg-violet-300">Gửi</button></a>
+                    <nuxt-link to="#">
+                        <button class="w-[40px] h-[40px] rounded-xl bg-violet-300">Gửi</button>
+                    </nuxt-link>
                 </div>
             </div>
         </div>
