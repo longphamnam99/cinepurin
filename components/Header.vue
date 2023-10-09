@@ -17,11 +17,11 @@ const router = [
     name: "Rạp và giá",
   },
   {
-    path: "/",
+    path: "/promotion",
     name: "Khuyến mãi",
   },
   {
-    path: "/",
+    path: "/askandanswer",
     name: "Hỏi và đáp",
   },
   {
@@ -121,7 +121,7 @@ const submitForm = async () => {
           <div class="flex items-center gap-x-2 cursor-pointer">
             <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-call.png" alt="icon call">
             <p class="uppercase text-[#f37520] font-bold sm:text-[30px] text-2xl font-Futurab">
-              +84 123456789
+              +84 89010316
             </p>
           </div>
         </div>

@@ -61,7 +61,7 @@ const handlePaneClick = (): void => {
             </div>   
         </div>
     </div>
-    <!-- chon ghế -->
+    <!-- chon thức ăn -->
     <div class="bg-pink-700 text-center text-2xl">
         <h1>Cine HCM</h1>
     </div>

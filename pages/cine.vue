@@ -17,6 +17,24 @@ const pictures = [
         'alt': 'Picture 2',
     },
 ]
+
+
+const slideshowCurrent = ref(0)
+
+const actionSlide = (status: boolean): void => {
+  if (status) {
+    if (slideshowCurrent.value == 6) {
+      return
+    }
+    slideshowCurrent.value += 1
+  } else {
+    if (slideshowCurrent.value == 0) {
+      return
+    }
+    slideshowCurrent.value -= 1
+  }
+}
+
 const handlePaneClick = (): void => {
     console.log("Click!")
     console.log("Click!")
@@ -84,42 +102,85 @@ const handlePaneClick = (): void => {
 
         </div>
     </div>
-    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
-        <div>
+    
+        <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
+            <div>
 
+            </div>
+            <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
+                <div class="flex justify-center items-center gap-x-10 py-10">
+                <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
+                    <img :src="useAsset('images/home/dolby.png')" :alt="useAsset('images/home/dolby.png')">
+                </nuxt-link>
+                <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
+                    <img :src="useAsset('images/home/christie.png')" :alt="useAsset('images/home/christie.png')">
+                </nuxt-link>
+                <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
+                    <img :src="useAsset('images/home/2d.png')" :alt="useAsset('images/home/2d.png')">
+                </nuxt-link>
+                <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
+                    <img :src="useAsset('images/home/3d3.png')" :alt="useAsset('images/home/3d3.png')">
+                </nuxt-link>
+                </div>
+        <div class="relative z-10 tabs-panel">
+        <tabs ref="tabsref" variant="default" v-model="activeTab">
+            <tab name="first" title="Phim đang chiếu">
+            <div class="bg-[#f18720] relative">
+                <div
+                    class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                        @click="actionSlide(false)">
+                    <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+                </button>
+                <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                        @click="actionSlide(true)">
+                    <img :src="useAsset('images/home/icon-start.png')" alt="next">
+                </button>
+                </div>
+                <div class="mx-auto max-w-[1200px] py-10">
+                <CarouselProduct v-model:model-value="slideshowCurrent"/>
+                </div>
+            </div>
+            </tab>
+            <tab name="second" title="Phim sắp chiếu">
+            <div class="bg-[#f18720] relative">
+                <div
+                    class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                        @click="actionSlide(false)">
+                    <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+                </button>
+                <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                        @click="actionSlide(true)">
+                    <img :src="useAsset('images/home/icon-start.png')" alt="next">
+                </button>
+                </div>
+                <div class="mx-auto max-w-[1200px] py-10">
+                <CarouselProduct v-model:model-value="slideshowCurrent"/>
+                </div>
+            </div>
+            </tab>
+            <tab name="third" title="Suất chiếu đặc biệt">
+            <div class="bg-[#f18720] relative">
+                <div
+                    class="absolute flex justify-between w-[70%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                        @click="actionSlide(false)">
+                    <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+                </button>
+                <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                        @click="actionSlide(true)">
+                    <img :src="useAsset('images/home/icon-start.png')" alt="next">
+                </button>
+                </div>
+                <div class="mx-auto max-w-[1200px] py-10">
+                <CarouselProduct v-model:model-value="slideshowCurrent"/>
+                </div>
+            </div>
+            </tab>
+        </tabs>
         </div>
-        <div class="flex justify-center items-center gap-x-10 py-10">
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/dolby.png')" :alt="useAsset('images/home/dolby.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/christie.png')" :alt="useAsset('images/home/christie.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/2d.png')" :alt="useAsset('images/home/2d.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/3d3.png')" :alt="useAsset('images/home/3d3.png')">
-            </nuxt-link>
-        </div>
-        <div class="relative z-10 tabs">
-            <tabs v-model="activeTab">
-                <tab name="first" title="Phim đang chiếu" class="!text-[#000]">
-                    <!-- <div class="bg-red-400">
-                    </div> -->
-                </tab>
-                <tab name="second" title="Phim sắp chiếu">
-                    <!-- <div class="bg-red-400">
-                        Lorem...
-                    </div> -->
-                </tab>
-                <tab name="third" title="Suất chiếu đặc biệt">
-                    <!-- <div class="bg-red-400">
-                        Lorem...
-                    </div> -->
-                </tab>
-            </tabs>
-        </div>
+    </div>
         <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1"></div>
     </div>
     <!-- cinema -->
@@ -306,28 +367,32 @@ const handlePaneClick = (): void => {
         <img src="/images/background-header.png" alt="">
     </div>
     <!-- chan trang -->
-    <div class="bg-red-400 mb-2">
+    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
         <div class="flex justify-center pt-2">
             <!-- logo -->
             <img src="/images/logo.png" alt="" class="w-50 h-20">
         </div>
-        <div class="grid grid-cols-4 w-[1280px] text-center justify-center pt-4">
+        <div class="grid grid-cols-5 w-[1280px] text-center justify-center pt-4 pl-24">
             <div class="">
+              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
                 <h2 class="">LIÊN KẾT</h2>
+              </div>
                 <div class="pt-2">
                     <div class="flex justify-center items-center pt-2 gap-2" >
                         <nuxt-link to="#">
-                            <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
+                            <img src="/images/scl_facebook.png" alt="" class="w-10 h-10">
                         </nuxt-link>
                         <nuxt-link to="#">
-                            <img src="/images/th.jpg" alt="" class="w-10 h-10 ">
+                            <img src="/images/scl_youtube.png" alt="" class="w-10 h-10 ">
                         </nuxt-link>
                     </div>
                 </div>
             </div>
-            <div>
+            <div >
+              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
                 <h2>HỆ THỐNG RẠP</h2>
-                <div class="pt-2">
+              </div>
+                <div class="pt-2 text-[#e1dae2]">
                     <div>
                         <nuxt-link to="#">
                             <H3>CINE Bình Dương</H3>
@@ -351,8 +416,10 @@ const handlePaneClick = (): void => {
                 </div>
             </div>
             <div>
+              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
                 <h2>CINEPURIN</h2>
-                <div class="pt-2">
+              </div> 
+                <div class="pt-2 text-[#e1dae2]">
                     <div>
                         <nuxt-link to="#">
                             <H3>Phim Đang Chiếu</H3>
@@ -376,8 +443,11 @@ const handlePaneClick = (): void => {
                 </div>
             </div>
             <div>
+              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
                 <h2>THÔNG TIN</h2>
-                <div class="pt-2">
+              </div> 
+                
+                <div class="pt-2 text-[#e1dae2]">
                     <div>
                         <nuxt-link to="#">
                             <H3>Giới Thiệu</H3>
@@ -399,6 +469,48 @@ const handlePaneClick = (): void => {
                         </nuxt-link>
                     </div>
                 </div>
+            </div>
+            <div>
+              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+                <h2>CHÍNH SÁCH VÀ QUY ĐỊNH</h2>
+              </div> 
+                
+                <div class="pt-2 text-[#e1dae2]">
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Quy Định Chung</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Điều Khoản Giao Dịch</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Chính Sách Bảo Mật</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Thông Tin Công Ty</H3>
+                        </nuxt-link>
+                    </div>
+                </div>
+            </div>
+            <div>
+              <div>
+                <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+                  <h2 class="">HOTLINE</h2>
+                </div>
+                <div class="flex items-center">
+                    <div class="flex items-center gap-x-2 cursor-pointer">
+                      <p class="text-white font-semibold text-2xl pl-12">
+                        0389 010 316
+                      </p>
+                    </div>
+                  </div>
+              </div>
             </div>
         </div>
         <div class="flex flex-col-5 justify-center items-center pt-5 gap-4">
@@ -428,7 +540,7 @@ const handlePaneClick = (): void => {
                 </nuxt-link>
             </div>
         </div>
-    </div>
+    </div>  
     <div class="flex bg-[#552463] text-center justify-center items-center text-white pt-2 pb-2">
         <div>
             <h2>Chấp Nhận Thanh Toán</h2>           
@@ -456,6 +568,7 @@ const handlePaneClick = (): void => {
             </div>
         </div>
     </div>
+    
     <div class="flex bg-black justify-center">
         <div>
             <div><p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO <br> </p>

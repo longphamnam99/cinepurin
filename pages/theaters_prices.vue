@@ -119,70 +119,94 @@ const handlePaneClick = (): void => {
     
 
     
-   <!-- uu dai -->
-  <div class="bg-yellow-200 pb-4">       
-        <div class="flex justify-center px-5 ">
-            <div class="flex">
-                <div class="h-75 md-5 pt-3">
-                    <h1 class="text-xl lg:text-4xl  text-green-600 font-serif"><strong>ƯU ĐÃI</strong></h1>
-                </div>
-                <div>
-                    <nuxt-link to="#">
-                        <img src="../public/images/icon-promotion.png" alt="" class="w-10 h-17 rounded-lg object-cover">
-                    </nuxt-link>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class=" bg-yellow-200 pb-2">
-        <div class="flex flex-cols-1 lg:flex flex-cols-3 gap-x-8 max-w-5xl mx-auto pt-2 px-4">
-            <div>
-                <div class="h-75 md-5">
-                    <nuxt-link to="#">
-                        <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
-                    </nuxt-link>
-                </div>
+   <!-- uu dai và tin tức -->
+    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
+        <div class="flex flex-col items-center justify-center">
+            <!-- ưu đãi -->
+            <div class="w-[70%] flex gap-6 my-10 items-center">
+            <div class="flex flex-col w-24 h-24">
+                <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
+                ƯU ĐÃI
+                </h3>
+                <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
             </div>
             <div>
-                <div class="h-75 md-5">
-                    <nuxt-link to="#">
-                        <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
-                    </nuxt-link>
+                <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
+                <Slide v-for="slide in 10" :key="slide">
+                    <div
+                        class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
+                    <img src="/images/c_monday.jpg" alt="" class="w-120 h-120 rounded-lg object-cover mr-[16px]">
+                    </div>
+                </Slide>
+                </carousel>
+            </div>
+            </div>
+             <!-- tin tức -->
+            <div class="w-[70%] flex gap-6 my-10 items-center">
+            <div class="flex flex-col w-24 h-24">
+                <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
+                Tin tức
+                </h3>
+                <img class="w-24 h-24" :src="useAsset('images/home/icon-news.png')" alt="promotion">
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+                <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
+                <div class="text-white font-MyriadRegular">
+                    <h1 class="text-base mb-2">
+                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                    </h1>
+                    <p class="text-sm">
+                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
+                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                    </p>
+                </div>
+                <div class="w-full h-full">
+                    <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
+                </div>
+                </div>
+                <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
+                <div class="text-white font-MyriadRegular">
+                    <h1 class="text-base mb-2">
+                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                    </h1>
+                    <p class="text-sm">
+                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
+                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                    </p>
+                </div>
+                <div class="w-full h-full">
+                    <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
+                </div>
+                </div>
+                <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
+                <div class="text-white font-MyriadRegular">
+                    <h1 class="text-base mb-2">
+                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                    </h1>
+                    <p class="text-sm">
+                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
+                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                    </p>
+                </div>
+                <div class="w-full h-full">
+                    <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
+                </div>
+                </div>
+                <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
+                <div class="text-white font-MyriadRegular">
+                    <h1 class="text-base mb-2">
+                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                    </h1>
+                    <p class="text-sm">
+                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
+                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                    </p>
+                </div>
+                <div class="w-full h-full">
+                    <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
+                </div>
                 </div>
             </div>
-            <div>
-                <div class="h-75 md-5"> 
-                    <nuxt-link to="#">
-                        <img src="../public/images/c_monday.jpg" alt="" class="w-200 h-200 rounded-lg object-cover">
-                    </nuxt-link>
-                </div>
-            </div>
-        </div>
-    </div>
-  <!--  tin tuc-->
-  <div class=" bg-red-400 w-auto pb-2 px-2">
-        <div class="">  
-            <h1 class="flex justify-center text-center pt-2 text-5xl">
-                <img src="/images/icon-promotion.png" alt="" class="h-16 w-16">TIN TUC</h1>
-            <div class="flex gap-1 max-w-6xl mx-auto pt-2 justify-center items-center"> 
-                <div class="flex gap-1">
-                    <nuxt-link to="#">
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tl-lg">
-                    </nuxt-link>
-                    <nuxt-link to="#">
-                        <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tr-lg">
-                    </nuxt-link>
-                </div>
-            </div>
-        </div>
-        <div >  
-            <div class="flex gap-1 max-w-6xl mx-auto pt-1 justify-center"> 
-                <nuxt-link to="#">
-                    <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tl-lg">
-                </nuxt-link>
-                <nuxt-link to="#">
-                    <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-80 h-32 rounded-tr-lg">
-                </nuxt-link>
             </div>
         </div>
     </div>
@@ -191,28 +215,32 @@ const handlePaneClick = (): void => {
         <img src="/images/background-header.png" alt="">
     </div>
     <!-- chan trang -->
-    <div class="bg-red-400 mb-2">
+    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
         <div class="flex justify-center pt-2">
             <!-- logo -->
             <img src="/images/logo.png" alt="" class="w-50 h-20">
         </div>
-        <div class="grid grid-cols-4 w-[1280px] text-center justify-center pt-4">
+        <div class="grid grid-cols-5 w-[1280px] text-center justify-center pt-4 pl-24">
             <div class="">
+              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
                 <h2 class="">LIÊN KẾT</h2>
+              </div>
                 <div class="pt-2">
                     <div class="flex justify-center items-center pt-2 gap-2" >
                         <nuxt-link to="#">
-                            <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
+                            <img src="/images/scl_facebook.png" alt="" class="w-10 h-10">
                         </nuxt-link>
                         <nuxt-link to="#">
-                            <img src="/images/th.jpg" alt="" class="w-10 h-10 ">
+                            <img src="/images/scl_youtube.png" alt="" class="w-10 h-10 ">
                         </nuxt-link>
                     </div>
                 </div>
             </div>
-            <div>
+            <div >
+              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
                 <h2>HỆ THỐNG RẠP</h2>
-                <div class="pt-2">
+              </div>
+                <div class="pt-2 text-[#e1dae2]">
                     <div>
                         <nuxt-link to="#">
                             <H3>CINE Bình Dương</H3>
@@ -236,8 +264,10 @@ const handlePaneClick = (): void => {
                 </div>
             </div>
             <div>
+              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
                 <h2>CINEPURIN</h2>
-                <div class="pt-2">
+              </div> 
+                <div class="pt-2 text-[#e1dae2]">
                     <div>
                         <nuxt-link to="#">
                             <H3>Phim Đang Chiếu</H3>
@@ -261,8 +291,11 @@ const handlePaneClick = (): void => {
                 </div>
             </div>
             <div>
+              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
                 <h2>THÔNG TIN</h2>
-                <div class="pt-2">
+              </div> 
+                
+                <div class="pt-2 text-[#e1dae2]">
                     <div>
                         <nuxt-link to="#">
                             <H3>Giới Thiệu</H3>
@@ -284,6 +317,48 @@ const handlePaneClick = (): void => {
                         </nuxt-link>
                     </div>
                 </div>
+            </div>
+            <div>
+              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+                <h2>CHÍNH SÁCH VÀ QUY ĐỊNH</h2>
+              </div> 
+                
+                <div class="pt-2 text-[#e1dae2]">
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Quy Định Chung</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Điều Khoản Giao Dịch</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Chính Sách Bảo Mật</H3>
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <nuxt-link to="#">
+                            <H3>Thông Tin Công Ty</H3>
+                        </nuxt-link>
+                    </div>
+                </div>
+            </div>
+            <div>
+              <div>
+                <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+                  <h2 class="">HOTLINE</h2>
+                </div>
+                <div class="flex items-center">
+                    <div class="flex items-center gap-x-2 cursor-pointer">
+                      <p class="text-white font-semibold text-2xl pl-12">
+                        0389 010 316
+                      </p>
+                    </div>
+                  </div>
+              </div>
             </div>
         </div>
         <div class="flex flex-col-5 justify-center items-center pt-5 gap-4">
@@ -313,7 +388,7 @@ const handlePaneClick = (): void => {
                 </nuxt-link>
             </div>
         </div>
-    </div>
+    </div>  
     <div class="flex bg-[#552463] text-center justify-center items-center text-white pt-2 pb-2">
         <div>
             <h2>Chấp Nhận Thanh Toán</h2>           
@@ -341,6 +416,7 @@ const handlePaneClick = (): void => {
             </div>
         </div>
     </div>
+    
     <div class="flex bg-black justify-center">
         <div>
             <div><p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO <br> </p>

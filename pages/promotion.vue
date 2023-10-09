@@ -17,6 +17,24 @@ const pictures = [
         'alt': 'Picture 2',
     },
 ]
+
+
+const slideshowCurrent = ref(0)
+
+const actionSlide = (status: boolean): void => {
+  if (status) {
+    if (slideshowCurrent.value == 6) {
+      return
+    }
+    slideshowCurrent.value += 1
+  } else {
+    if (slideshowCurrent.value == 0) {
+      return
+    }
+    slideshowCurrent.value -= 1
+  }
+}
+
 const handlePaneClick = (): void => {
     console.log("Click!")
 }
@@ -84,79 +102,16 @@ const handlePaneClick = (): void => {
         </div>
     </div>
     <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
-        <div>
-
-        </div>
-        <div class="flex justify-center items-center gap-x-10 py-10">
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/dolby.png')" :alt="useAsset('images/home/dolby.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/christie.png')" :alt="useAsset('images/home/christie.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/2d.png')" :alt="useAsset('images/home/2d.png')">
-            </nuxt-link>
-            <nuxt-link class="z-10 hover:opacity-[0.5] hover:transition-all hover:duration-300 hover:ease-in-out" to="/">
-                <img :src="useAsset('images/home/3d3.png')" :alt="useAsset('images/home/3d3.png')">
-            </nuxt-link>
-        </div>
-        <div class="relative z-10 tabs">
-            <tabs v-model="activeTab">
-                <tab name="first" title="Phim đang chiếu" class="!text-[#000]">
-                    <!-- <div class="bg-red-400">
-                        Lorem...
-                    </div> -->
-                </tab>
-                <tab name="second" title="Phim sắp chiếu">
-                    <!-- <div class="bg-red-400">
-                        Lorem...
-                    </div> -->
-                </tab>
-                <tab name="third" title="Suất chiếu đặc biệt">
-                    <!-- <div class="bg-red-400">
-                        Lorem...
-                    </div> -->
-                </tab>
-            </tabs>
-        </div>
-        <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1"></div>
-    </div>
-
-    <!-- contact -->
-    <div>
-        <div class="bg-purple-800 h-[350px]">
-            <div class="text-center text-lg lg:text-4xl font-sm lg:font-sans pt-12">
-                <h1 class="">Mọi Thắc Mắc Xin Liên Hệ:</h1>
-                <h2 class="">CinePurin</h2>
-                <h1>địa chỉ: HCM</h1>
-                <div class="flex justify-center">
-                    <nuxt-link to="facebook.com/Shu1906.cn">
-                        <img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-16">
-                    </nuxt-link>
-                    <h1 class="pt-2">FB CinePurin</h1>
-                </div>
-                <div class="flex justify-center">
-                    <nuxt-link to="#">
-                        <img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-16">
-                    </nuxt-link>
-                    <h1 class="pt-2">Gmail</h1>
-                </div>
-            </div>
-        </div>
-    </div>
     
-   <!-- uu dai và tin tức -->
+    </div>
+
+    
+   <!-- thành viên và các ưu đãi -->
    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
         <div class="flex flex-col items-center justify-center">
-            <!-- ưu đãi -->
+            <!-- thành viên -->
+            <h1 class="pt-6 text-2xl font-bold text-white pb-0">THÀNH VIÊN</h1>
             <div class="w-[70%] flex gap-6 my-10 items-center">
-            <div class="flex flex-col w-24 h-24">
-                <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
-                ƯU ĐÃI
-                </h3>
-                <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
-            </div>
             <div>
                 <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
                 <Slide v-for="slide in 10" :key="slide">
@@ -235,6 +190,67 @@ const handlePaneClick = (): void => {
                 </div>
             </div>
             </div>
+        </div>
+
+        <!-- phim đang chiếu -->
+        <div class="relative z-10 tabs-panel">
+            <tabs ref="tabsref" variant="default" v-model="activeTab">
+                <!-- <tab name="first" title="Các phim đang chiếu"> -->
+                <div class="bg-[#f18720] relative">
+                    <div
+                        class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                            @click="actionSlide(false)">
+                        <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+                    </button>
+                    <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                            @click="actionSlide(true)">
+                        <img :src="useAsset('images/home/icon-start.png')" alt="next">
+                    </button>
+                    </div>
+                    <h1 class="flex justify-center text-center font-bold text-white pt-5 text-2xl">CÁC PHIM ĐANG CHIẾU</h1>
+                    <div class="mx-auto max-w-[1200px] py-5">
+                    <CarouselProduct v-model:model-value="slideshowCurrent"/>
+                    </div>
+                </div>
+                <!-- </tab> -->
+                <!-- <tab name="second" title="Phim sắp chiếu">
+                <div class="bg-[#f18720] relative">
+                    <div
+                        class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                            @click="actionSlide(false)">
+                        <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+                    </button>
+                    <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                            @click="actionSlide(true)">
+                        <img :src="useAsset('images/home/icon-start.png')" alt="next">
+                    </button>
+                    </div>
+                    <div class="mx-auto max-w-[1200px] py-10">
+                    <CarouselProduct v-model:model-value="slideshowCurrent"/>
+                    </div>
+                </div>
+                </tab>
+                <tab name="third" title="Suất chiếu đặc biệt">
+                <div class="bg-[#f18720] relative">
+                    <div
+                        class="absolute flex justify-between w-[70%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                            @click="actionSlide(false)">
+                        <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+                    </button>
+                    <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                            @click="actionSlide(true)">
+                        <img :src="useAsset('images/home/icon-start.png')" alt="next">
+                    </button>
+                    </div>
+                    <div class="mx-auto max-w-[1200px] py-10">
+                    <CarouselProduct v-model:model-value="slideshowCurrent"/>
+                    </div>
+                </div>
+                </tab> -->
+            </tabs>
         </div>
     </div>
     <!-- gach -->
