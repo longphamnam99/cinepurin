@@ -118,7 +118,7 @@ const actionSlide = (status: boolean): void => {
         <tab name="first" title="Phim đang chiếu">
           <div class="bg-[#f18720] relative">
             <div
-                class="absolute flex justify-between w-[70%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
                       @click="actionSlide(false)">
                 <img :src="useAsset('images/home/icon-start.png')" alt="prev">
