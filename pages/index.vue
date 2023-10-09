@@ -136,7 +136,7 @@ const actionSlide = (status: boolean): void => {
         <tab name="second" title="Phim sắp chiếu">
           <div class="bg-[#f18720] relative">
             <div
-                class="absolute flex justify-between w-[70%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
                       @click="actionSlide(false)">
                 <img :src="useAsset('images/home/icon-start.png')" alt="prev">
@@ -260,9 +260,6 @@ const actionSlide = (status: boolean): void => {
     <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1"></div>
   </div>
   <!-- gach -->
-  <div class="w-full">
-    <img class="w-full" src="/images/background-header.png" alt="">
-  </div>
   <!-- chan trang -->
   <div class="bg-[#f18720] mb-2">
     <div class="flex justify-center pt-2">

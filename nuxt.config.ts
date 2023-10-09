@@ -21,4 +21,9 @@ export default defineNuxtConfig({
       ['defineStore', 'definePiniaStore'],
     ],
   },
+  runtimeConfig: {
+    public: {
+      baseURL: process.env.NUXT_PUBLIC_BASEURL
+    },
+  },
 })

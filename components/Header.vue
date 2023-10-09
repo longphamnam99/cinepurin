@@ -1,182 +1,215 @@
-<script setup>
-import { ref } from 'vue'
-import { Modal } from 'flowbite-vue'
+<script setup lang="ts">
+import {ref} from 'vue'
+import {Modal} from 'flowbite-vue'
+// import request from "~/utils/request";
 
 const router = [
-    {
-        path: "/cine",
-        name: "Phim",
-    },
-    {
-        path: "/showtimes",
-        name: "Lịch chiếu",
-    },
-    {
-        path: "/theaters_prices",
-        name: "Rạp và giá",
-    },
-    {
-        path: "/",
-        name: "Khuyến mãi",
-    },
-    {
-        path: "/",
-        name: "Hỏi và đáp",
-    },
-    {
-        path: "/",
-        name: "Tin tức",
-    },
-    {
-        path: "/",
-        name: "Giới thiệu",
-    },
-    {
-        path: "/contact",
-        name: "Liên hệ",
-    },
+  {
+    path: "/cine",
+    name: "Phim",
+  },
+  {
+    path: "/showtimes",
+    name: "Lịch chiếu",
+  },
+  {
+    path: "/theaters_prices",
+    name: "Rạp và giá",
+  },
+  {
+    path: "/",
+    name: "Khuyến mãi",
+  },
+  {
+    path: "/",
+    name: "Hỏi và đáp",
+  },
+  {
+    path: "/",
+    name: "Tin tức",
+  },
+  {
+    path: "/",
+    name: "Giới thiệu",
+  },
+  {
+    path: "/contact",
+    name: "Liên hệ",
+  },
 ]
 
-const isShowModal = ref(false)
+const isShowModalRegister = ref(false)
 const closeModal = () => {
-    isShowModal.value = false
+  isShowModalRegister.value = false
 }
+
+const isShowModalLogin = ref(false)
 const showModal = () => {
-    isShowModal.value = true
+  isShowModalRegister.value = true
+}
+
+const form = ref({})
+
+const submitForm = async () => {
+  // await  request({
+  //   url: "test",
+  //   method: "get",
+  // })
+  console.log(form)
 }
 </script>
 
 <template>
-    <nav>
-        <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
-            <div class="relative">
-                <img src="/images/background-header.png" alt="Top header">
-            </div>
+  <nav>
+    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
+      <div class="relative">
+        <img src="/images/background-header.png" alt="Top header">
+      </div>
 
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-4">
-                <nuxt-link to="/" class="flex items-center w-[220px] h-[110px] cursor-pointer">
-                    <img src="/images/logo.png" class="z-10" alt="Flowbite Logo" />
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-4">
+        <nuxt-link to="/" class="flex items-center w-[220px] h-[110px] cursor-pointer">
+          <img src="/images/logo.png" class="z-10" alt="Flowbite Logo"/>
+        </nuxt-link>
+        <div class="xl:flex flex-col gap-y-3 py-2 hidden md:w-auto justify-between items-end z-10">
+          <div class="flex gap-5">
+            <form @click.prevent class="relative">
+              <input
+                  class="rounded-[30px] bg-[#000000] opacity-[0.7] border-0 pr-28 pl-[20px] py-3 placeholder-[#d1d1d1] text-sm text-[#d1d1d1] focus:ring-0 focus:placeholder-transparent placeholder:font-avantgarde"
+                  type="text" placeholder="Tìm kiếm...">
+              <button type="submit" class="absolute top-1/2 right-0 transform -translate-y-1/2">
+                <img src="/images/icon-search.png" alt="search">
+              </button>
+            </form>
+            <button
+                class="rounded-[1000px] bg-[#ba3469] w-[39px] h-[39px] flex items-center justify-center text-white font-bold leading-[39px] text-sm">
+              EN
+            </button>
+          </div>
+          <div class="rounded-[30px] border border-[#e00d7a] p-1">
+            <ul class="nav z-20 bg-[#e00d7a] rounded-[30px] flex font-avantgarde-demi text-shadow">
+              <li v-for="item in router" :key="item.name"
+                  class="hover:bg-[#f37520] transition-all duration-300 ease-in-out text-[18px] leading-[24px]">
+                <nuxt-link :to="item.path" class="block py-2 pl-3 pr-4 text-white uppercase">{{
+                    item.name
+                  }}
                 </nuxt-link>
-                <div class="xl:flex flex-col gap-y-3 py-2 hidden md:w-auto justify-between items-end z-10">
-                    <div class="flex gap-5">
-                        <form @click.prevent class="relative">
-                            <input
-                                class="rounded-[30px] bg-[#000000] opacity-[0.7] border-0 pr-28 pl-[20px] py-3 placeholder-[#d1d1d1] text-sm text-[#d1d1d1] focus:ring-0 focus:placeholder-transparent placeholder:font-avantgarde"
-                                type="text" placeholder="Tìm kiếm...">
-                            <button type="submit" class="absolute top-1/2 right-0 transform -translate-y-1/2">
-                                <img src="/images/icon-search.png" alt="search">
-                            </button>
-                        </form>
-                        <button
-                            class="rounded-[1000px] bg-[#ba3469] w-[39px] h-[39px] flex items-center justify-center text-white font-bold leading-[39px] text-sm">
-                            EN
-                        </button>
-                    </div>
-                    <div class="rounded-[30px] border border-[#e00d7a] p-1">
-                        <ul class="nav z-20 bg-[#e00d7a] rounded-[30px] flex font-avantgarde-demi text-shadow">
-                            <li v-for="item in router" :key="item.name"
-                                class="hover:bg-[#f37520] transition-all duration-300 ease-in-out text-[18px] leading-[24px]">
-                                <nuxt-link :to="item.path" class="block py-2 pl-3 pr-4 text-white uppercase">{{ item.name
-                                }}</nuxt-link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1">
-            </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="bg-[url('/images/pattern.png')] bg-repeat bg-top max-w-full flex items-center justify-center">
-            <div class="lg:w-[90%] w-full items-center flex flex-wrap lg:justify-between justify-center gap-x-10">
-                <div class="flex items-center sm:gap-x-10 gap-x-8">
-                    <div class="flex items-center gap-x-2 cursor-pointer" @click="isShowModal = true">
-                        <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-register.png" alt="icon register">
-                        <p class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs font-avantgarde-demi">
-                            Đăng ký thành viên
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-x-2 cursor-pointer" @click="isShowModal = true">
-                        <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-login.png" alt="icon login">
-                        <p class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs font-avantgarde-demi">
-                            Đăng nhập
-                        </p>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <div class="flex items-center gap-x-2 cursor-pointer">
-                        <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-call.png" alt="icon call">
-                        <p class="uppercase text-[#f37520] font-bold sm:text-[30px] text-2xl font-Futurab">
-                            +84 123456789
-                        </p>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1">
+      </div>
+    </div>
+    <div class="bg-[url('/images/pattern.png')] bg-repeat bg-top max-w-full flex items-center justify-center">
+      <div class="lg:w-[90%] w-full items-center flex flex-wrap lg:justify-between justify-center gap-x-10">
+        <div class="flex items-center sm:gap-x-10 gap-x-8">
+          <div class="flex items-center gap-x-2 cursor-pointer" @click="isShowModalRegister = true">
+            <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-register.png" alt="icon register">
+            <p class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs font-avantgarde-demi">
+              Đăng ký thành viên
+            </p>
+          </div>
+          <div class="flex items-center gap-x-2 cursor-pointer" @click="isShowModalLogin = true">
+            <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-login.png" alt="icon login">
+            <p class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs font-avantgarde-demi">
+              Đăng nhập
+            </p>
+          </div>
         </div>
-    </nav>
-    <teleport to="body">
-        <Modal :size="size" v-if="isShowModal" @close="closeModal">
-            <template #header>
-                <div class="flex items-center text-lg">
-                    Đăng ký tài khoản
-                </div>
-            </template>
-            <!-- đăng ký đăng nhập -->
-            <template #body>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    <div class="w-72">
-                        <div class="flex items-center">
-                        <!-- Nút chọn giới tính Nam -->
-                        <label class="inline-flex items-center">
-                            <input type="radio" class="form-radio" name="gender" value="nam">
-                            <span class="ml-2">Nam</span>
-                        </label>
+        <div class="flex items-center">
+          <div class="flex items-center gap-x-2 cursor-pointer">
+            <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-call.png" alt="icon call">
+            <p class="uppercase text-[#f37520] font-bold sm:text-[30px] text-2xl font-Futurab">
+              +84 123456789
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <teleport to="body">
+    <Modal v-if="isShowModalRegister" @close="isShowModalRegister = false">
+      <template #header>
+        <div class="flex items-center text-lg">
+          Đăng ký tài khoản
+        </div>
+      </template>
+      <!-- đăng ký đăng nhập -->
+      <template #body>
+        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+          <div class="w-72">
+            <div class="flex items-center">
+              <!-- Nút chọn giới tính Nam -->
+              <label class="inline-flex items-center">
+                <input type="radio" class="form-radio" name="gender" value="nam">
+                <span class="ml-2">Nam</span>
+              </label>
 
-                        <!-- Nút chọn giới tính Nữ -->
-                        <label class="inline-flex items-center ml-6">
-                            <input type="radio" class="form-radio" name="gender" value="nu">
-                            <span class="ml-2">Nữ</span>
-                        </label>
-                        </div>
-                        <!-- nhập thông tin -->
-                    </div>  
-                    <div class="flex gap-[10px]">
-                        <div>
-                            <input type="text" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]" placeholder="Họ tên">
-                        </div>
-                        <div>
-                            <input type="text" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]" placeholder="Ngày sinh">
-                        </div>
-                    </div> 
-                    <div class="pt-2">
-                        <input type="text" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[590px]" placeholder="Địa chỉ">
-                    </div> 
-                    <div class="flex gap-[10px] pt-2">
-                        <div>
-                            <input type="text" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[200px]" placeholder="Số CMND/BLX">
-                        </div>
-                        <div>
-                            <input type="text" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[180px]" placeholder="Điện Thoại">
-                        </div>
-                        <div>
-                            <input type="text" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[190px]" placeholder="Email">
-                        </div>
-                    </div> 
-                    <div class="pt-2">
-                        <input type="text" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[590px]" placeholder="Tên đăng nhập(*)">
-                    </div> 
-                    <div class="flex gap-[10px] pt-2">
-                        <div>
-                            <input type="text" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]" placeholder="Mật khẩu(*)">
-                        </div>
-                        <div>
-                            <input type="text" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]" placeholder="Nhập lại mật khẩu(*)">
-                        </div>
-                    </div> 
-                    <div>
-                        <div>
-                            <h1 class="text-center">CHÍNH SÁCH BẢO MẬT</h1>
-                        </div>
-                        <textarea name="" id="" cols="69" rows="8">1. TỔNG QUAN VỀ CHÍNH SÁCH BẢO MẬT
+              <!-- Nút chọn giới tính Nữ -->
+              <label class="inline-flex items-center ml-6">
+                <input type="radio" class="form-radio" name="gender" value="nu">
+                <span class="ml-2">Nữ</span>
+              </label>
+            </div>
+            <!-- nhập thông tin -->
+          </div>
+          <div class="flex gap-[10px]">
+            <div>
+              <input type="text"
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
+                     placeholder="Họ tên">
+            </div>
+            <div>
+              <input type="text"
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
+                     placeholder="Ngày sinh">
+            </div>
+          </div>
+          <div class="pt-2">
+            <input type="text"
+                   class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[590px]"
+                   placeholder="Địa chỉ">
+          </div>
+          <div class="flex gap-[10px] pt-2">
+            <div>
+              <input type="text"
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[200px]"
+                     placeholder="Số CMND/BLX">
+            </div>
+            <div>
+              <input type="text"
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[180px]"
+                     placeholder="Điện Thoại">
+            </div>
+            <div>
+              <input type="text"
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[190px]"
+                     placeholder="Email">
+            </div>
+          </div>
+          <div class="pt-2">
+            <input type="text"
+                   class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[590px]"
+                   placeholder="Tên đăng nhập(*)">
+          </div>
+          <div class="flex gap-[10px] pt-2">
+            <div>
+              <input type="text"
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
+                     placeholder="Mật khẩu(*)">
+            </div>
+            <div>
+              <input type="text"
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
+                     placeholder="Nhập lại mật khẩu(*)">
+            </div>
+          </div>
+          <div>
+            <div>
+              <h1 class="text-center">CHÍNH SÁCH BẢO MẬT</h1>
+            </div>
+            <textarea name="" id="" cols="69" rows="8">1. TỔNG QUAN VỀ CHÍNH SÁCH BẢO MẬT
                             CINESTAR hiểu rằng Khách Hàng quan tâm đến việc dữ liệu cá nhân của Khách Hàng sẽ được sử dụng và chia sẻ như thế nào. CINESTAR rất coi trọng sự tin tưởng của Khách Hàng, vì vậy CINESTAR sẽ sử dụng những dữ liệu mà Khách Hàng cung cấp một cách cẩn thận và hợp lý, phù hợp với quy định của pháp luật.
                             Website: www.cinestar.com.vn thuộc quyền sở hữu của Công ty Cổ phần Giải trí – Phát hành phim – Rạp chiếu phim Ngôi Sao (CINESTAR), địa chỉ: 135 Hai Bà Trưng, phường Bến Nghé, Quận 1, TP.HCM. Website này được quản lý điều hành bởi CINESTAR. Website này được sử dụng cho các hoạt động của CINESTAR, các chi nhánh trực thuộc, các công ty thành viên và các tổ chức liên quan (được gọi là CINESTAR trong văn bản này).
                             CINESTAR cam kết tôn trọng quyền riêng tư và những vấn đề cá nhân của tất cả Khách Hàng trên website của CINESTAR (sau đây gọi là "Website”). CINESTAR nhận thức được tầm quan trọng của các dữ liệu cá nhân mà Khách Hàng đã cung cấp cho CINESTAR và tin rằng trách nhiệm của CINESTAR là quản lý đúng cách, bảo vệ và xử lý dữ liệu cá nhân của Khách Hàng.
@@ -285,43 +318,73 @@ const showModal = () => {
                             
 
                             Bất kỳ lúc nào Khách Hàng có bất kỳ câu hỏi, cần hỗ trợ, cần giải thích, khiếu nại hoặc quan tâm về việc bảo mật của CINESTAR hoặc các giao dịch của Khách Hàng với CINESTAR, xin vui lòng liên hệ CINESTAR theo thông tin sau:
-                        </textarea>                      
-                    </div>
-                </p>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    <div class="w-72">
-                        
-                    </div>
-                </p>
-            </template>
-            <template #footer>
-                <div class="flex justify-between">
-                    <button @click="closeModal" type="button"
-                        class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
-                        Decline
-                    </button>
-                    <button @click="closeModal" type="button"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        I accept
-                    </button>
-                </div>
-            </template>
-        </Modal>
-    </teleport>
+                        </textarea>
+          </div>
+        </p>
+        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+          <div class="w-72">
+
+          </div>
+        </p>
+      </template>
+      <template #footer>
+        <div class="flex justify-between">
+          <button @click="closeModal" type="button"
+                  class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+            Decline
+          </button>
+          <button @click="closeModal" type="button"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            I accept
+          </button>
+        </div>
+      </template>
+    </Modal>
+    <Modal v-if="isShowModalLogin" @close="isShowModalLogin = false">
+      <template #header>
+        <div class="flex items-center text-lg">
+          Đăng nhập
+        </div>
+      </template>
+      <template #body>
+        <form @click.prevent="submitForm">
+          <div class="relative z-0 w-full mb-6 group">
+            <input v-model="form.email" type="email" name="floating_email" id="floating_email"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" " required/>
+            <label for="floating_email"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+          </div>
+          <div class="relative z-0 w-full mb-6 group">
+            <input v-model="form.password" type="password" name="floating_password" id="floating_password"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" " required/>
+            <label for="floating_password"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mật
+              khẩu</label>
+          </div>
+          <button type="submit"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Đăng nhập
+          </button>
+        </form>
+      </template>
+    </Modal>
+  </teleport>
 </template>
 
 <style scoped>
 .nav li:first-child {
-    border-radius: 30px 0 0 30px;
-    -webkit-border-radius: 30px 0 0 30px;
+  border-radius: 30px 0 0 30px;
+  -webkit-border-radius: 30px 0 0 30px;
 }
 
 .nav li:last-child {
-    border-radius: 0 30px 30px 0;
-    -webkit-border-radius: 0 30px 30px 0;
+  border-radius: 0 30px 30px 0;
+  -webkit-border-radius: 0 30px 30px 0;
 }
 
 .text-shadow {
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 </style>
