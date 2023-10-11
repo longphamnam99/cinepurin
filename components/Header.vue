@@ -25,11 +25,11 @@ const router = [
     name: "Hỏi và đáp",
   },
   {
-    path: "/",
+    path: "/news",
     name: "Tin tức",
   },
   {
-    path: "/",
+    path: "/introduce",
     name: "Giới thiệu",
   },
   {
