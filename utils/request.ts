@@ -1,9 +1,12 @@
 import axios from "axios";
 
-const config = useRuntimeConfig();
+const config = () => {
+    const config = useRuntimeConfig();
+    return config.public.baseURL
+}
 
 const service = axios.create({
-    baseURL: config.public.baseURL,
+    baseURL: config(),
     timeout: 100000,
 });
 
