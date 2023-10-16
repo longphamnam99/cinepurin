@@ -86,14 +86,14 @@ const handlePaneClick = (): void => {
                 <select-search model-value=""
                     class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                     :options="[
-                         { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
                         { label: 'Shin - Cậu bé bút chì', value: '2' },
                         { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
                     ]" placeholder="Chọn rạp chiếu" />
                 <select-search model-value=""
                     class="rounded-tl-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                     :options="[
-                         { label: 'Chuyến xe cuối cùng', value: '1' },
+                        { label: 'Chuyến xe cuối cùng', value: '1' },
                         { label: 'Shin - Cậu bé bút chì', value: '2' },
                         { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
                     ]" placeholder="Chọn thời gian" />
@@ -107,13 +107,15 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[400px] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
                     <div>
                         <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
-                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
+                            trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
+                            xem .</p>
                         <img src="../public/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
@@ -130,15 +132,15 @@ const handlePaneClick = (): void => {
                     <div class="pt-2 px-2">
                         <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3>
-                        </nuxt-link>    
+                        </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">20:30</h3>
                         </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">22:30</h3>
                         </nuxt-link>
                     </div>
@@ -150,13 +152,15 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[400px] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
                     <div>
                         <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
-                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
+                            trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
+                            xem .</p>
                         <img src="../public/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
@@ -173,15 +177,15 @@ const handlePaneClick = (): void => {
                     <div class="pt-2 px-2">
                         <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3>
-                        </nuxt-link>    
+                        </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">20:30</h3>
                         </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">22:30</h3>
                         </nuxt-link>
                     </div>
@@ -193,13 +197,15 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[400px] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
                     <div>
                         <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
-                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
+                            trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
+                            xem .</p>
                         <img src="../public/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
@@ -216,15 +222,15 @@ const handlePaneClick = (): void => {
                     <div class="pt-2 px-2">
                         <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3>
-                        </nuxt-link>    
+                        </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">20:30</h3>
                         </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">22:30</h3>
                         </nuxt-link>
                     </div>
@@ -236,13 +242,15 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[400px] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
                     <div>
                         <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
-                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
+                            trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
+                            xem .</p>
                         <img src="../public/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
@@ -259,15 +267,15 @@ const handlePaneClick = (): void => {
                     <div class="pt-2 px-2">
                         <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3>
-                        </nuxt-link>    
+                        </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">20:30</h3>
                         </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">22:30</h3>
                         </nuxt-link>
                     </div>
@@ -279,13 +287,15 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[400px] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
                     <div>
                         <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
-                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
+                            trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
+                            xem .</p>
                         <img src="../public/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
@@ -302,15 +312,15 @@ const handlePaneClick = (): void => {
                     <div class="pt-2 px-2">
                         <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3>
-                        </nuxt-link>    
+                        </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">20:30</h3>
                         </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">22:30</h3>
                         </nuxt-link>
                     </div>
@@ -322,13 +332,15 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[400px] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3" >
+                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[180px] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
                     <div>
                         <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
-                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng xem .</p>
+                        <p class="text-white font-sans pt-2 pb-2">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
+                            trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
+                            xem .</p>
                         <img src="../public/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
@@ -345,15 +357,15 @@ const handlePaneClick = (): void => {
                     <div class="pt-2 px-2">
                         <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">18:30</h3>
-                        </nuxt-link>    
+                        </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">20:30</h3>
                         </nuxt-link>
                     </div>
                     <div class="pt-2 px-2">
-                       <nuxt-link to="#">
+                        <nuxt-link to="#">
                             <h3 class="w-[70px] h-[70px] bg-purple-700 pt-5 text-center">22:30</h3>
                         </nuxt-link>
                     </div>
@@ -362,313 +374,105 @@ const handlePaneClick = (): void => {
         </div>
     </div>
 
-    
- 
-   <!-- uu dai và tin tức -->
-   <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
+
+
+    <!-- uu dai và tin tức -->
+    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
         <div class="flex flex-col items-center justify-center">
             <!-- ưu đãi -->
             <div class="w-[70%] flex gap-6 my-10 items-center">
-            <div class="flex flex-col w-24 h-24">
-                <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
-                ƯU ĐÃI
-                </h3>
-                <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
+                <div class="flex flex-col w-24 h-24">
+                    <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
+                        ƯU ĐÃI
+                    </h3>
+                    <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
+                </div>
+                <div>
+                    <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
+                        <Slide v-for="slide in 10" :key="slide">
+                            <div
+                                class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
+                                <img src="/images/c_monday.jpg" alt=""
+                                    class="w-120 h-120 rounded-lg object-cover mr-[16px]">
+                            </div>
+                        </Slide>
+                    </carousel>
+                </div>
             </div>
-            <div>
-                <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
-                <Slide v-for="slide in 10" :key="slide">
-                    <div
-                        class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
-                    <img src="/images/c_monday.jpg" alt="" class="w-120 h-120 rounded-lg object-cover mr-[16px]">
-                    </div>
-                </Slide>
-                </carousel>
-            </div>
-            </div>
-             <!-- tin tức -->
+            <!-- tin tức -->
             <div class="w-[70%] flex gap-6 my-10 items-center">
-            <div class="flex flex-col w-24 h-24">
-                <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
-                Tin tức
-                </h3>
-                <img class="w-24 h-24" :src="useAsset('images/home/icon-news.png')" alt="promotion">
-            </div>
-            <div class="grid grid-cols-2 gap-2">
-                <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
-                <div class="text-white font-MyriadRegular">
-                    <h1 class="text-base mb-2">
-                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
-                    </h1>
-                    <p class="text-sm">
-                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
-                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
-                    </p>
+                <div class="flex flex-col w-24 h-24">
+                    <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
+                        Tin tức
+                    </h3>
+                    <img class="w-24 h-24" :src="useAsset('images/home/icon-news.png')" alt="promotion">
                 </div>
-                <div class="w-full h-full">
-                    <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
-                </div>
-                </div>
-                <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
-                <div class="text-white font-MyriadRegular">
-                    <h1 class="text-base mb-2">
-                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
-                    </h1>
-                    <p class="text-sm">
-                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
-                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
-                    </p>
-                </div>
-                <div class="w-full h-full">
-                    <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
-                </div>
-                </div>
-                <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
-                <div class="text-white font-MyriadRegular">
-                    <h1 class="text-base mb-2">
-                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
-                    </h1>
-                    <p class="text-sm">
-                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
-                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
-                    </p>
-                </div>
-                <div class="w-full h-full">
-                    <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
-                </div>
-                </div>
-                <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
-                <div class="text-white font-MyriadRegular">
-                    <h1 class="text-base mb-2">
-                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
-                    </h1>
-                    <p class="text-sm">
-                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
-                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
-                    </p>
-                </div>
-                <div class="w-full h-full">
-                    <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-    <!-- gach -->
-    <div class="">
-        <img src="/images/background-header.png" alt="">
-    </div>
-    <!-- chan trang -->
-    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
-        <div class="flex justify-center pt-2">
-            <!-- logo -->
-            <img src="/images/logo.png" alt="" class="w-50 h-20">
-        </div>
-        <div class="grid grid-cols-5 w-[1280px] text-center justify-center pt-4 pl-24">
-            <div class="">
-              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                <h2 class="">LIÊN KẾT</h2>
-              </div>
-                <div class="pt-2">
-                    <div class="flex justify-center items-center pt-2 gap-2" >
-                        <nuxt-link to="#">
-                            <img src="/images/scl_facebook.png" alt="" class="w-10 h-10">
-                        </nuxt-link>
-                        <nuxt-link to="#">
-                            <img src="/images/scl_youtube.png" alt="" class="w-10 h-10 ">
-                        </nuxt-link>
+                <div class="grid grid-cols-2 gap-2">
+                    <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
+                        <div class="text-white font-MyriadRegular">
+                            <h1 class="text-base mb-2">
+                                Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                            </h1>
+                            <p class="text-sm">
+                                Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay
+                                Cinestar
+                                Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                            </p>
+                        </div>
+                        <div class="w-full h-full">
+                            <img src="/images/c_monday.jpg" alt=""
+                                class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
+                        <div class="text-white font-MyriadRegular">
+                            <h1 class="text-base mb-2">
+                                Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                            </h1>
+                            <p class="text-sm">
+                                Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay
+                                Cinestar
+                                Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                            </p>
+                        </div>
+                        <div class="w-full h-full">
+                            <img src="/images/c_monday.jpg" alt=""
+                                class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
+                        <div class="text-white font-MyriadRegular">
+                            <h1 class="text-base mb-2">
+                                Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                            </h1>
+                            <p class="text-sm">
+                                Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay
+                                Cinestar
+                                Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                            </p>
+                        </div>
+                        <div class="w-full h-full">
+                            <img src="/images/c_monday.jpg" alt=""
+                                class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
+                        <div class="text-white font-MyriadRegular">
+                            <h1 class="text-base mb-2">
+                                Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                            </h1>
+                            <p class="text-sm">
+                                Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay
+                                Cinestar
+                                Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                            </p>
+                        </div>
+                        <div class="w-full h-full">
+                            <img src="/images/c_monday.jpg" alt=""
+                                class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div >
-              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                <h2>HỆ THỐNG RẠP</h2>
-              </div>
-                <div class="pt-2 text-[#e1dae2]">
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>CINE Bình Dương</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>CINE Bình Phước</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>CINE Đồng Tháp</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>CINE Hồ Chí Minh</H3>
-                        </nuxt-link>
-                    </div>
-                </div>
-            </div>
-            <div>
-              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                <h2>CINEPURIN</h2>
-              </div> 
-                <div class="pt-2 text-[#e1dae2]">
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>Phim Đang Chiếu</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>Phim Sắp Chiếu</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>Xuất Chiếu Đặc Biệt</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>CINE Bình Dương</H3>
-                        </nuxt-link>
-                    </div>
-                </div>
-            </div>
-            <div>
-              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                <h2>THÔNG TIN</h2>
-              </div> 
-                
-                <div class="pt-2 text-[#e1dae2]">
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>Giới Thiệu</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>Tin Tức</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>Hỏi và Đáp</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>Liên Hệ</H3>
-                        </nuxt-link>
-                    </div>
-                </div>
-            </div>
-            <div>
-              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                <h2>CHÍNH SÁCH VÀ QUY ĐỊNH</h2>
-              </div> 
-                
-                <div class="pt-2 text-[#e1dae2]">
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>Quy Định Chung</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>Điều Khoản Giao Dịch</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>Chính Sách Bảo Mật</H3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#">
-                            <H3>Thông Tin Công Ty</H3>
-                        </nuxt-link>
-                    </div>
-                </div>
-            </div>
-            <div>
-              <div>
-                <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                  <h2 class="">HOTLINE</h2>
-                </div>
-                <div class="flex items-center">
-                    <div class="flex items-center gap-x-2 cursor-pointer">
-                      <p class="text-white font-semibold text-2xl pl-12">
-                        0389 010 316
-                      </p>
-                    </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-        <div class="flex flex-col-5 justify-center items-center pt-5 gap-4">
-            <div>
-                <nuxt-link to="#">
-                    <img src="../public/images/dolby2.png" alt="">
-                </nuxt-link>
-            </div>
-            <div>
-                <nuxt-link to="#">
-                    <img src="../public/images/crhistie.png" alt="">
-                </nuxt-link>
-            </div>
-            <div>
-                <nuxt-link to="#">
-                    <img src="../public/images/2d.jpg" alt="">
-                </nuxt-link>
-            </div>
-            <div>
-                <nuxt-link to="#">
-                    <img src="../public/images/3d.png" alt="">
-                </nuxt-link>
-            </div>    
-            <div>
-                <nuxt-link to="#">
-                    <img src="../public/images/cinestar-coffee-02.png" alt="">
-                </nuxt-link>
-            </div>
-        </div>
-    </div>  
-    <div class="flex bg-[#552463] text-center justify-center items-center text-white pt-2 pb-2">
-        <div>
-            <h2>Chấp Nhận Thanh Toán</h2>           
-            <div class="flex flex-col-4 gap-2 pt-2" >
-                <div>
-                    <nuxt-link to="#">
-                        <img src="../public/images/napas-40.png" alt="">
-                    </nuxt-link>
-                </div>
-                <div>
-                    <nuxt-link to="#">
-                        <img src="../public/images/momo.jpg" alt="">
-                    </nuxt-link>
-                </div>
-                <div>
-                    <nuxt-link to="#">
-                        <img src="../public/images/payment-mastercard.png" alt="">
-                    </nuxt-link>
-                </div>
-                <div>
-                    <nuxt-link to="#">
-                        <img src="../public/images/payment-visa.png" alt="">
-                    </nuxt-link>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="flex bg-black justify-center">
-        <div>
-            <div><p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO <br> </p>
-                <!-- ĐỊA CHỈ: 135 HAI BÀ TRƯNG, PHƯỜNG BẾN NGHÉ, QUẬN 1, TP.HCM <br>
-                GIẤY CNĐKDN SỐ: 0312742744, ĐĂNG KÝ LẦN ĐẦU NGÀY 18/04/2014, ĐĂNG KÝ THAY ĐỔI LẦN THỨ 2 NGÀY 15/09/2014, CẤP BỞI SỞ KH&ĐT TP.HCM
-                <br>
-                <br>2015 © CINESTAR. ALL RIGHTS RESERVED.</p> -->
             </div>
         </div>
     </div>
@@ -741,7 +545,7 @@ const handlePaneClick = (): void => {
 .tabs ul li {
     background-color: #f18720;
     -webkit-transition: all 0.3s ease-in-out;
-    box-shadow: 10px 0 0 rgba(0,0,0,0.1);
+    box-shadow: 10px 0 0 rgba(0, 0, 0, 0.1);
 }
 
 .tabs ul li:nth-child(1) {
@@ -773,11 +577,8 @@ const handlePaneClick = (): void => {
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     padding: 0 45px;
-}
-</style>
+}</style>
 
-<style scoped>
-.text-shadow {
+<style scoped>.text-shadow {
     text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
-}
-</style>
+}</style>
