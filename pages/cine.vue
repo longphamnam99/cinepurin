@@ -122,11 +122,190 @@ const handlePaneClick = (): void => {
                     <img :src="useAsset('images/home/3d3.png')" :alt="useAsset('images/home/3d3.png')">
                 </nuxt-link>
                 </div>
-        <div class="relative z-10 tabs-panel">
+        <div class="relative z-10 tabs-panel lg:font-bold md:font-semibold sm:font-light">
         <tabs ref="tabsref" variant="default" v-model="activeTab">
             <tab name="first" title="Phim đang chiếu">
-            <div class="bg-[#f18720] relative">
-                <div
+                <!-- cinema -->
+                <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 justify-center gap-8 px-8 lg:px-32 py-6">
+                        <div class="flex flex-col-2 bg-red-300 w-[full] h-[400px]">
+                            <div class="flex flex-col-2 gap-2">
+                                <div>
+                                    <nuxt-link to="/shin-main">
+                                        <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[full] h-[380px] pt-5 pl-3">
+                                    </nuxt-link>
+                                </div>
+                                <div class="w-[50%]">
+                                    <h3 class="text-lg pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                                    <p class="text-xs pt-2 text-white hidden xl:block">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                                    <p class="pt-4 text-white w-[full]">.............................</p>
+                                    <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                                    <div class="flex flex-col-2 justify-center px-2 py-2">
+                                        <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                            <nuxt-link to="#">
+                                                <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                            </nuxt-link>
+                                            <p>Trailer</p>
+                                        </button>
+                                        <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                            <nuxt-link to="/shin">
+                                                Mua Vé
+                                            </nuxt-link>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col-2 bg-red-300 w-[full] h-[400px]">
+                            <div class="flex flex-col-2 gap-2">
+                                <div>
+                                    <nuxt-link to="/shin-main">
+                                        <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[full] h-[380px] pt-5 pl-3">
+                                    </nuxt-link>
+                                </div>
+                                <div class="w-[50%]">
+                                    <h3 class="text-lg pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                                    <p class="text-xs pt-2 text-white hidden xl:block">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                                    <p class="pt-4 text-white w-[full]">.............................</p>
+                                    <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                                    <div class="flex flex-col-2 justify-center px-2 py-2">
+                                        <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                            <nuxt-link to="#">
+                                                <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                            </nuxt-link>
+                                            <p>Trailer</p>
+                                        </button>
+                                        <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                            <nuxt-link to="/shin">
+                                                Mua Vé
+                                            </nuxt-link>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -------- -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 justify-center gap-8 px-8 lg:px-32 py-6">
+                        <div class="flex flex-col-2 bg-red-300 w-[full] h-[400px]">
+                                <div class="flex flex-col-2 gap-2">
+                                    <div>
+                                        <nuxt-link to="/shin-main">
+                                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[full] h-[380px] pt-5 pl-3">
+                                        </nuxt-link>
+                                    </div>
+                                    <div class="w-[50%]">
+                                        <h3 class="text-lg pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                                        <p class="text-xs pt-2 text-white hidden xl:block">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                                        <p class="pt-4 text-white w-[full]">.............................</p>
+                                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                                        <div class="flex flex-col-2 justify-center px-2 py-2">
+                                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                                <nuxt-link to="#">
+                                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                                </nuxt-link>
+                                                <p>Trailer</p>
+                                            </button>
+                                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                                <nuxt-link to="/shin">
+                                                    Mua Vé
+                                                </nuxt-link>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="flex flex-col-2 bg-red-300 w-[full] h-[400px]">
+                            <div class="flex flex-col-2 gap-2">
+                                <div>
+                                    <nuxt-link to="/shin-main">
+                                        <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[full] h-[380px] pt-5 pl-3">
+                                    </nuxt-link>
+                                </div>
+                                <div class="w-[50%]">
+                                    <h3 class="text-lg pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                                    <p class="text-xs pt-2 text-white hidden xl:block">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                                    <p class="pt-4 text-white w-[full]">.............................</p>
+                                    <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                                    <div class="flex flex-col-2 justify-center px-2 py-2">
+                                        <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                            <nuxt-link to="#">
+                                                <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                            </nuxt-link>
+                                            <p>Trailer</p>
+                                        </button>
+                                        <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                            <nuxt-link to="/shin">
+                                                Mua Vé
+                                            </nuxt-link>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--     -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 justify-center gap-8 px-8 lg:px-32 py-6">
+                        <div class="flex flex-col-2 bg-red-300 w-[full] h-[400px]">
+                                <div class="flex flex-col-2 gap-2">
+                                    <div>
+                                        <nuxt-link to="/shin-main">
+                                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[full] h-[380px] pt-5 pl-3">
+                                        </nuxt-link>
+                                    </div>
+                                    <div class="w-[50%]">
+                                        <h3 class="text-lg pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                                        <p class="text-xs pt-2 text-white hidden xl:block">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                                        <p class="pt-4 text-white w-[full]">.............................</p>
+                                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                                        <div class="flex flex-col-2 justify-center px-2 py-2">
+                                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                                <nuxt-link to="#">
+                                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                                </nuxt-link>
+                                                <p>Trailer</p>
+                                            </button>
+                                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                                <nuxt-link to="/shin">
+                                                    Mua Vé
+                                                </nuxt-link>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="flex flex-col-2 bg-red-300 w-[full] h-[400px]">
+                            <div class="flex flex-col-2 gap-2">
+                                <div>
+                                    <nuxt-link to="/shin-main">
+                                        <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[full] h-[380px] pt-5 pl-3">
+                                    </nuxt-link>
+                                </div>
+                                <div class="w-[50%]">
+                                    <h3 class="text-lg pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
+                                    <p class="text-xs pt-2 text-white hidden xl:block">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
+                                    <p class="pt-4 text-white w-[full]">.............................</p>
+                                    <img src="../public/images/2d.png" alt="" class="w-10 h-10">
+                                    <div class="flex flex-col-2 justify-center px-2 py-2">
+                                        <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                            <nuxt-link to="#">
+                                                <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                            </nuxt-link>
+                                            <p>Trailer</p>
+                                        </button>
+                                        <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                            <nuxt-link to="/shin">
+                                                Mua Vé
+                                            </nuxt-link>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- <div class="bg-[#f18720] relative"> -->
+                <!-- <div
                     class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
                         @click="actionSlide(false)">
@@ -136,14 +315,14 @@ const handlePaneClick = (): void => {
                         @click="actionSlide(true)">
                     <img :src="useAsset('images/home/icon-start.png')" alt="next">
                 </button>
-                </div>
-                <div class="mx-auto max-w-[1200px] py-10">
+                </div> -->
+                <!-- <div class="mx-auto max-w-[1200px] py-10">
                 <CarouselProduct v-model:model-value="slideshowCurrent"/>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
             </tab>
             <tab name="second" title="Phim sắp chiếu">
-            <div class="bg-[#f18720] relative">
+            <!-- <div class="bg-[#f18720] relative">
                 <div
                     class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
@@ -158,10 +337,10 @@ const handlePaneClick = (): void => {
                 <div class="mx-auto max-w-[1200px] py-10">
                 <CarouselProduct v-model:model-value="slideshowCurrent"/>
                 </div>
-            </div>
+            </div> -->
             </tab>
             <tab name="third" title="Suất chiếu đặc biệt">
-            <div class="bg-[#f18720] relative">
+            <!-- <div class="bg-[#f18720] relative">
                 <div
                     class="absolute flex justify-between w-[70%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
@@ -176,192 +355,14 @@ const handlePaneClick = (): void => {
                 <div class="mx-auto max-w-[1200px] py-10">
                 <CarouselProduct v-model:model-value="slideshowCurrent"/>
                 </div>
-            </div>
+            </div> -->
             </tab>
         </tabs>
         </div>
     </div>
         <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1"></div>
     </div>
-    <!-- cinema -->
-    <div class="bg-yellow-100">
-        <div class="flex justify-center gap-2 pt-2">
-            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
-                <div class="flex flex-col-2 gap-2">
-                    <div>
-                        <nuxt-link to="/shin-main">
-                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
-                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
-                        <p class="pt-4 text-white">.............................................................</p>
-                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
-                        <div class="flex flex-col-2">
-                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <nuxt-link to="#">
-                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </nuxt-link>
-                                <p>Trailer</p>
-                            </button>
-                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <nuxt-link to="/shin">
-                                    Mua Vé
-                                </nuxt-link>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
-                <div class="flex flex-col-2 gap-2">
-                    <div>
-                        <nuxt-link to="#">
-                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
-                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
-                        <p class="pt-4 text-white">.............................................................</p>
-                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
-                        <div class="flex flex-col-2">
-                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <nuxt-link to="#">
-                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </nuxt-link>
-                                <p>Trailer</p>
-                            </button>
-                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <nuxt-link to="/shin">
-                                    Mua Vé
-                                </nuxt-link>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex justify-center gap-2 pt-2">
-            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
-                <div class="flex flex-col-2 gap-2">
-                    <div>
-                        <nuxt-link to="/shin-main">
-                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
-                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
-                        <p class="pt-4 text-white">.............................................................</p>
-                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
-                        <div class="flex flex-col-2">
-                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <nuxt-link to="#">
-                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </nuxt-link>
-                                <p>Trailer</p>
-                            </button>
-                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <nuxt-link to="/shin">
-                                    Mua Vé
-                                </nuxt-link>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
-                <div class="flex flex-col-2 gap-2">
-                    <div>
-                        <nuxt-link to="#">
-                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
-                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
-                        <p class="pt-4 text-white">.............................................................</p>
-                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
-                        <div class="flex flex-col-2">
-                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <nuxt-link to="#">
-                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </nuxt-link>
-                                <p>Trailer</p>
-                            </button>
-                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <nuxt-link to="/shin">
-                                    Mua Vé
-                                </nuxt-link>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex justify-center gap-2 pt-2">
-            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
-                <div class="flex flex-col-2 gap-2">
-                    <div>
-                        <nuxt-link to="#">
-                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
-                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
-                        <p class="pt-4 text-white">.............................................................</p>
-                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
-                        <div class="flex flex-col-2">
-                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <nuxt-link to="#">
-                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </nuxt-link>
-                                <p>Trailer</p>
-                            </button>
-                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <nuxt-link to="/shin">
-                                    Mua Vé
-                                </nuxt-link>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col-2 bg-red-300 w-[600px] h-[400px]">
-                <div class="flex flex-col-2 gap-2">
-                    <div>
-                        <nuxt-link to="#">
-                            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[300px] h-[380px] pt-5 pl-3">
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <h3 class="text-xl pt-5 text-white">3DCG! SHIN CẬU  BÉ BÚT<br> CHÌ 2D LT (P): ĐẠI CHIẾN<br> SIÊU NĂNG LỰC SUSHI BAY</h3>
-                        <p class="text-xs pt-2 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến <br> Siêu Năng Lực ~Sushi Bay~ xoay quanh <br>câu chuyện về hai nguồn sáng đặc biệt <br>từ vũ trụ mang theo siêu năng lực đặc biệt <br> tới Trái Đất. Một nguồn sáng tích cực <br> “nhập” vào nhóc Shin, khiến cặp mông <br>núng nính của cậu chàng trở nên nóng <br>bỏng và có khả năng điều khiển những <br>đồ vật xung quanh theo ý muốn.</p>
-                        <p class="pt-4 text-white">.............................................................</p>
-                        <img src="../public/images/2d.png" alt="" class="w-10 h-10">
-                        <div class="flex flex-col-2">
-                            <button class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
-                                <nuxt-link to="#">
-                                    <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
-                                </nuxt-link>
-                                <p>Trailer</p>
-                            </button>
-                            <button class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
-                                <nuxt-link to="/shin">
-                                    Mua Vé
-                                </nuxt-link>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </template>
 
 <style>
