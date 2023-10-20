@@ -197,13 +197,13 @@ const actionSlide = (status: boolean): void => {
             </h3>
             <img class="w-24 h-24" :src="useAsset('images/home/icon-news.png')" alt="promotion">
           </div>
-          <div class="grid grid-cols-2 gap-2">
-            <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
+          <div class="grid grid-cols-1 xl:grid-cols-2 gap-2">
+            <div class=" grid xl:grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
               <div class="text-white font-MyriadRegular">
                 <h1 class="text-base mb-2">
                   Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
                 </h1>
-                <p class="text-sm">
+                <p class="text-sm hidden xl:block">
                   Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
                   Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
                 </p>
@@ -212,40 +212,40 @@ const actionSlide = (status: boolean): void => {
                 <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
               </div>
             </div>
-            <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
+            <div class=" grid xl:grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
               <div class="text-white font-MyriadRegular">
                 <h1 class="text-base mb-2">
                   Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
                 </h1>
-                <p class="text-sm">
+                <p class="text-sm hidden xl:block">
                   Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
                   Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
                 </p>
               </div>
               <div class="w-full h-full">
-                <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
+                <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
               </div>
             </div>
-            <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
+            <div class=" grid xl:grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
               <div class="text-white font-MyriadRegular">
                 <h1 class="text-base mb-2">
                   Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
                 </h1>
-                <p class="text-sm">
+                <p class="text-sm hidden xl:block">
                   Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
                   Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
                 </p>
               </div>
               <div class="w-full h-full">
-                <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
+                <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
               </div>
             </div>
-            <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
+            <div class=" grid xl:grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
               <div class="text-white font-MyriadRegular">
                 <h1 class="text-base mb-2">
                   Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
                 </h1>
-                <p class="text-sm">
+                <p class="text-sm hidden xl:block">
                   Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến ngay Cinestar
                   Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
                 </p>

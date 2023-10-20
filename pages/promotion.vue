@@ -124,7 +124,7 @@ const handlePaneClick = (): void => {
                     </carousel>
                 </div>
             </div>
-            <!-- tin tức -->
+            <!-- các ưu đãi -->
             <div class="w-[70%] flex gap-6 my-10 items-center">
                 <div class="flex flex-col w-24 h-24">
                     <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
