@@ -171,8 +171,8 @@ const actionSlide = (status: boolean): void => {
           </div>
         </tab>
       </tabs>
-      <div class="flex flex-col items-center justify-center">
-        <div class="w-[70%] flex gap-6 my-10 items-center">
+      <div class="flex flex-col items-center justify-center overflow-auto">
+        <div class="sm:w-[70%] w-full flex gap-6 my-10 items-center">
           <div class="flex flex-col w-24 h-24">
             <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
               ƯU ĐÃI
@@ -190,7 +190,7 @@ const actionSlide = (status: boolean): void => {
             </carousel>
           </div>
         </div>
-        <div class="w-[70%] flex gap-6 my-10 items-center">
+        <div class="sm:w-[70%] w-full flex gap-6 my-10 items-center">
           <div class="flex flex-col w-24 h-24">
             <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
               Tin tức

@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { Modal } from 'flowbite-vue'
+import { useAuthStore } from '~/stores/auth'
+import Cookies from 'js-cookie'
+
+const authStore = useAuthStore()
 
 const router = [
   {
@@ -37,6 +41,8 @@ const router = [
   },
 ]
 
+const token = Cookies.get('token') || ""
+
 const isShowModalRegister = ref(false)
 const closeModal = () => {
   isShowModalRegister.value = false
@@ -53,12 +59,21 @@ const form = ref({
 })
 
 const submitForm = async () => {
-  await useApiBridge({
-    url: "signup",
+  const data = await useApiBridge({
+    url: "auth/signin",
     method: "post",
     data: form.value
   })
+
+  if (data.code === 200) {
+    Cookies.set('token', data.data.token)
+  }
 }
+
+onMounted(() => {
+  console.log(authStore.auth)
+  console.log(123)
+})
 </script>
 
 <template>
@@ -112,11 +127,14 @@ const submitForm = async () => {
               Đăng ký thành viên
             </p>
           </div>
-          <div class="flex items-center gap-x-2 cursor-pointer" @click="isShowModalLogin = true">
+          <div v-if="!token.length" class="flex items-center gap-x-2 cursor-pointer" @click="isShowModalLogin = true">
             <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-login.png" alt="icon login">
             <p class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs font-avantgarde-demi">
               Đăng nhập
             </p>
+          </div>
+          <div v-else>
+            Đã đăng nhập
           </div>
         </div>
         <div class="flex items-center">
@@ -351,7 +369,7 @@ const submitForm = async () => {
       <template #body>
         <form @submit.prevent="submitForm">
           <div class="relative z-0 w-full mb-6 group">
-            <input v-model="form.email" type="text" name="floating_email" id="floating_email"
+            <input v-model="form.email" type="email" name="floating_email" id="floating_email"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
             <label for="floating_email"

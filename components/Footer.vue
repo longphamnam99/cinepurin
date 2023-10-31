@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full min-w-[640px]">
-    <img class="w-full min-w-[640px]" src="/images/background-header.png" alt="">
+  <div class="w-full">
+    <img class="w-full" src="/images/background-header.png" alt="">
   </div>
   <!-- chan trang -->
   <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">

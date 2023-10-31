@@ -27,34 +27,44 @@ const settings = {
 
 const data = ref([
   {
-    isShow: false
+    isShow: false,
+    image: "/images/ben-pha-xac-song1.jpg",
   },
   {
-    isShow: false
+    isShow: false,
+    image: "https://www.kkday.com/vi/blog/wp-content/uploads/chup-anh-dep-bang-dien-thoai-25.jpg",
   },
   {
-    isShow: false
+    isShow: false,
+    image: "/images/ben-pha-xac-song1.jpg",
   },
   {
-    isShow: false
+    isShow: false,
+    image: "/images/ben-pha-xac-song1.jpg",
   },
   {
-    isShow: false
+    isShow: false,
+    image: "/images/ben-pha-xac-song1.jpg",
   },
   {
-    isShow: false
+    isShow: false,
+    image: "/images/ben-pha-xac-song1.jpg",
   },
   {
-    isShow: false
+    isShow: false,
+    image: "/images/ben-pha-xac-song1.jpg",
   },
   {
-    isShow: false
+    isShow: false,
+    image: "/images/ben-pha-xac-song1.jpg",
   },
   {
-    isShow: false
+    isShow: false,
+    image: "/images/ben-pha-xac-song1.jpg",
   },
   {
-    isShow: false
+    isShow: false,
+    image: "/images/ben-pha-xac-song1.jpg",
   },
 ])
 
@@ -70,7 +80,7 @@ const isShow = ref(false)
       <div class="relative">
         <div class="cursor-pointer relative z-20" @mouseover="slide.isShow = true" @mouseleave="isShow = slide.isShow = false">
           <div class="flex justify-center md-5">
-            <img src="/images/ben-pha-xac-song1.jpg" alt=""
+            <img :src="slide.image" alt=""
                  class="h-96 rounded-lg object-cover">
           </div>
           <div class="text-center pt-2">
