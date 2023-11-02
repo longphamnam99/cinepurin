@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, watch } from 'vue'
 import { Modal } from 'flowbite-vue'
 import { useAuthStore } from '~/stores/auth'
 import Cookies from 'js-cookie'
+import axios from 'axios'
 
 const authStore = useAuthStore()
 
@@ -54,8 +55,31 @@ const showModal = () => {
 }
 
 const form = ref({
-  email: null,
+  username: null,
   password: null
+})
+
+const formRegister = ref({
+  gender: 0,
+  fullname: null,
+  birthday: null,
+  address: null,
+  idcard: null,
+  phone: null,
+  email: null,
+  username: null,
+  password: null,
+  repassword: null,
+})
+
+const isShowLogin = ref(true)
+
+watch(token, (newToken) => {
+  if (token.length) {
+    isShowLogin.value = false
+  }
+}, {
+  immediate: true,
 })
 
 const submitForm = async () => {
@@ -67,13 +91,34 @@ const submitForm = async () => {
 
   if (data.code === 200) {
     Cookies.set('token', data.data.token)
+    isShowLogin.value = false
+    isShowModalLogin.value = false
   }
 }
 
-onMounted(() => {
-  console.log(authStore.auth)
-  console.log(123)
-})
+const logout = async () => {
+  const data = await useApiBridge({
+    url: "auth/logout",
+    method: "post",
+    data: {
+      data: null
+    },
+    useToken: true
+  })
+  if (data.code === 200) {
+    Cookies.set('token', "")
+    isShowLogin.value = true
+  }
+}
+
+const register = async () => {
+  const data = await useApiBridge({
+    url: "auth/signup",
+    method: "post",
+    data: formRegister.value
+  })
+  console.log(data)
+}
 </script>
 
 <template>
@@ -121,20 +166,20 @@ onMounted(() => {
     <div class="bg-[url('/images/pattern.png')] bg-repeat bg-top max-w-full flex items-center justify-center">
       <div class="lg:w-[90%] w-full items-center flex flex-wrap lg:justify-between justify-center gap-x-10">
         <div class="flex items-center sm:gap-x-10 gap-x-8">
-          <div class="flex items-center gap-x-2 cursor-pointer" @click="isShowModalRegister = true">
+          <div v-if="isShowLogin" class="flex items-center gap-x-2 cursor-pointer" @click="isShowModalRegister = true">
             <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-register.png" alt="icon register">
             <p class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs font-avantgarde-demi">
               Đăng ký thành viên
             </p>
           </div>
-          <div v-if="!token.length" class="flex items-center gap-x-2 cursor-pointer" @click="isShowModalLogin = true">
+          <div v-if="isShowLogin" class="flex items-center gap-x-2 cursor-pointer" @click="isShowModalLogin = true">
             <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-login.png" alt="icon login">
             <p class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs font-avantgarde-demi">
               Đăng nhập
             </p>
           </div>
-          <div v-else>
-            Đã đăng nhập
+          <div v-else class="cursor-pointer" @click="logout">
+            Đăng xuất
           </div>
         </div>
         <div class="flex items-center">
@@ -162,13 +207,13 @@ onMounted(() => {
             <div class="flex items-center">
               <!-- Nút chọn giới tính Nam -->
               <label class="inline-flex items-center">
-                <input type="radio" class="form-radio" name="gender" value="nam">
+                <input type="radio" class="form-radio" name="gender" value="0" v-model="formRegister.gender">
                 <span class="ml-2">Nam</span>
               </label>
 
               <!-- Nút chọn giới tính Nữ -->
               <label class="inline-flex items-center ml-6">
-                <input type="radio" class="form-radio" name="gender" value="nu">
+                <input type="radio" class="form-radio" name="gender" value="1" v-model="formRegister.gender">
                 <span class="ml-2">Nữ</span>
               </label>
             </div>
@@ -181,48 +226,48 @@ onMounted(() => {
                 placeholder="Họ tên">
             </div>
             <div>
-              <input type="text"
+              <input type="date"
                 class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
-                placeholder="Ngày sinh">
+                placeholder="Ngày sinh" v-model="formRegister.birthday">
             </div>
           </div>
           <div class="pt-2">
             <input type="text"
               class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[590px]"
-              placeholder="Địa chỉ">
+              placeholder="Địa chỉ" v-model="formRegister.address">
           </div>
           <div class="flex gap-[10px] pt-2">
             <div>
               <input type="text"
                 class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[200px]"
-                placeholder="Số CMND/BLX">
+                placeholder="Số CMND/BLX" v-model="formRegister.idcard">
             </div>
             <div>
-              <input type="text"
+              <input type="tel"
                 class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[180px]"
-                placeholder="Điện Thoại">
+                placeholder="Điện Thoại" v-model="formRegister.phone">
             </div>
             <div>
-              <input type="text"
+              <input type="email"
                 class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[190px]"
-                placeholder="Email">
+                placeholder="Email" v-model="formRegister.email">
             </div>
           </div>
           <div class="pt-2">
             <input type="text"
               class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[590px]"
-              placeholder="Tên đăng nhập(*)">
+              placeholder="Tên đăng nhập(*)" v-model="formRegister.username">
           </div>
           <div class="flex gap-[10px] pt-2">
             <div>
               <input type="text"
                 class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
-                placeholder="Mật khẩu(*)">
+                placeholder="Mật khẩu(*)" v-model="formRegister.password">
             </div>
             <div>
               <input type="text"
                 class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
-                placeholder="Nhập lại mật khẩu(*)">
+                placeholder="Nhập lại mật khẩu(*)" v-model="formRegister.repassword">
             </div>
           </div>
           <div>
@@ -353,7 +398,7 @@ onMounted(() => {
             class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
             Từ Chối
           </button>
-          <button @click="closeModal" type="button"
+          <button @click="register" type="button"
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Đồng Ý
           </button>
@@ -369,11 +414,11 @@ onMounted(() => {
       <template #body>
         <form @submit.prevent="submitForm">
           <div class="relative z-0 w-full mb-6 group">
-            <input v-model="form.email" type="email" name="floating_email" id="floating_email"
+            <input v-model="form.username" type="text" name="floating_email" id="floating_email"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" " required />
             <label for="floating_email"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tài khoản</label>
           </div>
           <div class="relative z-0 w-full mb-6 group">
             <input v-model="form.password" type="password" name="floating_password" id="floating_password"

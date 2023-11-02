@@ -1,4 +1,5 @@
 import axios, { AxiosResponse, AxiosError } from "axios";
+import Cookies from "js-cookie";
 
 interface RuntimeConfig {
     public: {
@@ -6,27 +7,43 @@ interface RuntimeConfig {
     };
 }
 
+interface Header {
+    Authorization: string
+}
+
 export async function useApiBridge({
     url,
     method = "get",
     data = null,
+    useToken = false,
+    headers = {
+        "Authorization": ""
+    }
 }: {
     url: string;
     method?: "get" | "post" | "put" | "delete";
     data?: any;
+    useToken?: boolean;
+    headers?: Header;
 }): Promise<any> {
     const config: RuntimeConfig = useRuntimeConfig();
+    const objSend = {
+        method,
+        url: config.public.baseURL + url,
+        data,
+        headers: {
+            "Content-Type": "application/json",
+        },
+        timeout: 100000,
+    };
+
+    if (useToken) {
+        const token = Cookies.get('token') || ""
+        axios.defaults.headers.common = { 'Authorization': token }
+    }
 
     try {
-        const response: AxiosResponse = await axios({
-            method,
-            url: config.public.baseURL + url,
-            data,
-            headers: {
-                "Content-Type": "application/json",
-            },
-            timeout: 100000,
-        });
+        const response: AxiosResponse = await axios(objSend);
 
         return response.data;
     } catch (error) {
