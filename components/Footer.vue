@@ -31,22 +31,22 @@
                 <div class="pt-2 text-[#e1dae2]">
                     <div>
                         <nuxt-link to="#">
-                            <H3>CINE Bình Dương</H3>
+                            <h3>CINE Bình Dương</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>CINE Bình Phước</H3>
+                            <h3>CINE Bình Phước</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>CINE Đồng Tháp</H3>
+                            <h3>CINE Đồng Tháp</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>CINE Hồ Chí Minh</H3>
+                            <h3>CINE Hồ Chí Minh</h3>
                         </nuxt-link>
                     </div>
                 </div>
@@ -58,22 +58,22 @@
                 <div class="pt-2 text-[#e1dae2]">
                     <div>
                         <nuxt-link to="#">
-                            <H3>Phim Đang Chiếu</H3>
+                            <h3>Phim Đang Chiếu</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>Phim Sắp Chiếu</H3>
+                            <h3>Phim Sắp Chiếu</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>Xuất Chiếu Đặc Biệt</H3>
+                            <h3>Xuất Chiếu Đặc Biệt</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>CINE Bình Dương</H3>
+                            <h3>CINE Bình Dương</h3>
                         </nuxt-link>
                     </div>
                 </div>
@@ -86,22 +86,22 @@
                 <div class="pt-2 text-[#e1dae2]">
                     <div>
                         <nuxt-link to="#">
-                            <H3>Giới Thiệu</H3>
+                            <h3>Giới Thiệu</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>Tin Tức</H3>
+                            <h3>Tin Tức</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>Hỏi và Đáp</H3>
+                            <h3>Hỏi và Đáp</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>Liên Hệ</H3>
+                            <h3>Liên Hệ</h3>
                         </nuxt-link>
                     </div>
                 </div>
@@ -114,22 +114,22 @@
                 <div class="pt-2 text-[#e1dae2]">
                     <div>
                         <nuxt-link to="#">
-                            <H3>Quy Định Chung</H3>
+                            <h3>Quy Định Chung</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>Điều Khoản Giao Dịch</H3>
+                            <h3>Điều Khoản Giao Dịch</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>Chính Sách Bảo Mật</H3>
+                            <h3>Chính Sách Bảo Mật</h3>
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="#">
-                            <H3>Thông Tin Công Ty</H3>
+                            <h3>Thông Tin Công Ty</h3>
                         </nuxt-link>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
                 <div class="pt-2 text-[#e1dae2]">
                     <div>
                         <nuxt-link to="#">
-                            <H3 class="font-bold text-2xl">0389 010 316</H3>
+                            <h3 class="font-bold text-2xl">0389 010 316</h3>
                         </nuxt-link>
                     </div>
                 </div>
