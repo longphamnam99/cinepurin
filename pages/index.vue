@@ -171,7 +171,7 @@ const actionSlide = (status: boolean): void => {
           </div>
         </tab>
       </tabs>
-      <div class="flex flex-col items-center justify-center overflow-auto">
+      <div class="flex flex-col items-center justify-center overflow-auto px-5">
         <div class="sm:w-[70%] w-full flex gap-6 my-10 items-center">
           <div class="flex flex-col w-24 h-24">
             <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
