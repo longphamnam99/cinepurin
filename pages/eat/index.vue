@@ -81,7 +81,7 @@ const handlePaneClick = (): void => {
         </div>
         <div>
             <div >
-                <img src="../public/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
+                <img src="/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
             </div>
         </div>
         <div class="flex flex-col-3 bg-[#3d3d3d] w-[120px]">
@@ -107,7 +107,7 @@ const handlePaneClick = (): void => {
         </div>
         <div>
             <div >
-                <img src="../public/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
+                <img src="/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
             </div>
         </div>
         <div class="flex flex-col-3 bg-[#3d3d3d] w-[120px]">
@@ -132,7 +132,7 @@ const handlePaneClick = (): void => {
         </div>
         <div>
             <div >
-                <img src="../public/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
+                <img src="/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
             </div>
         </div>
         <div class="flex flex-col-3 bg-[#3d3d3d] w-[120px]">
@@ -163,7 +163,7 @@ const handlePaneClick = (): void => {
         </div>
         <div>
             <div >
-                <img src="../public/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
+                <img src="/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
             </div>
         </div>
         <div class="flex flex-col-3 bg-[#3d3d3d] w-[120px]">
@@ -189,7 +189,7 @@ const handlePaneClick = (): void => {
         </div>
         <div>
             <div >
-                <img src="../public/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
+                <img src="/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
             </div>
         </div>
         <div class="flex flex-col-3 bg-[#3d3d3d] w-[120px]">
@@ -214,7 +214,7 @@ const handlePaneClick = (): void => {
         </div>
         <div>
             <div >
-                <img src="../public/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
+                <img src="/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
             </div>
         </div>
         <div class="flex flex-col-3 bg-[#3d3d3d] w-[120px]">
@@ -245,7 +245,7 @@ const handlePaneClick = (): void => {
         </div>
         <div>
             <div >
-                <img src="../public/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
+                <img src="/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
             </div>
         </div>
         <div class="flex flex-col-3 bg-[#3d3d3d] w-[120px]">
@@ -271,7 +271,7 @@ const handlePaneClick = (): void => {
         </div>
         <div>
             <div >
-                <img src="../public/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
+                <img src="/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
             </div>
         </div>
         <div class="flex flex-col-3 bg-[#3d3d3d] w-[120px]">
@@ -296,7 +296,7 @@ const handlePaneClick = (): void => {
         </div>
         <div>
             <div >
-                <img src="../public/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
+                <img src="/images/in-tui-giay-bap-rang-bo-dep.webp" alt="" class="w-[120px] h-[120px]">
             </div>
         </div>
         <div class="flex flex-col-3 bg-[#3d3d3d] w-[120px]">

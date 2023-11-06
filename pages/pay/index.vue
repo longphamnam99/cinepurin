@@ -73,7 +73,7 @@ const handlePaneClick = (): void => {
             <div class="flex flex-col-2">
                 <div>
                     <div>
-                    <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[400px] h-[500px]">
+                    <img src="/images/shin-cau-be-but-chi.jpg" alt="" class="w-[400px] h-[500px]">
                     </div>
                 </div>
                 <div>
@@ -213,7 +213,7 @@ Bạn không được đưa lên, hoặc chuyển tải lên trang web tất c�
         </div>
         <div class="flex justify-center">
             <div class="w-[850px]">
-                <img src="../public/images/momo.jpg" alt="">
+                <img src="/images/momo.jpg" alt="">
             </div>
         </div>
     </div>

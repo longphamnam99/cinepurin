@@ -212,15 +212,15 @@ const handlePaneClick = (): void => {
     </div>
     <div class="flex pt-3 justify-center gap-2">
         <div class="">
-            <img src="../public/images/ghe.jpg" alt="" class="w-[40px] h-[40px] ">  
+            <img src="/images/ghe.jpg" alt="" class="w-[40px] h-[40px] ">  
         </div>
         <p class="pt-1">ghe thuong</p>
         <div class=" ">
-            <img src="../public/images/ghe.jpg" alt="" class="w-[40px] h-[40px]">
+            <img src="/images/ghe.jpg" alt="" class="w-[40px] h-[40px]">
         </div>
         <p class="pt-1">ghe thuong</p>
         <div class=" ">
-            <img src="../public/images/ghe.jpg" alt="" class="w-[40px] h-[40px]">
+            <img src="/images/ghe.jpg" alt="" class="w-[40px] h-[40px]">
         </div>
         <p class="pt-1">ghe thuong</p>
     </div>
