@@ -3,7 +3,6 @@ import { ref, watch } from 'vue'
 import { Modal } from 'flowbite-vue'
 import { useAuthStore } from '~/stores/auth'
 import Cookies from 'js-cookie'
-import axios from 'axios'
 
 const authStore = useAuthStore()
 

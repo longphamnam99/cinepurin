@@ -8,7 +8,7 @@ interface RuntimeConfig {
 }
 
 interface Header {
-    Authorization: string
+    Authorization: string;
 }
 
 export async function useApiBridge({
@@ -17,8 +17,8 @@ export async function useApiBridge({
     data = null,
     useToken = false,
     headers = {
-        "Authorization": ""
-    }
+        Authorization: "",
+    },
 }: {
     url: string;
     method?: "get" | "post" | "put" | "delete";
@@ -30,16 +30,19 @@ export async function useApiBridge({
     const objSend = {
         method,
         url: config.public.baseURL + url,
-        data,
         headers: {
             "Content-Type": "application/json",
         },
         timeout: 100000,
     };
 
+    if (data !== null && data !== undefined) {
+        objSend.data = data;
+    }
+
     if (useToken) {
-        const token = Cookies.get('token') || ""
-        axios.defaults.headers.common = { 'Authorization': token }
+        const token = Cookies.get("token") || "";
+        axios.defaults.headers.common = { Authorization: "Bearer " + token };
     }
 
     try {
