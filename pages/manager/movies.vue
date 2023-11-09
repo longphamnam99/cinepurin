@@ -1,31 +1,38 @@
 
   
 <script setup lang="ts">
-import { ref, Ref } from 'vue'; 
+import { ref, Ref } from 'vue';
+import { useMoviesStore } from '~/stores/movies';
+import { useCategoriesStore } from "~/stores/categories"
+
+const moviesStore = useMoviesStore();
+const categoriesStore = useCategoriesStore();
 
 definePageMeta({
   layout: 'admin'
 })
 
 const resultCategories = reactive({});
+const resultMovie = reactive({});
+
+const getDataCata = async (): Promise<void> => {
+    await categoriesStore.getCategories();
+    resultCategories.value = categoriesStore.categories;
+}
+
+const getDataMovie = async (): Promise<void> => {
+    await moviesStore.getMovies();
+    resultMovie.value = moviesStore.movies;
+}
 
 useAsyncData("fetch", async () => {
   try {
-    await getCategories()
+    await getDataCata()
+    await getDataMovie()
   } catch (error) {
     console.error(error);
   }
 });
-
-const getCategories = async (): Promise<void> => {
-  const response = await useApiBridge({
-    url: "categories",
-    method: "get",
-  })
-  if (response.code === 200) {
-    resultCategories.value = response.data
-  }
-}
 
 const isEdit = ref(false)
 const typeSubmit = ref("add")
@@ -37,7 +44,7 @@ interface ModelType {
   description: string | null;
   category: Array<number | string>,
   price: number,
-  primiere: string | null,
+  premiere: string | null,
   actor: Array<number | string>,
   director: Array<number | string>,
   type: number,
@@ -50,7 +57,7 @@ const model: Ref<ModelType> = ref({
   description: null,
   category: [],
   price: null,
-  primiere: null,
+  premiere: null,
   actor: [],
   director: [],
   type: 1,
@@ -62,13 +69,19 @@ const submitForm = async (): Promise<void> => {
     url: typeSubmit.value == "add" ? "products" : "products/" + editId.value,
     method: typeSubmit.value == "add" ? "post" : "put",
     data: model.value,
-    useToken: true
+    useToken: true,
+    useUpload: true,
   })
+
+  if (response.code === 200) {
+    for (const key in model.value) {
+      model.value[key] = null
+    }
+  }
 }
 
 const onFileChange = ($event: Event): void => {
   const target = $event.target as HTMLInputElement;
-  console.log("selected file",target.files[0])
   if (target && target.files) {
     model.value.image = target.files[0];
   }
@@ -107,7 +120,7 @@ const onFileChange = ($event: Event): void => {
       </div>
       <div>
         <label for="studentAge" class="block text-sm font-medium text-gray-700">Ngày khởi chiếu</label>
-        <input v-model="model.primiere" type="date" id="studentAge" name="studentAge"
+        <input v-model="model.premiere" type="date" id="studentAge" name="studentAge"
           class="w-full border border-gray-300 rounded p-2">
       </div>
       <div>
@@ -159,8 +172,7 @@ const onFileChange = ($event: Event): void => {
           <td class="border border-gray-300">John Doe</td>
           <td class="border border-gray-300">25000</td>
           <td class="border border-gray-300">
-            <button
-              class="bg-blue-500 text-white font-semibold rounded p-2 hover:bg-blue-700">Sửa</button>
+            <button class="bg-blue-500 text-white font-semibold rounded p-2 hover:bg-blue-700">Sửa</button>
             <button class="bg-red-500 text-white font-semibold rounded p-2 hover:bg-red-700">Xóa</button>
           </td>
         </tr>

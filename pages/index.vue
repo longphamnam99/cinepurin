@@ -4,6 +4,24 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 import { ref } from 'vue'
 import { Tabs, Tab } from 'flowbite-vue'
+import { useMoviesStore } from '~/stores/movies';
+
+const moviesStore = useMoviesStore();
+
+const resultMovie = reactive({});
+
+const getDataMovie = async (): Promise<void> => {
+    await moviesStore.getMovies();
+    resultMovie.value = moviesStore.movies;
+}
+
+useAsyncData("fetch", async () => {
+  try {
+    await getDataMovie()
+  } catch (error) {
+    console.error(error);
+  }
+})
 
 const config = useRuntimeConfig();
 
@@ -40,9 +58,11 @@ const actionSlide = (status: boolean): void => {
 </script>
 
 <template>
-  <carousel v-if="dataSlide?.data.length" :autoplay="3000" :wrap-around="true" class="relative slideshow w-full" ref="slideshow">
+  <carousel v-if="dataSlide?.data.length" :autoplay="3000" :wrap-around="true" class="relative slideshow w-full"
+    ref="slideshow">
     <slide class="w-full" v-for="(item, index) in dataSlide?.data" :key="index">
-      <img class="w-full" :src="config.public.baseURLDefault + item?.url" :alt="config.public.baseURLDefault + item?.url" />
+      <img class="w-full" :src="config.public.baseURLDefault + item?.url"
+        :alt="config.public.baseURLDefault + item?.url" />
     </slide>
     <template #addons>
       <navigation />
@@ -130,7 +150,7 @@ const actionSlide = (status: boolean): void => {
               </button>
             </div>
             <div class="mx-auto max-w-[1200px] py-10">
-              <CarouselProduct v-model:model-value="slideshowCurrent" />
+              <CarouselProduct v-model:model-value="slideshowCurrent" :data="resultMovie.value" />
             </div>
           </div>
         </tab>
@@ -385,6 +405,8 @@ const actionSlide = (status: boolean): void => {
 }
 </style>
 
-<style scoped>.text-shadow {
+<style scoped>
+.text-shadow {
   text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
-}</style>
+}
+</style>

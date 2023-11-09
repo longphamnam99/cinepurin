@@ -8,7 +8,7 @@ interface RuntimeConfig {
 }
 
 interface Header {
-    Authorization: string;
+    ContentType: string;
 }
 
 export async function useApiBridge({
@@ -16,15 +16,14 @@ export async function useApiBridge({
     method = "get",
     data = null,
     useToken = false,
-    headers = {
-        Authorization: "",
-    },
+    useUpload = false,
 }: {
     url: string;
     method?: "get" | "post" | "put" | "delete";
     data?: any;
     useToken?: boolean;
     headers?: Header;
+    useUpload?: boolean;
 }): Promise<any> {
     const config: RuntimeConfig = useRuntimeConfig();
     const objSend = {
@@ -35,6 +34,16 @@ export async function useApiBridge({
         },
         timeout: 100000,
     };
+
+    if (useUpload) {
+        objSend.headers = {
+            "Content-Type": "multipart/form-data"
+        }
+    } else {
+        objSend.headers = {
+            "Content-Type": "application/json",
+        }
+    }
 
     if (data !== null && data !== undefined) {
         objSend.data = data;

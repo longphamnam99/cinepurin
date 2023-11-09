@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useCategoriesStore } from "~/stores/categories"
+
+const categoriesStore = useCategoriesStore();
+
 definePageMeta({
     layout: 'admin'
 })
@@ -14,13 +18,8 @@ useAsyncData("fetch", async () => {
 });
 
 const getData = async (): Promise<void> => {
-    const response = await useApiBridge({
-        url: "categories",
-        method: "get",
-    })
-    if (response.code === 200) {
-        result.value = response.data
-    }
+    await categoriesStore.getCategories();
+    result.value = categoriesStore.categories;
 }
 
 const idDelete = ref()
