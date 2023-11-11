@@ -8,7 +8,7 @@ const authStore = useAuthStore()
 
 const router = [
   {
-    path: "/cine",
+    path: "/movies",
     name: "Phim",
   },
   {
@@ -128,7 +128,7 @@ const register = async () => {
       </div>
 
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-4">
-        <nuxt-link to="/" class="flex items-center w-[220px] h-[110px] cursor-pointer">
+        <nuxt-link to="/" class="logo flex items-center w-[220px] h-[110px] cursor-pointer">
           <img src="/images/logo.png" class="z-10" alt="Flowbite Logo" />
         </nuxt-link>
         <div class="xl:flex flex-col gap-y-3 py-2 hidden md:w-auto justify-between items-end z-10">
@@ -438,6 +438,23 @@ const register = async () => {
 </template>
 
 <style scoped>
+.logo.active {
+  background: transparent;
+}
+.active {
+  background: #f37520;
+}
+
+.nav li:first-child > .active {
+  border-top-left-radius: 30px !important;
+  border-bottom-left-radius: 30px !important;
+}
+
+.nav li:last-child > .active {
+  border-top-right-radius: 30px !important;
+  border-bottom-right-radius: 30px !important;
+}
+
 .nav li:first-child {
   border-radius: 30px 0 0 30px;
   -webkit-border-radius: 30px 0 0 30px;

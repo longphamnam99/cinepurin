@@ -1,13 +1,30 @@
 <script setup lang="ts">
-import { useCategoriesStore } from "~/stores/categories"
-
-const categoriesStore = useCategoriesStore();
+import { useDirectorsStore } from "~/stores/directors"
 
 definePageMeta({
     layout: 'admin'
 })
 
+const directorsStore = useDirectorsStore();
+
 const result = reactive({});
+
+const formatDate = (dateTimeString: string) => {
+    const dateTime = new Date(dateTimeString);
+
+    const year = dateTime.getFullYear();
+    const month = dateTime.getMonth() + 1;
+    const day = dateTime.getDate();
+
+    const dateString = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
+
+    return dateString
+}
+
+const getData = async (): Promise<void> => {
+    await directorsStore.getDirectors()
+    result.value = directorsStore.directors
+}
 
 useAsyncData("fetch", async () => {
     try {
@@ -16,11 +33,6 @@ useAsyncData("fetch", async () => {
         console.error(error);
     }
 });
-
-const getData = async (): Promise<void> => {
-    await categoriesStore.getCategories();
-    result.value = categoriesStore.categories;
-}
 
 const idDelete = ref()
 
@@ -33,13 +45,15 @@ const showModalDelete = (id: number | string): void => {
 
 const model = ref({
     name: null,
-    description: null
+    image: null,
+    description: null,
+    birthday: null
 })
 
 
 const acceptHandler = async (isAccept: boolean): Promise<void> => {
     const response = await useApiBridge({
-        url: "categories/" + idDelete.value,
+        url: "directors/" + idDelete.value,
         method: "delete",
         useToken: true
     })
@@ -56,6 +70,7 @@ const editHandler = (data: object): void => {
     isEdit.value = true
     editId.value = data.id
     model.value.name = data.name
+    model.value.birthday = formatDate(data.birthday)
     model.value.description = data.description
 }
 
@@ -66,10 +81,11 @@ const submitForm = async (): Promise<void> => {
     }
 
     const response = await useApiBridge({
-        url: typeSubmit.value == "add" ? "categories" : "categories/" + editId.value,
+        url: typeSubmit.value == "add" ? "directors" : "directors/" + editId.value,
         method: typeSubmit.value == "add" ? "post" : "put",
         data: model.value,
-        useToken: true
+        useToken: true,
+        useUpload: true,
     })
 
     if (response.code != 200) {
@@ -78,20 +94,39 @@ const submitForm = async (): Promise<void> => {
     } else {
         getData()
         model.value.name = null
+        model.value.birthday = null
         model.value.description = null
         if (isEdit.value) {
             isEdit.value = false
         }
     }
 }
+
+const onFileChange = ($event: Event): void => {
+    const target = $event.target as HTMLInputElement;
+    if (target && target.files) {
+        model.value.image = target.files[0];
+    }
+}
+
 </script>
 <template>
     <div class="bg-white shadow-md rounded my-6 p-6">
-        <h2 class="text-2xl font-semibold mb-4">Danh mục</h2>
+        <h2 class="text-2xl font-semibold mb-4">Đạo diễn</h2>
         <form @submit.prevent="submitForm" class="space-y-4">
             <div>
-                <label for="studentName" class="block text-sm font-medium text-gray-700">Tên danh mục</label>
+                <label for="studentName" class="block text-sm font-medium text-gray-700">Tên diễn viên</label>
                 <input v-model="model.name" type="text" class="w-full border border-gray-300 rounded p-2">
+            </div>
+            <div>
+                <label for="studentAge" class="block text-sm font-medium text-gray-700">Ngày sinh</label>
+                <input v-model="model.birthday" type="date" id="studentAge" name="studentAge"
+                    class="w-full border border-gray-300 rounded p-2">
+            </div>
+            <div>
+                <label for="studentAge" class="block text-sm font-medium text-gray-700">Ảnh diễn viên</label>
+                <input accept="image/*" @change="onFileChange($event)" type="file" id="studentAge" name="studentAge"
+                    class="border-gray-300 rounded p-2">
             </div>
             <div>
                 <label for="studentName" class="block text-sm font-medium text-gray-700">Mô tả</label>
@@ -104,8 +139,8 @@ const submitForm = async (): Promise<void> => {
             <div v-else class="flex gap-2">
                 <button type="submit"
                     class="bg-blue-500 text-white font-semibold rounded p-2 hover:bg-blue-700">Sửa</button>
-                <button
-                    class="bg-red-500 text-white font-semibold rounded p-2 hover:bg-blue-700" @click="isEdit = false">Huỷ</button>
+                <button class="bg-red-500 text-white font-semibold rounded p-2 hover:bg-blue-700"
+                    @click="isEdit = false">Huỷ</button>
             </div>
         </form>
     </div>
@@ -114,7 +149,7 @@ const submitForm = async (): Promise<void> => {
             <thead>
                 <tr>
                     <th class="bg-gray-200 text-gray-600 border border-gray-300 w-20">STT</th>
-                    <th class="bg-gray-200 text-gray-600 border border-gray-300 text-left pl-2">Tên Phim</th>
+                    <th class="bg-gray-200 text-gray-600 border border-gray-300 text-left pl-2">Diễn viên</th>
                     <th class="bg-gray-200 text-gray-600 border border-gray-300 w-20">Thao tác</th>
                 </tr>
             </thead>

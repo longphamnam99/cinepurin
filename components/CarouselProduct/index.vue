@@ -94,7 +94,7 @@ const trailerHandler = (link: any): void => {
     </Slide>
   </Carousel>
   <div v-if="showTrailer">
-    <div class="w-full h-full bg-red-500 fixed z-10 top-0 left-0">
+    <div class="w-full h-full fixed z-10 top-0 left-0">
       <button @click="showTrailer = false" class="z-20 absolute right-5 top-5 text-white text-[1rem]">close</button>
       <iframe width="100%" height="100%" :src="enmbed" title="Trót Trao Duyên - NB3 Hoài Bảo | OFFICIAL MUSIC VIDEO"
         frameborder="0"

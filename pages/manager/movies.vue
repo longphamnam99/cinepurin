@@ -4,6 +4,7 @@
 import { ref, Ref } from 'vue';
 import { useMoviesStore } from '~/stores/movies';
 import { useCategoriesStore } from "~/stores/categories"
+import Multiselect from '@vueform/multiselect'
 
 const moviesStore = useMoviesStore();
 const categoriesStore = useCategoriesStore();
@@ -12,17 +13,45 @@ definePageMeta({
   layout: 'admin'
 })
 
-const resultCategories = reactive({});
 const resultMovie = reactive({});
 
+const categories = ref([])
+
+const actors = ref([
+  {
+    value: 1,
+    label: 'Long Phạm'
+  },
+  {
+    value: 2,
+    label: 'Đạt Lê'
+  }
+])
+
+const directors = ref([
+  {
+    value: 1,
+    label: 'Long Phạm'
+  },
+  {
+    value: 2,
+    label: 'Đạt Lê'
+  }
+])
+
 const getDataCata = async (): Promise<void> => {
-    await categoriesStore.getCategories();
-    resultCategories.value = categoriesStore.categories;
+  await categoriesStore.getCategories();
+  categoriesStore.categories.forEach(e => {
+    categories.value.push({
+      label: e.name,
+      value: e.id
+    })
+  });
 }
 
 const getDataMovie = async (): Promise<void> => {
-    await moviesStore.getMovies();
-    resultMovie.value = moviesStore.movies;
+  await moviesStore.getMovies();
+  resultMovie.value = moviesStore.movies;
 }
 
 useAsyncData("fetch", async () => {
@@ -37,6 +66,30 @@ useAsyncData("fetch", async () => {
 const isEdit = ref(false)
 const typeSubmit = ref("add")
 const editId = ref()
+
+const editHandler = (data: object): void => {
+  typeSubmit.value = "edit"
+  isEdit.value = true
+  editId.value = data.id
+  model.value.name = data.name
+  model.value.description = data.description
+  model.value.category = data.category
+  model.value.price = data.price
+  model.value.premiere = data.premiere
+  model.value.actor = data.actor
+  model.value.director = data.director
+  model.value.type = data.type
+  model.value.trailer = data.trailer
+}
+
+const showModal = ref(false)
+
+const idDelete = ref()
+
+const showModalDelete = (id: number | string): void => {
+  showModal.value = true
+  idDelete.value = id
+}
 
 interface ModelType {
   name: string | null;
@@ -77,6 +130,9 @@ const submitForm = async (): Promise<void> => {
     for (const key in model.value) {
       model.value[key] = null
     }
+    getDataMovie()
+  } else {
+    alert("Cập nhật thất bại")
   }
 }
 
@@ -85,6 +141,16 @@ const onFileChange = ($event: Event): void => {
   if (target && target.files) {
     model.value.image = target.files[0];
   }
+}
+
+const acceptHandler = async (isAccept: boolean): Promise<void> => {
+    const response = await useApiBridge({
+        url: "products/" + idDelete.value,
+        method: "delete",
+        useToken: true
+    })
+
+    if (response.code === 200) getDataMovie()
 }
 
 </script>
@@ -109,9 +175,7 @@ const onFileChange = ($event: Event): void => {
       </div>
       <div>
         <label for="studentName" class="block text-sm font-medium text-gray-700">Danh mục</label>
-        <select class="border border-gray-300 rounded p-2" multiple v-model="model.category">
-          <option v-for="data in resultCategories.value" :key="data.id" :value="data.id">{{ data.name }}</option>
-        </select>
+        <Multiselect mode="multiple" v-model="model.category" :options="categories" />
       </div>
       <div>
         <label for="studentAge" class="block text-sm font-medium text-gray-700">Giá</label>
@@ -125,17 +189,11 @@ const onFileChange = ($event: Event): void => {
       </div>
       <div>
         <label for="studentAge" class="block text-sm font-medium text-gray-700">Diễn viên</label>
-        <select class="border border-gray-300 rounded p-2" multiple v-model="model.actor">
-          <option value="1">Long Phạm</option>
-          <option value="2">Đạt Lê</option>
-        </select>
+        <Multiselect mode="multiple" v-model="model.actor" :options="actors" />
       </div>
       <div>
         <label for="studentAddress" class="block text-sm font-medium text-gray-700">Đạo diễn</label>
-        <select class="border border-gray-300 rounded p-2" multiple v-model="model.director">
-          <option value="1">Long Phạm</option>
-          <option value="2">Đạt Lê</option>
-        </select>
+        <Multiselect mode="multiple" v-model="model.director" :options="directors" />
       </div>
       <div>
         <label for="studentAddress" class="block text-sm font-medium text-gray-700">Kiểu</label>
@@ -149,8 +207,13 @@ const onFileChange = ($event: Event): void => {
         <input v-model="model.trailer" type="text" id="studentAddress" name="studentAddress"
           class="w-full border border-gray-300 rounded p-2">
       </div>
-      <div>
+      <div v-if="!isEdit">
         <button type="submit" class="bg-blue-500 text-white font-semibold rounded p-2 hover:bg-blue-700">Thêm</button>
+      </div>
+      <div v-else class="flex gap-2">
+        <button type="submit" class="bg-blue-500 text-white font-semibold rounded p-2 hover:bg-blue-700">Sửa</button>
+        <button class="bg-red-500 text-white font-semibold rounded p-2 hover:bg-blue-700"
+          @click="isEdit = false">Huỷ</button>
       </div>
     </form>
   </div>
@@ -159,25 +222,32 @@ const onFileChange = ($event: Event): void => {
     <table class="min-w-full table-auto">
       <thead>
         <tr>
-          <th class="bg-gray-200 text-gray-600 border border-gray-300">STT</th>
-          <th class="bg-gray-200 text-gray-600 border border-gray-300">Tên phim</th>
-          <th class="bg-gray-200 text-gray-600 border border-gray-300">Giá</th>
-          <th class="bg-gray-200 text-gray-600 border border-gray-300">Chức Năng</th>
-
+          <th class="bg-gray-200 text-gray-600 border border-gray-300 w-20">STT</th>
+          <th class="bg-gray-200 text-gray-600 border border-gray-300 text-left pl-2">Tên phim</th>
+          <th class="bg-gray-200 text-gray-600 border border-gray-300 w-40">Giá</th>
+          <th class="bg-gray-200 text-gray-600 border border-gray-300 w-20">Chức Năng</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="border border-gray-300">1</td>
-          <td class="border border-gray-300">John Doe</td>
-          <td class="border border-gray-300">25000</td>
-          <td class="border border-gray-300">
-            <button class="bg-blue-500 text-white font-semibold rounded p-2 hover:bg-blue-700">Sửa</button>
-            <button class="bg-red-500 text-white font-semibold rounded p-2 hover:bg-red-700">Xóa</button>
+        <tr v-for="(movie, key) in resultMovie.value" :key="movie.id">
+          <td class="border border-gray-300">{{ key + 1 }}</td>
+          <td class="border border-gray-300 text-left pl-2">{{ movie.name }}</td>
+          <td class="border border-gray-300">{{ movie.price }}</td>
+          <td class="border border-gray-300 flex gap-2">
+            <button class="bg-blue-500 text-white font-semibold rounded p-2 hover:bg-blue-700"
+              @click="editHandler(movie)">Sửa</button>
+            <button class="bg-red-500 text-white font-semibold rounded p-2 hover:bg-red-700"
+              @click="showModalDelete(movie.id)">
+              Xóa
+            </button>
           </td>
         </tr>
         <!-- Thêm các hàng dữ liệu khác ở đây -->
       </tbody>
     </table>
   </div>
+  <teleport to="body">
+    <ModalConfirmDelete v-model:model-value="showModal" @accept="acceptHandler" />
+  </teleport>
 </template>
+<style src="@vueform/multiselect/themes/default.css"></style>
