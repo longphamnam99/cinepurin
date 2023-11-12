@@ -114,7 +114,7 @@ const handlePaneClick = (): void => {
                         <div class="bg-[#f18720] relative h-[460px]">
                             <div class="w-[301px] ">
                                 <div class="">
-                                    <nuxt-link to=""><img src="../public/images/daotrich.jpeg" alt=""
+                                    <nuxt-link to=""><img src="/images/daotrich.jpeg" alt=""
                                             class="w-[300px] h-[350px] px-2 py-1 flex justify-center items-center"></nuxt-link>
                                 </div>
                                 <div>
@@ -130,7 +130,7 @@ const handlePaneClick = (): void => {
                         <div class="bg-[#ffff] relative h-[460px]">
                             <div class="w-[301px] ">
                                 <div class="">
-                                    <nuxt-link to=""><img src="../public/images/daotrich.jpeg" alt=""
+                                    <nuxt-link to=""><img src="/images/daotrich.jpeg" alt=""
                                             class="w-[300px] h-[350px] px-2 py-1 flex justify-center items-center"></nuxt-link>
                                 </div>
                                 <div>
@@ -146,7 +146,7 @@ const handlePaneClick = (): void => {
                         <div class="bg-[#ffff] relative h-[460px]">
                             <div class="w-[301px] ">
                                 <div class="">
-                                    <nuxt-link to=""><img src="../public/images/daotrich.jpeg" alt=""
+                                    <nuxt-link to=""><img src="/images/daotrich.jpeg" alt=""
                                             class="w-[300px] h-[350px] px-2 py-1 flex justify-center items-center"></nuxt-link>
                                 </div>
                                 <div>
@@ -164,7 +164,7 @@ const handlePaneClick = (): void => {
                         <div class="bg-[#f18720] relative h-[460px]">
                             <div class="w-[301px] ">
                                 <div class="">
-                                    <nuxt-link to=""><img src="../public/images/daotrich.jpeg" alt=""
+                                    <nuxt-link to=""><img src="/images/daotrich.jpeg" alt=""
                                             class="w-[300px] h-[350px] px-2 py-1 flex justify-center items-center"></nuxt-link>
                                 </div>
                                 <div>
@@ -180,7 +180,7 @@ const handlePaneClick = (): void => {
                         <div class="bg-[#ffff] relative h-[460px]">
                             <div class="w-[301px] ">
                                 <div class="">
-                                    <nuxt-link to=""><img src="../public/images/daotrich.jpeg" alt=""
+                                    <nuxt-link to=""><img src="/images/daotrich.jpeg" alt=""
                                             class="w-[300px] h-[350px] px-2 py-1 flex justify-center items-center"></nuxt-link>
                                 </div>
                                 <div>
@@ -196,7 +196,7 @@ const handlePaneClick = (): void => {
                         <div class="bg-[#ffff] relative h-[460px]">
                             <div class="w-[301px] ">
                                 <div class="">
-                                    <nuxt-link to=""><img src="../public/images/daotrich.jpeg" alt=""
+                                    <nuxt-link to=""><img src="/images/daotrich.jpeg" alt=""
                                             class="w-[300px] h-[350px] px-2 py-1 flex justify-center items-center"></nuxt-link>
                                 </div>
                                 <div>

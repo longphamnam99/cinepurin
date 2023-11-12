@@ -132,13 +132,13 @@ const handlePaneClick = (): void => {
                 <h1>địa chỉ: HCM</h1>
                 <div class="flex justify-center">
                     <nuxt-link to="facebook.com/Shu1906.cn">
-                        <img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-16">
+                        <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-16">
                     </nuxt-link>
                     <h1 class="pt-2">FB CinePurin</h1>
                 </div>
                 <div class="flex justify-center">
                     <nuxt-link to="#">
-                        <img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-16">
+                        <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-16">
                     </nuxt-link>
                     <h1 class="pt-2">Gmail</h1>
                 </div>

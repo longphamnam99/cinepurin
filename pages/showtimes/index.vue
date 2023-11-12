@@ -107,7 +107,7 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[550px] lg:w-[full] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
+                        <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
@@ -116,7 +116,7 @@ const handlePaneClick = (): void => {
                         <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
                             trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
                             xem .</p>
-                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                        <img src="/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
             </div>
@@ -154,7 +154,7 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[550px] lg:w-[full] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
+                        <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
@@ -163,7 +163,7 @@ const handlePaneClick = (): void => {
                         <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
                             trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
                             xem .</p>
-                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                        <img src="/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
             </div>
@@ -200,7 +200,7 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[550px] lg:w-[full] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
+                        <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
@@ -209,7 +209,7 @@ const handlePaneClick = (): void => {
                         <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
                             trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
                             xem .</p>
-                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                        <img src="/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
             </div>
@@ -246,7 +246,7 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[550px] lg:w-[full] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
+                        <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
@@ -255,7 +255,7 @@ const handlePaneClick = (): void => {
                         <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
                             trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
                             xem .</p>
-                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                        <img src="/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
             </div>
@@ -292,7 +292,7 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[550px] lg:w-[full] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
+                        <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
@@ -301,7 +301,7 @@ const handlePaneClick = (): void => {
                         <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
                             trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
                             xem .</p>
-                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                        <img src="/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
             </div>
@@ -338,7 +338,7 @@ const handlePaneClick = (): void => {
             <div class="flex bg-orange-500 w-[550px] lg:w-[full] h-[315px]">
                 <div class="w-[200px]">
                     <div>
-                        <img src="../public/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
+                        <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
                     </div>
                 </div>
                 <div class="w-[200px] pt-3">
@@ -347,7 +347,7 @@ const handlePaneClick = (): void => {
                         <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn dựa
                             trên những câu chuyện từ tập truyện ngắn "Đô Thị Linh Dị" của tác giả Nguyễn Ngọc Thạch. Cùng
                             xem .</p>
-                        <img src="../public/images/2d.png" alt="" class="w-9 h-9">
+                        <img src="/images/2d.png" alt="" class="w-9 h-9">
                     </div>
                 </div>
             </div>

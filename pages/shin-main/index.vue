@@ -113,7 +113,7 @@ const handlePaneClick = (): void => {
     <!-- gioi thieu -->
     <div class="flex flex-col-2 bg-[url('/public/images/film-bg.jpg')] pt-5 pb-5 gap-5">
         <div>
-            <img src="../public/images/shin-cau-be-but-chi.jpg" alt="" class="w-[550px] h-[650px] pl-14">
+            <img src="/images/shin-cau-be-but-chi.jpg" alt="" class="w-[550px] h-[650px] pl-14">
         </div>
         <div class="bg-orange-400 w-[830px] h-[650px] pt-5">
             <h1 class="text-3xl text-white pl-5 pr-5">3DCG! SHIN CẬU BÉ BÚT CHÌ 2D LT (P): ĐẠI CHIẾN SIÊU NĂNG LỰC SUSHI BAY</h1>
@@ -133,18 +133,18 @@ const handlePaneClick = (): void => {
                 <h3 class="pt-2">dao dien:</h3>
                 <h3 class="bg-white w-[200px] h-[40px] text-center pt-2 rounded-xl">Hitoshi One</h3>
             </div>
-            <img src="../public/images/2d.png" alt="" class="pl-5 w-20 pt-3">
+            <img src="/images/2d.png" alt="" class="pl-5 w-20 pt-3">
             <p class="pl-5 pt-3 text-white">3DCG! Shin Cậu Bé Bút Chì: Đại Chiến Siêu Năng Lực ~Sushi Bay~ xoay quanh câu chuyện về hai nguồn sáng đặc biệt từ vũ trụ mang theo siêu năng lực đặc biệt tới Trái Đất. Một nguồn sáng tích cực “nhập” vào nhóc Shin, khiến cặp mông núng nính của cậu chàng trở nên nóng bỏng và có khả năng điều khiển những đồ vật xung quanh theo ý muốn.</p>
             <div class="flex flex-col-2 pl-5 pt-3">
                 <h3>danh gia:</h3>
-                <img src="../public/images/danhgia.jpg" alt="" class="h-6 w-40 pl-5">
+                <img src="/images/danhgia.jpg" alt="" class="h-6 w-40 pl-5">
             </div>
 
             <div class="flex flex-cols-3 pt-3 pl-52 gap-3">
                 <div class="pt-6">
                     <div class="flex flex-col-2 bg-blue-900 w-40 h-10 items-center justify-center">
                         <Nuxt-link to="#"> 
-                            <img src="../public/images/th.jpg" alt="" class="w-14 h-7">
+                            <img src="/images/th.jpg" alt="" class="w-14 h-7">
                         </Nuxt-link>
                         <p>trailer</p>
                     </div>
@@ -160,7 +160,7 @@ const handlePaneClick = (): void => {
                     <div class="flex items-center justify-center">
                         <Nuxt-link to="#"> 
                             <p>chia se</p>
-                            <img src="../public/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
+                            <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
                         </Nuxt-link>
                     </div>
                 </div>
@@ -175,7 +175,7 @@ const handlePaneClick = (): void => {
             
             <div>
                 <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
+                    <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
                 </div>
                 <div class="text-center">
                     <h3>BẾN PHÀ XÁC SỐNG P16</h3>
@@ -186,7 +186,7 @@ const handlePaneClick = (): void => {
             </div>
             <div>
                 <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
+                    <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
                 </div>
                 <div class="text-center">
                     <h3>BẾN PHÀ XÁC SỐNG</h3>
@@ -197,7 +197,7 @@ const handlePaneClick = (): void => {
             </div>
             <div>
                 <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
+                    <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
                 </div>
                 <div class="text-center">
                     <h3>BẾN PHÀ XÁC SỐNG</h3>
@@ -208,7 +208,7 @@ const handlePaneClick = (): void => {
             </div>
             <div>
                 <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
+                    <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
                 </div>
                 <div class="text-center">
                     <h3>BẾN PHÀ XÁC SỐNG</h3>
@@ -219,7 +219,7 @@ const handlePaneClick = (): void => {
             </div>
             <div>
                 <div class="h-96 md-5">
-                    <img src="../public/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
+                    <img src="/images/ben-pha-xac-song1.jpg" alt="" class="w-full h-full rounded-lg object-cover">
                 </div>
                 <div class="text-center">
                     <h3>BẾN PHÀ XÁC SỐNG</h3>

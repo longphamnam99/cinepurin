@@ -230,7 +230,7 @@ const findInArray = computed(() => {
                         <img src="/images/start-comment.png" alt="">
                     </div>
                 </div>
-                <img src="../public/images/2d.png" alt="" class="pl-5 w-20 pt-3">
+                <img src="/images/2d.png" alt="" class="pl-5 w-20 pt-3">
                 <p class="pl-5 pt-3 text-white">{{ dataApi?.value?.description }}</p>
 
                 <div class="flex flex-cols-3 pt-3 pl-52 gap-3">

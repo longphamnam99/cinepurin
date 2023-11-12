@@ -101,7 +101,7 @@ const handlePaneClick = (): void => {
             <div>
                 <div>
                     <a href="#">
-                        <img src="../public/images/logo.png" alt="" class="w-50 h-36">
+                        <img src="/images/logo.png" alt="" class="w-50 h-36">
                     </a>
                 </div>
             </div>

@@ -114,7 +114,7 @@ const handlePaneClick = (): void => {
                         <div class="flex justify-center py-3 gap-2">
                             <div>
                                 <div class="intro-pic">
-                                    <img src="../public/images/ld.jpg" alt=""
+                                    <img src="/images/ld.jpg" alt=""
                                         class="h-[300px] w-[300px] block rounded-full">
                                 </div>
                             </div>
@@ -142,7 +142,7 @@ const handlePaneClick = (): void => {
                             </div>
                             <div class="">
                                 <div class="intro-pic">
-                                    <img src="../public/images/ld.jpg" alt=""
+                                    <img src="/images/ld.jpg" alt=""
                                         class="h-[300px] w-[300px] block rounded-full">
                                 </div>
                             </div>
@@ -152,7 +152,7 @@ const handlePaneClick = (): void => {
                         <div class="flex justify-center py-3 gap-2">
                             <div>
                                 <div class="intro-pic">
-                                    <img src="../public/images/ld.jpg" alt=""
+                                    <img src="/images/ld.jpg" alt=""
                                         class="h-[300px] w-[300px] block rounded-full">
                                 </div>
                             </div>
@@ -182,7 +182,7 @@ const handlePaneClick = (): void => {
 
 
                                 <div class="intro-pic">
-                                    <img src="../public/images/ld.jpg" alt=""
+                                    <img src="/images/ld.jpg" alt=""
                                         class="h-[300px] w-[300px] block rounded-full">
                                 </div>
                             </div>
