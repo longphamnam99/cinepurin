@@ -8,7 +8,9 @@ module.exports = {
     "./nuxt.config.{js,ts}",
     "./app.vue",
     'node_modules/flowbite-vue/**/*.{js,ts}',
-    'node_modules/flowbite/**/*.{js,ts}'
+    'node_modules/flowbite/**/*.{js,ts}',
+    "./public/**/*.html",
+    "./src/**/*.vue",
   ],
   theme: {
     extend: {
@@ -23,6 +25,9 @@ module.exports = {
         "Futurab": ["Futurab"],
         "Futurab-bold": ["Futurab-bold"],
       },
+      backgroundImage: {
+        'hero-pattern': "url('/image/footer.jpg')",
+      }
     },
   },
   plugins: [require("flowbite/plugin")],

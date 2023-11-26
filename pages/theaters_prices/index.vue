@@ -109,10 +109,13 @@ const handlePaneClick = (): void => {
     </div>
 
     <!-- lich chieu -->
-    <div class="flex justify-center bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative pt-2 pb-2">
-        <div class=" flex  ">
+    <div class="flex justify-center bg-cover from-[#4E0045] to-[#23001C] relative pt-2 pb-2" style="background-image: url(/images/vt.jpg)">
+        <div class="px-[50px] py-[10px]">
             <div>
-                <img src="/images/shin-cau-be-but-chi.jpg" alt="" class="w-[550px] h-[430px] pt-5 pl-5">
+                <img src="/images/bg.jpg" alt="" class="w-[100%] h-[auto]">
+            </div>
+            <div class="pt-5">
+                <img src="/images/cqt_3d.png" alt="" class="w-[100%] h-[auto]">
             </div>
         </div>
     </div>

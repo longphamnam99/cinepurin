@@ -175,7 +175,7 @@ const trailerHandler = (link: any): void => {
                         <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
                             <div class="grid grid-cols-1 lg:grid-cols-2 justify-center gap-8 px-8 lg:px-32 py-6">
                                 <div v-for="movie in resultMovie.value" :key="movie.id"
-                                    class="flex flex-col-2 bg-red-300 w-[full] h-[400px]">
+                                    class="flex flex-col-2 bg-yellow-400 w-[full] h-[400px]">
                                     <div class="flex flex-col-2 gap-2">
                                         <div>
                                             <nuxt-link :to="`/movies/${movie.id}`">
@@ -184,10 +184,10 @@ const trailerHandler = (link: any): void => {
                                             </nuxt-link>
                                         </div>
                                         <div class="w-[50%]">
-                                            <h3 class="text-lg pt-5 text-white">
+                                            <h3 class="font-Futurab text-[28px] pt-5 text-white">
                                                 {{ movie.name }}
                                             </h3>
-                                            <p class="text-xs pt-2 text-white hidden xl:block">
+                                            <p class="font-Arial text-xs pt-2 text-white hidden xl:block">
                                                 {{ movie.description }}
                                             </p>
                                             <p class="pt-4 text-white w-[full]">.............................</p>
@@ -195,16 +195,16 @@ const trailerHandler = (link: any): void => {
                                             <img v-else-if="movie.type == 2" class="w-10 h-10" src="/images/3d.png" alt="">
                                             <div class="flex flex-col-2 justify-center px-2 py-2">
                                                 <button @click="trailerHandler(movie.trailer)"
-                                                    class="flex bg-red-200 w-[140px] h-[40px] justify-center items-center gap-4 rounded-bl-2xl">
+                                                    class="flex bg-[rgba(0,0,0,0.5)] w-[140px] h-[50px] justify-center items-center rounded-bl-2xl hover:opacity-50 hover:text-blue-500 px-5">
                                                     <nuxt-link to="#">
-                                                        <img src="/images/th.jpg" class="w-[30px] h-[30px]" alt="Play Icon">
+                                                        <img src="/images/icon-play.png" class="" alt="Play Icon">
                                                     </nuxt-link>
-                                                    <p>Trailer</p>
+                                                    <p class="font-avantgarde-demi text-[16px] text-white">TRAILER</p>
                                                 </button>
                                                 <button
-                                                    class="fle w-[140px] h-[40px] justify-center items-center gap-4 bg-red-600 rounded-tr-2xl">
+                                                    class="flex w-[140px] h-[50px] justify-center text-white items-center gap-4 bg-[#e00d7a] rounded-tr-2xl font-avantgarde-demi hover:opacity-50 hover:text-blue-500">
                                                     <nuxt-link :to="`/movies/${movie.id}/location`">
-                                                        Mua Vé
+                                                        MUA VÉ
                                                     </nuxt-link>
                                                 </button>
                                             </div>
