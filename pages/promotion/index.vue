@@ -110,7 +110,7 @@ const handlePaneClick = (): void => {
     <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
         <div class="flex flex-col items-center justify-center">
             <!-- thành viên -->
-            <h1 class="pt-6 text-2xl font-bold text-white pb-0">THÀNH VIÊN</h1>
+            <h1 class="text-[30px] text-white pb-0 font-Futurab py-[40px]">THÀNH VIÊN</h1>
             <div class="w-[70%] flex gap-6 my-10 items-center">
                 <div>
                     <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">

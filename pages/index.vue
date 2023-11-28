@@ -10,14 +10,30 @@ const moviesStore = useMoviesStore();
 
 const resultMovie = reactive({});
 
+const films = ref([])
+
+const dangChieu = ref([])
+const sapChieu = ref([])
+const dacBiet = ref([])
+
 const getDataMovie = async (): Promise<void> => {
-    await moviesStore.getMovies();
-    resultMovie.value = moviesStore.movies;
+  await moviesStore.getMovies();
+  moviesStore.movies.forEach(e => {
+    films.value.push({
+      label: e.tenPhim,
+      value: e.maPhim
+    })
+  })
+  resultMovie.value = moviesStore.movies;
 }
 
 useAsyncData("fetch", async () => {
   try {
     await getDataMovie()
+    dataSlide.value = await useFetchApiByUrl('http://movieapi.cyberlearn.vn/api/QuanLyPhim/LayDanhSachBanner')
+    dangChieu.value = await useFetchApi('QuanLyPhim/LayDanhSachPhim?dangchieu=1')
+    sapChieu.value = await useFetchApi('QuanLyPhim/LayDanhSachPhim?sapchieu=1')
+    dacBiet.value = await useFetchApi('QuanLyPhim/LayDanhSachPhim?dacbiet=1')
   } catch (error) {
     console.error(error);
   }
@@ -28,14 +44,6 @@ const config = useRuntimeConfig();
 const activeTab = ref('first')
 
 const dataSlide = ref()
-
-useAsyncData('fetch', async () => {
-  try {
-    dataSlide.value = await useFetchApi('slideshow')
-  } catch (e) {
-    console.error(e);
-  }
-});
 
 useHead({ title: "Trang chủ" })
 
@@ -55,14 +63,56 @@ const actionSlide = (status: boolean): void => {
   }
 }
 
+const filmDachon = ref({})
+
+const rap = ref([])
+
+const chooseFilm = async (value: string) => {
+  const response = await useFetchApi('QuanLyRap/LayThongTinLichChieuPhim?MaPhim=' + value)
+  filmDachon.value = response
+  response?.heThongRapChieu?.forEach(e => {
+    e.cumRapChieu.forEach(rapchieu => {
+      rap.value.push({
+        value: rapchieu.maCumRap,
+        label: rapchieu.tenCumRap
+      })
+    })
+  })
+}
+
+const ngay = ref([])
+
+const suatchieu = ref([])
+
+const chooseRap = (value: string) => {
+  const find = filmDachon.value.heThongRapChieu.flatMap(heThongRap => heThongRap.cumRapChieu)
+    .find(cumRap => cumRap.maCumRap === value);
+  find.lichChieuPhim.forEach(e => {
+    const dateTimeString = e.ngayChieuGioChieu;
+    const dateTimeObject = new Date(dateTimeString);
+    const ngayChieu = dateTimeObject.toISOString().split('T')[0];
+    const gioChieu = dateTimeObject.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+    ngay.value.push({
+      value: e.maLichChieu,
+      label: ngayChieu
+    })
+
+    suatchieu.value.push({
+      value: e.maLichChieu,
+      label: gioChieu
+    })
+  })
+}
+
+const tabActive = ref(1)
+
 </script>
 
 <template>
-  <carousel v-if="dataSlide?.data.length" :autoplay="3000" :wrap-around="true" class="relative slideshow w-full"
+  <carousel v-if="dataSlide?.data?.content?.length" :autoplay="3000" :wrap-around="true" class="relative slideshow w-full"
     ref="slideshow">
-    <slide class="w-full" v-for="(item, index) in dataSlide?.data" :key="index">
-      <img class="w-full" :src="config.public.baseURLDefault + item?.url"
-        :alt="config.public.baseURLDefault + item?.url" />
+    <slide class="w-full" v-for="(item, index) in dataSlide?.data?.content" :key="index">
+      <img class="w-full" :src="item?.hinhAnh" :alt="item?.hinhAnh" />
     </slide>
     <template #addons>
       <navigation />
@@ -85,34 +135,18 @@ const actionSlide = (status: boolean): void => {
         </h2>
       </div>
       <div class="grid grid-cols-2 gap-5">
-        <select-search model-value=""
+        <select-search model-value="" @update:modelValue="chooseFilm"
           class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-          :options="[
-            { label: 'Chuyến xe cuối cùng', value: '1' },
-            { label: 'Shin - Cậu bé bút chì', value: '2' },
-            { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
-          ]" placeholder="Chọn phim" />
-        <select-search model-value=""
+          :options="films" placeholder="Chọn phim" />
+        <select-search model-value="" @update:modelValue="chooseRap"
           class="rounded-tl-[24px] rounded-bl-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-          :options="[
-            { label: 'Chuyến xe cuối cùng', value: '1' },
-            { label: 'Shin - Cậu bé bút chì', value: '2' },
-            { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
-          ]" placeholder="Chọn rạp" />
+          :options="rap" placeholder="Chọn rạp" />
         <select-search model-value=""
           class="rounded-tl-[24px] rounded-tr-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-          :options="[
-            { label: 'Chuyến xe cuối cùng', value: '1' },
-            { label: 'Shin - Cậu bé bút chì', value: '2' },
-            { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
-          ]" placeholder="Chọn ngày" />
+          :options="ngay" placeholder="Chọn ngày" />
         <select-search model-value=""
           class="rounded-tl-[24px] rounded-tr-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-          :options="[
-            { label: 'Chuyến xe cuối cùng', value: '1' },
-            { label: 'Shin - Cậu bé bút chì', value: '2' },
-            { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
-          ]" placeholder="Chọn suất chiếu" />
+          :options="suatchieu" placeholder="Chọn suất chiếu" />
       </div>
     </div>
     <div>
@@ -134,63 +168,80 @@ const actionSlide = (status: boolean): void => {
         <img :src="useAsset('images/home/3d3.png')" :alt="useAsset('images/home/3d3.png')">
       </nuxt-link>
     </div>
+
     <div class="relative z-10 tabs-panel">
-      <tabs ref="tabsref" variant="default" v-model="activeTab">
-        <tab name="first" title="Phim đang chiếu">
-          <div class="bg-[#f18720] relative">
-            <div
-              class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                @click="actionSlide(false)">
-                <img :src="useAsset('images/home/icon-start.png')" alt="prev">
-              </button>
-              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                @click="actionSlide(true)">
-                <img :src="useAsset('images/home/icon-start.png')" alt="next">
-              </button>
-            </div>
-            <div class="mx-auto max-w-[1200px] py-10">
-              <CarouselProduct v-model:model-value="slideshowCurrent" :data="resultMovie.value" />
-            </div>
+      <div>
+        <div class="">
+          <ul
+            class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
+            <li @click="tabActive = 1">
+              <div :class="{ active: tabActive == 1 }"
+                class="cursor-pointer inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-blue-500">
+                Phim đang chiếu</div>
+            </li>
+            <li>
+              <div :class="{ active: tabActive == 2 }" @click="tabActive = 2"
+                class="cursor-pointer inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">
+                Phim sắp chiếu</div>
+            </li>
+            <li @click="tabActive = 3">
+              <div :class="{ active: tabActive === 3 }" @click="tabActive = 2"
+                class="cursor-pointer inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">
+                Suất chiếu đặc biệt</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="default-tab-content">
+        <div v-if="tabActive == 1" class="bg-[#f18720] relative">
+          <div
+            class="px-[10%] absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+              @click="actionSlide(false)">
+              <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+            </button>
+            <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+              @click="actionSlide(true)">
+              <img :src="useAsset('images/home/icon-start.png')" alt="next">
+            </button>
           </div>
-        </tab>
-        <tab name="second" title="Phim sắp chiếu">
-          <div class="bg-[#f18720] relative">
-            <div
-              class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                @click="actionSlide(false)">
-                <img :src="useAsset('images/home/icon-start.png')" alt="prev">
-              </button>
-              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                @click="actionSlide(true)">
-                <img :src="useAsset('images/home/icon-start.png')" alt="next">
-              </button>
-            </div>
-            <div class="mx-auto max-w-[1200px] py-10">
-              <CarouselProduct v-model:model-value="slideshowCurrent" />
-            </div>
+          <div class="mx-auto max-w-[1200px] py-10">
+            <CarouselProduct v-model:model-value="slideshowCurrent" :data="dangChieu" />
           </div>
-        </tab>
-        <tab name="third" title="Suất chiếu đặc biệt">
-          <div class="bg-[#f18720] relative">
-            <div
-              class="absolute flex justify-between w-[70%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                @click="actionSlide(false)">
-                <img :src="useAsset('images/home/icon-start.png')" alt="prev">
-              </button>
-              <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                @click="actionSlide(true)">
-                <img :src="useAsset('images/home/icon-start.png')" alt="next">
-              </button>
-            </div>
-            <div class="mx-auto max-w-[1200px] py-10">
-              <CarouselProduct v-model:model-value="slideshowCurrent" />
-            </div>
+        </div>
+        <div v-if="tabActive == 2" class="bg-[#f18720] relative">
+          <div
+            class="px-[10%] absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+              @click="actionSlide(false)">
+              <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+            </button>
+            <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+              @click="actionSlide(true)">
+              <img :src="useAsset('images/home/icon-start.png')" alt="next">
+            </button>
           </div>
-        </tab>
-      </tabs>
+          <div class="mx-auto max-w-[1200px] py-10">
+            <CarouselProduct v-model:model-value="slideshowCurrent" :data="sapChieu" />
+          </div>
+        </div>
+        <div v-if="tabActive == 3" class="bg-[#f18720] relative">
+          <div
+            class="px-[10%] absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+              @click="actionSlide(false)">
+              <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+            </button>
+            <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+              @click="actionSlide(true)">
+              <img :src="useAsset('images/home/icon-start.png')" alt="next">
+            </button>
+          </div>
+          <div class="mx-auto max-w-[1200px] py-10">
+            <CarouselProduct v-model:model-value="slideshowCurrent" :data="dacBiet" />
+          </div>
+        </div>
+      </div>
       <div class="flex flex-col items-center justify-center overflow-auto px-5">
         <div class="sm:w-[70%] w-full flex gap-6 my-10 items-center">
           <div class="flex flex-col w-24 h-24">
@@ -282,6 +333,40 @@ const actionSlide = (status: boolean): void => {
   </div>
 </template>
 <style>
+.tab-film {
+  background: #f18720;
+  border-radius: 0 30px 0 0;
+  -webkit-border-radius: 30px 50px 50px 0;
+}
+
+.tab-film:first-child button {
+  font-family: 'avantgarde-demi';
+  font-weight: normal;
+  color: #fff;
+  font-size: 30px;
+  text-transform: uppercase;
+  line-height: 74px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  padding: 0 45px;
+}
+
+.tab-film:nth-child(2) {
+  z-index: 2;
+  border-radius: 0 50px 50px 0;
+  -webkit-border-radius: 0 50px 50px 0;
+  padding-left: 55px;
+  margin-left: -80px;
+  font-family: 'avantgarde-demi';
+  font-weight: normal;
+  color: #fff;
+  font-size: 30px;
+  text-transform: uppercase;
+  line-height: 74px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
 .slideshow .carousel__pagination {
   gap: 10px;
   position: absolute;
@@ -376,6 +461,11 @@ const actionSlide = (status: boolean): void => {
   color: #020230;
   border-radius: 0 30px 0 0;
   -webkit-border-radius: 30px 50px 50px 0;
+}
+
+.tabs-panel>div>div:first-child ul li .active {
+  background: #fecf06 !important;
+  color: #020230;
 }
 
 .tabs-panel>div>div:first-child ul li:first-child {

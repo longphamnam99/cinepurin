@@ -9,44 +9,21 @@ import { useDirectorsStore } from "~/stores/directors"
 import { useCategoriesStore } from "~/stores/categories"
 import { useMoviesStore } from "~/stores/movies"
 
-const activeTab = ref('first')
-const directorsStore = useDirectorsStore();
-const actorsStore = useActorsStore();
-const categoriesStore = useCategoriesStore();
-const moviesStore = useMoviesStore();
-
 useHead({ title: "Trang chủ" })
 
 const param = useRoute().params.id;
-
-const dataApiCategories = reactive([])
-const dataApiActor = reactive([])
-const dataApiDirector = reactive([])
-const dataApiMovie = reactive([])
 const dataApi = reactive({})
+const dangChieu = ref([])
 
 useAsyncData("fetch", async () => {
     try {
         const response = await useApiBridge({
-            url: "products/" + param,
+            url: "QuanLyRap/LayThongTinLichChieuPhim?MaPhim=" + param,
             method: "get",
         });
+        dataApi.value = response
 
-        if (response.code === 200) {
-            dataApi.value = response.data
-        }
-
-        await actorsStore.getActors();
-        dataApiActor.value = actorsStore.actors
-
-        await directorsStore.getDirectors();
-        dataApiDirector.value = directorsStore.directors
-
-        await categoriesStore.getCategories()
-        dataApiCategories.value = categoriesStore.categories
-
-        await moviesStore.getMovies()
-        dataApiMovie.value = moviesStore.movies
+        dangChieu.value = await useFetchApi('QuanLyPhim/LayDanhSachPhim?dangchieu=1')
     } catch (error) {
         console.error(error);
     }
@@ -71,9 +48,9 @@ const config = useRuntimeConfig()
 function formatDate(time: Date) {
     const date = new Date(time);
 
-    const year = date.toLocaleString("default", { year: "numeric" });
-    const month = date.toLocaleString("default", { month: "2-digit" });
-    const day = date.toLocaleString("default", { day: "2-digit" });
+    const day = date.getUTCDate().toString().padStart(2, '0');
+    const month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
+    const year = date.getUTCFullYear();
 
     return `${day}/${month}/${year}`;
 }
@@ -91,16 +68,21 @@ const trailerHandler = (link: any): void => {
     enmbed.value = `https://www.youtube.com/embed/${getVideoId(link)}?autoplay=1`;
 }
 
-const findInArray = computed(() => {
-    return (input, arr) => {
-        if (!Array.isArray(arr)) {
-            console.error('Input should be an array');
-            return [];
+const slideshowCurrent = ref(0)
+
+const actionSlide = (status: boolean): void => {
+    if (status) {
+        if (slideshowCurrent.value == 6) {
+            return
         }
-        const result = arr.filter(item => input.includes(item.id.toString()))
-        return result
+        slideshowCurrent.value += 1
+    } else {
+        if (slideshowCurrent.value == 0) {
+            return
+        }
+        slideshowCurrent.value -= 1
     }
-})
+}
 </script>
 
 <template>
@@ -176,45 +158,41 @@ const findInArray = computed(() => {
             </div>
         </div>
 
-        <!-- gioi thieu -->
-        <div class="flex flex-col-2 bg-[url('/public/images/film-bg.jpg')] pt-5 pb-5 gap-5">
-            <div>
-                <img :src="config.public.baseURLDefault + dataApi?.value?.image" alt="" class="w-[550px] h-[650px] pl-14">
+        <div
+            class="flex items-center justify-center flex-col-2 px-[10%] bg-[url('/public/images/film-bg.jpg')] pt-5 pb-5 gap-5">
+            <div class="border-[9px] border-solid border-[#fae2a2] w-[40%]">
+                <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
             </div>
-            <div class="bg-[#f18720] w-[830px] h-[650px] pt-5">
-                <h1 class="font-Futurab text-[28px] text-white pl-5 pr-5 text-left">{{ dataApi?.value?.name }}
+            <div class="film-details-wrap w-[60%] shadow-lg hover:shadow-inner-md bg-[#f18720] p-12">
+                <h1 class="text-[28px] font-Futurab text-white pl-5 pr-5 mb-4">{{ dataApi?.value?.tenPhim }}
                 </h1>
                 <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="font-MyriadLight pt-2 w-20 text-white">Khởi chiếu</h3>
-                    <h3 class="bg-white font-MyriadBold w-[200px] h-[40px] text-[20px] text-center pt-1 rounded-xl">Từ {{
-                        formatDate(dataApi.value?.premiere) }}</h3>
+                    <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Khởi chiếu</h3>
+                    <h3
+                        class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
+                        Từ {{
+                            formatDate(dataApi?.value?.ngayKhoiChieu) }}</h3>
                 </div>
                 <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="font-MyriadLight pt-2 w-20 text-white">Thể loại:</h3>
-                    <div class="bg-white font-MyriadBold text-[20px] h-[40px] text-center pt-1 rounded-xl flex">
-                        <p class="px-1" v-for="category in findInArray(dataApi?.value?.category, dataApiCategories?.value)"
-                            :key="category.id">
-                            {{ category.name }}
-                        </p>
-                    </div>
+                    <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Thể loại:</h3>
+                    <h3
+                        class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
+                        {{
+                            dataApi?.value?.tenTheLoai }}</h3>
                 </div>
                 <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="font-MyriadLight pt-2 w-20 text-white">Diễn viên:</h3>
-                    <div class="bg-white font-MyriadBold text-[20px] h-[40px] text-center pt-1 rounded-xl flex">
-                        <p class="px-1" v-for="category in findInArray(dataApi?.value?.actor, dataApiActor?.value)"
-                            :key="category.id">
-                            {{ category.name }}
-                        </p>
-                    </div>
+                    <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Diễn viên:</h3>
+                    <h3
+                        class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
+                        {{
+                            dataApi?.value?.dienVien }}</h3>
                 </div>
                 <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="font-MyriadLight pt-2 w-20 text-white">Đạo diễn:</h3>
-                    <div class="bg-white font-MyriadBold text-[20px] h-[40px] text-center pt-1 rounded-xl flex">
-                        <p class="px-1" v-for="category in findInArray(dataApi?.value?.director, dataApiDirector?.value)"
-                            :key="category.id">
-                            {{ category.name }}
-                        </p>
-                    </div>
+                    <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Đạo diễn:</h3>
+                    <h3
+                        class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
+                        {{
+                            dataApi?.value?.daoDien }}</h3>
                 </div>
                 <div class="flex flex-col-2 pt-3 gap-5 pl-5">
                     <img v-if="dataApi.value?.type == 1" class="w-10 h-10" src="/images/2d.png" alt="">
@@ -222,77 +200,108 @@ const findInArray = computed(() => {
                 </div>
                 <p class="pl-5 pt-3 text-white">{{ dataApi?.value?.description }}</p>
                 <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="font-Arial pt-2 w-20 text-white">Đánh giá:</h3>
-                    <div class="flex gap-2">
-                        <img src="/images/start-comment.png" alt="">
-                        <img src="/images/start-comment.png" alt="">
-                        <img src="/images/start-comment.png" alt="">
-                        <img src="/images/start-comment.png" alt="">
+                    <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Đánh giá:</h3>
+                    <div class="flex gap-2" v-for="danhgia in dataApi.value?.danhGia" :key="danhgia">
                         <img src="/images/start-comment.png" alt="">
                     </div>
                 </div>
-                <div class="flex flex-cols-3 pt-3 pl-52 gap-3">
-                    <div @click="trailerHandler(dataApi?.value?.trailer)" class="pt-7 cursor-pointer">
-                        <div class="flex flex-col-2 bg-[rgba(0,0,0,0.5)] w-[160px] h-[54px] items-center rounded-[30px] hover:bg-black">
-                            <Nuxt-link to="#">
-                                <img src="/images/icon-play.png" class="">
-                            </Nuxt-link>
-                            <p class="font-Futurab text-[#fff] px-3 text-[24px] ">TRAILER</p>
+                <img src="/images/2d.png" alt="" class="pl-5 w-20 pt-3">
+                <p class="pl-5 pt-3 text-white">{{ dataApi?.value?.moTa }}</p>
+
+                <div class="flex flex-cols-3 pt-3 items-center justify-center gap-3">
+                    <div @click="trailerHandler(dataApi?.value?.trailer)" class="pt-6 cursor-pointer">
+                        <div
+                            class="rounded-[1000px] p-6 bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.8)] flex flex-col-2 w-[180px] h-[52px] items-center justify-center">
+                            <img src="/images/icon-play.png" alt="" class="w-[80px] h-[80px] -ml-8">
+                            <p class="font-Futurab text-[24px] text-white uppercase">trailer</p>
                         </div>
                     </div>
-                    <div class="pt-7">
-                        <Nuxt-link :to="`/booking/${dataApi?.value?.id}`"
-                            class="flex flex-col-2 hover:bg-yellow-300 bg-[#e00d7a] text-[#fff] font-Futurab w-[160px] h-[54px] text-[24px] items-center justify-center rounded-ee-[30px] rounded-s-[30px]">
-                            MUA VÉ
+                    <div class="pt-6">
+                        <Nuxt-link :to="`/booking/${dataApi?.value?.maPhim}`"
+                            class="rounded-tl-[1000px] rounded-bl-[1000px] rounded-br-[1000px] p-6 bg-[#e00d7a] hover:bg-[#fecf06] flex flex-col-2 w-[180px] h-[52px] items-center justify-center font-Futurab text-[24px] text-white uppercase">
+                            Mua Vé
                         </Nuxt-link>
                     </div>
                     <div>
-                        <div>
-                            <p class="text-[18px] text-[#fff] font-MyriadLight pl-6">Chia sẻ</p>
-                        </div>
-                        <div class="flex items-center justify-center">
-                            <Nuxt-link to="#" class="">
-                                <img src="/images/scl_facebook.png" alt="" class="w-[54px] h-[54px]">
-                            </Nuxt-link>
-                            <Nuxt-link to="#" class="">
-                                <img src="/images/scl_google.png" alt="" class="w-[54px] h-[54px]">
-                            </Nuxt-link>
+                        <div class="flex flex-col justify-center items-center">
+                            <p class="text-[18px] font-MyriadLight text-white">Chia sẻ</p>
+
+                            <div class="flex items-center justify-center gap-2">
+                                <img src="/images/facebook_icon-icons.com_59205.png" alt=""
+                                    class="w-14 h-14 shadow-custom overflow-hidden">
+                                <img src="/images/scl_google.png" alt="" class="w-14 h-14 shadow-custom overflow-hidden">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
-            <div class="">
-                <h1 class="text-center text-[30px] text-[#fff] font-Futurab py-[40px]">PHIM HAY TRONG TUẦN</h1>
-                <div class="grid grid-cols-5 gap-x-8 max-w-6xl mx-auto pt-2">
-                    <div v-for="movie in dataApiMovie.value" :key="movie.id">
-                        <div class="h-96 md-5">
-                            <img :src="config.public.baseURLDefault + movie?.image" alt=""
-                                class="w-full h-full rounded-lg object-cover">
-                        </div>
-                        <div class="text-center text-[#fff] font-Futurab text-[16px]">
-                            <h3>{{ movie.name }}</h3>
-                        </div>
-                        <div class="flex justify-center">
-                            <img v-if="movie.type == 1" class="w-10 h-10" src="/images/2d.png" alt="">
-                            <img v-else-if="movie.type == 2" class="w-10 h-10" src="/images/3d.png" alt="">
-                        </div>
-                    </div>
+
+        <div class="bg-gradient-to-tr from-[#4E0045] to-[#410434]">
+            <h1 class="text-center text-[30px] py-[40px] uppercase text-white font-Futurab">Phim hay trong tuần</h1>
+            <div class="relative">
+                <div
+                    class="px-[10%] absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                        @click="actionSlide(false)">
+                        <img :src="useAsset('images/home/icon-start.png')" alt="prev">
+                    </button>
+                    <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
+                        @click="actionSlide(true)">
+                        <img :src="useAsset('images/home/icon-start.png')" alt="next">
+                    </button>
+                </div>
+                <div class="mx-auto max-w-[1200px] py-10">
+                    <CarouselProduct v-model:model-value="slideshowCurrent" :data="dangChieu" />
                 </div>
             </div>
-
-            <!-- uu dai và tin tức -->
-            <div class="">
-                <div class="flex flex-col items-center justify-center">
-                    <!-- ưu đãi -->
-                    <div class="w-[70%] flex gap-6 my-10 items-center">
-                        <div class="flex flex-col w-24 h-24">
-                            <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
-                                ƯU ĐÃI
-                            </h3>
-                            <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
+            <div class="flex flex-col items-center justify-center">
+                <!-- ưu đãi -->
+                <div class="w-[70%] flex gap-6 my-10 items-center">
+                    <div class="flex flex-col w-24 h-24">
+                        <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
+                            ƯU ĐÃI
+                        </h3>
+                        <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
+                    </div>
+                    <div>
+                        <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
+                            <Slide v-for="slide in 10" :key="slide">
+                                <div
+                                    class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
+                                    <img src="/images/c_monday.jpg" alt=""
+                                        class="w-120 h-120 rounded-lg object-cover mr-[16px]">
+                                </div>
+                            </Slide>
+                        </carousel>
+                    </div>
+                </div>
+                <!-- tin tức -->
+                <div class="w-[70%] flex gap-6 my-10 items-center">
+                    <div class="flex flex-col w-24 h-24">
+                        <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
+                            Tin tức
+                        </h3>
+                        <img class="w-24 h-24" :src="useAsset('images/home/icon-news.png')" alt="promotion">
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
+                            <div class="text-white font-MyriadRegular">
+                                <h1 class="text-base mb-2">
+                                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
+                                </h1>
+                                <p class="text-sm">
+                                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến
+                                    ngay
+                                    Cinestar
+                                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
+                                </p>
+                            </div>
+                            <div class="w-full h-full">
+                                <img src="/images/c_monday.jpg" alt=""
+                                    class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
+                            </div>
                         </div>
                         <div>
                             <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
@@ -418,5 +427,10 @@ const findInArray = computed(() => {
 <style scoped>
 .text-shadow {
     text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+.film-details-wrap {
+    box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3), 0 0 50px 0 rgba(0, 0, 0, 0.4) inset;
 }
 </style>

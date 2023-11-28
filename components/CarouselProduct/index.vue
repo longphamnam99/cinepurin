@@ -58,37 +58,45 @@ const trailerHandler = (link: any): void => {
 </script>
 
 <template>
-  <Carousel v-bind="settings" :modelValue="model" :breakpoints="breakpoints">
+  <Carousel class="product-box" v-bind="settings" :modelValue="model" :breakpoints="breakpoints">
     <Slide v-for="slide in dataRef" :key="slide">
-      <div class="relative">
-        <div class="cursor-pointer relative z-20" @mouseover="slide.isShow = true"
+      <div :class="{ 'show': slide.isShow, 'hide': !slide.isShow }" class="movie-item relative mr-2">
+        <div class="cursor-pointer relative z-20 p-4" @mouseover="slide.isShow = true"
           @mouseleave="isShow = slide.isShow = false">
           <div class="flex justify-center md-5">
-            <img :src="config.public.baseURLDefault + slide.image" alt="" class="h-96 rounded-lg object-cover">
+            <img :src="slide.hinhAnh" alt="" class="h-96 rounded-lg object-cover">
           </div>
           <div class="text-center pt-2">
-            <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold font-Futurab text-white">{{ slide.name }}</h3>
+            <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold font-Futurab text-white">{{ slide.tenPhim }}
+            </h3>
           </div>
           <div class="w-8 h-8 flex items-center justify-center mx-auto my-1 border-[#fff] border-[2px]">
-            <p v-if="slide.type == 1" class="font-Futurab font-medium text-[#fff] text-sm">2D</p>
-            <p v-else-if="slide.type == 2" class="font-Futurab font-medium text-[#fff] text-sm">3D</p>
+            <p v-if="slide.dinhDang == '2D'" class="font-Futurab font-medium text-[#fff] text-sm">2D</p>
+            <p v-else-if="slide.type == '3D'" class="font-Futurab font-medium text-[#fff] text-sm">3D</p>
           </div>
         </div>
-        <div :class="{ active: slide.isShow }"
-          class="slide-item flex flex-col absolute top-0 left-0 bg-[#282828e0] w-full h-full p-6 z-30 border"
+        <!--  -->
+        <div
+          class="mouse-over shadow-md flex justify-center items-center flex-col absolute top-0 left-0 bg-[#282828e0] w-full h-full p-6 z-30 border"
           @mouseover="slide.isShow = true" @mouseleave="isShow = slide.isShow = false" v-show="slide.isShow">
           <p class="text-white">
             {{ slide.description }}
           </p>
-          <nuxt-link :to="`/movies/${slide.id}`" class="text-white">
+          <nuxt-link :to="`/movies/${slide.maPhim}`"
+            class="mb-10 text-white rounded-[1000px] bg-[#f18720] w-20 text-[18px] hover:bg-[#e00d7a] transition ease-in-out delay-50">
             Chi tiết
           </nuxt-link>
-          <button @click="trailerHandler(slide.trailer)" class="text-white">
+          <button @click="trailerHandler(slide.trailer)"
+            class="text-white mb-2 rounded-tl-[1000px] rounded-tr-[1000px] rounded-br-[1000px] py-2 bg-[#f18720] w-[150px] text-[22px] hover:bg-[#e00d7a] transition ease-in-out delay-50">
             Xem trailer
           </button>
-          <button class="text-white">
-            Mua vé
-          </button>
+          <div class="relative group">
+            <button
+              class="text-white rounded-tr-[1000px] rounded-br-[1000px] rounded-bl-[1000px] bg-[#e00d7a] w-[150px] text-[22px] py-2 group-hover:bg-[#f18720] transition ease-in-out delay-50">
+              Mua vé
+            </button>
+            <img class="absolute -right-4 w-15 h-12 top-0 bg-[#f18720] group-hover:bg-[#e00d7a] rounded-[1000px]" src="/images/icon-start.png" alt="/images/icon-start.png">
+          </div>
         </div>
       </div>
     </Slide>
@@ -103,3 +111,82 @@ const trailerHandler = (link: any): void => {
     </div>
   </div>
 </template>
+
+<style>
+@-webkit-keyframes flipInX1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1.0);
+  }
+}
+
+@keyframes flipInX1 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+@-webkit-keyframes flipOutX1 {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+  }
+}
+
+@keyframes flipOutX1 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+/* .show {
+  display: block;
+}
+
+.hide {
+  display: none;
+} */
+
+.movie-item.show .mouse-over {
+  animation: flipInX1 1s;
+  opacity: 1;
+}
+
+.movie-item.hide .mouse-over {
+  animation: flipOutX1 1s;
+  opacity: 1;
+}
+
+.mouse-over {
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
+  border: 1px solid #fbdbbd;
+  padding: 25px 20px;
+  text-align: center;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  opacity: 0;
+}</style>

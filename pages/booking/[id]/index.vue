@@ -14,13 +14,11 @@ const dataApi = reactive({})
 useAsyncData("fetch", async () => {
     try {
         const response = await useApiBridge({
-            url: "products/" + id,
+            url: "QuanLyRap/LayThongTinLichChieuPhim?MaPhim=" + id,
             method: "get",
         });
 
-        if (response.code === 200) {
-            dataApi.value = response.data
-        }
+        dataApi.value = response
     } catch (error) {
         console.error(error);
     }
@@ -36,9 +34,6 @@ const pictures = [
         'alt': 'Picture 2',
     },
 ]
-const handlePaneClick = (): void => {
-    console.log("Click!")
-}
 
 const config = useRuntimeConfig()
 
@@ -124,56 +119,57 @@ const config = useRuntimeConfig()
     </div>
 
     <!-- lich chieu -->
-    <div class="flex justify-center bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative pt-2 pb-2">
-        <div class=" flex flex-col-2  bg-[#f37520] w-[1174px] h-[450px] gap-5">
+    <div class="flex justify-center bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
+        <div class=" flex flex-col-2  bg-[#f37520] gap-5 p-10">
             <div>
-                <img :src="config.public.baseURLDefault + dataApi?.value?.image" alt="" class="w-[550px] h-[430px] pt-5 pl-5">
+                <img :src="dataApi?.value?.hinhAnh" alt=""
+                    class="w-[450px] h-[430px] showdow-custom">
             </div>
-            <div class="relative w-full h-auto overflow-hidden mb-5 pt-5">
-                <h3 class="text-3xl text-white pb-3">{{ dataApi?.value?.name }}</h3>
-                
+            <div class="relative w-full h-auto overflow-hidden mb-5">
+                <h3 class="text-[28px] uppercase text-white pb-3 font-Futurab">{{ dataApi?.value?.tenPhim }}</h3>
+
                 <h4 class="flex bg-yellow-300 w-[200px] h-[50px] text-xl justify-center items-center">CineStar Đà Lạt</h4>
                 <div class="flex flex-col-2">
-                    <h3 class="flex bg-yellow-300 w-[70px] h-[60px] justify-center items-center pl-2">16/09 2023 
-                    </h3>   
+                    <h3 class="flex bg-yellow-300 w-[70px] h-[60px] justify-center items-center pl-2">16/09 2023
+                    </h3>
                     <div class="flex flex-col-2 bg-yellow-100 w-[700px] h-[60px] pt-1 pl-5 pr-8 gap-2">
                         <nuxt-link :to="`/payment/${id}`">
                             <p class="bg-yellow-50 w-[50px] h-[50px] text-center pt-3"><button>12:30</button></p>
                         </nuxt-link>
                     </div>
                 </div>
-                       
             </div>
         </div>
     </div>
-    
 
-    
-  
-   <!-- uu dai và tin tức -->
-   <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
+
+
+
+    <!-- uu dai và tin tức -->
+    <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
         <div class="flex flex-col items-center justify-center">
             <!-- ưu đãi -->
             <div class="w-[70%] flex gap-6 my-10 items-center">
-            <div class="flex flex-col w-24 h-24">
-                <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
-                ƯU ĐÃI
-                </h3>
-                <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
-            </div>
-            <div>
-                <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
-                <Slide v-for="slide in 10" :key="slide">
-                    <div
-                        class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
-                    <img src="/images/c_monday.jpg" alt="" class="w-120 h-120 rounded-lg object-cover mr-[16px]">
-                    </div>
-                </Slide>
-                </carousel>
-            </div>
+                <div class="flex flex-col w-24 h-24">
+                    <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
+                        ƯU ĐÃI
+                    </h3>
+                    <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
+                </div>
+                <div>
+                    <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
+                        <Slide v-for="slide in 10" :key="slide">
+                            <div
+                                class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
+                                <img src="/images/c_monday.jpg" alt=""
+                                    class="w-120 h-120 rounded-lg object-cover mr-[16px]">
+                            </div>
+                        </Slide>
+                    </carousel>
+                </div>
             </div>
         </div>
-    </div> 
+    </div>
 </template>
 <style>
 .slideshow .carousel__pagination {
@@ -243,7 +239,7 @@ const config = useRuntimeConfig()
 .tabs ul li {
     background-color: #f18720;
     -webkit-transition: all 0.3s ease-in-out;
-    box-shadow: 10px 0 0 rgba(0,0,0,0.1);
+    box-shadow: 10px 0 0 rgba(0, 0, 0, 0.1);
 }
 
 .tabs ul li:nth-child(1) {
@@ -281,5 +277,9 @@ const config = useRuntimeConfig()
 <style scoped>
 .text-shadow {
     text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.showdow-custom {
+    box-shadow: 5px 5px 0 rgba(0,0,0,0.5);
 }
 </style>

@@ -9,12 +9,10 @@ export const useMoviesStore = defineStore("movies", {
     actions: {
         async getMovies() {
             const response = await useApiBridge({
-                url: "products",
+                url: "QuanLyPhim/LayDanhSachPhim",
                 method: "get",
             });
-            if (response.code === 200) {
-                this.movies = response.data
-            }
+            this.movies = response
         },
     },
 });

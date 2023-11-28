@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css';
+import { ref, watch } from 'vue'
 
 interface Option {
     value: string | number
@@ -20,12 +21,15 @@ const props = withDefaults(defineProps<IProps>(), {
 })
 
 const selectedValue = ref(props.modelValue)
+
+watch(selectedValue, async (newQuestion, oldQuestion) => {
+    emits('update:modelValue', newQuestion)
+})
 </script>
 
 <template>
     <v-select ref="select-search" class="bg-[rgba(0,0,0,0.7)] text-white hover:bg-[#e00d7a]" :placeholder="placeholder"
-        v-model="selectedValue" :options="options" label="label" :reduce="search => search.label"
-        @input="emits('update:modelValue', $event.target?.value)" />
+        v-model="selectedValue" :options="options" label="label" :reduce="search => search.value" />
 </template>
 
 <style lang="scss">
