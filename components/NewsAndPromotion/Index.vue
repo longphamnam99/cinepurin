@@ -40,7 +40,7 @@
             <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
           </div>
         </div>
-        <div class=" grid xl:grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
+        <div class=" grid xl:grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
           <div class="text-white font-MyriadRegular">
             <h1 class="text-base mb-2">
               Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
@@ -54,7 +54,7 @@
             <img src="/images/c_monday.jpg" alt="" class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
           </div>
         </div>
-        <div class=" grid xl:grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
+        <div class=" grid xl:grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
           <div class="text-white font-MyriadRegular">
             <h1 class="text-base mb-2">
               Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
