@@ -181,17 +181,17 @@ const findInArray = computed(() => {
             <div>
                 <img :src="config.public.baseURLDefault + dataApi?.value?.image" alt="" class="w-[550px] h-[650px] pl-14">
             </div>
-            <div class="bg-orange-400 w-[830px] h-[650px] pt-5">
-                <h1 class="text-3xl text-white pl-5 pr-5">{{ dataApi?.value?.name }}
+            <div class="bg-[#f18720] w-[830px] h-[650px] pt-5">
+                <h1 class="font-Futurab text-[28px] text-white pl-5 pr-5 text-left">{{ dataApi?.value?.name }}
                 </h1>
                 <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="pt-2 w-20 text-white">Khởi chiếu</h3>
-                    <h3 class="bg-white w-[200px] h-[40px] text-left px-1 pt-2 rounded-xl">Từ {{
+                    <h3 class="font-MyriadLight pt-2 w-20 text-white">Khởi chiếu</h3>
+                    <h3 class="bg-white font-MyriadBold w-[200px] h-[40px] text-[20px] text-center pt-1 rounded-xl">Từ {{
                         formatDate(dataApi.value?.premiere) }}</h3>
                 </div>
                 <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="pt-2 w-20 text-white">Thể loại:</h3>
-                    <div class="bg-white h-[40px] text-left pt-2 rounded-xl flex">
+                    <h3 class="font-MyriadLight pt-2 w-20 text-white">Thể loại:</h3>
+                    <div class="bg-white font-MyriadBold text-[20px] h-[40px] text-center pt-1 rounded-xl flex">
                         <p class="px-1" v-for="category in findInArray(dataApi?.value?.category, dataApiCategories?.value)"
                             :key="category.id">
                             {{ category.name }}
@@ -199,8 +199,8 @@ const findInArray = computed(() => {
                     </div>
                 </div>
                 <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="pt-2 w-20 text-white">Diễn viên:</h3>
-                    <div class="bg-white h-[40px] text-left pt-2 rounded-xl flex">
+                    <h3 class="font-MyriadLight pt-2 w-20 text-white">Diễn viên:</h3>
+                    <div class="bg-white font-MyriadBold text-[20px] h-[40px] text-center pt-1 rounded-xl flex">
                         <p class="px-1" v-for="category in findInArray(dataApi?.value?.actor, dataApiActor?.value)"
                             :key="category.id">
                             {{ category.name }}
@@ -208,8 +208,8 @@ const findInArray = computed(() => {
                     </div>
                 </div>
                 <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="pt-2 w-20 text-white">Đạo diễn:</h3>
-                    <div class="bg-white h-[40px] text-left pt-2 rounded-xl flex">
+                    <h3 class="font-MyriadLight pt-2 w-20 text-white">Đạo diễn:</h3>
+                    <div class="bg-white font-MyriadBold text-[20px] h-[40px] text-center pt-1 rounded-xl flex">
                         <p class="px-1" v-for="category in findInArray(dataApi?.value?.director, dataApiDirector?.value)"
                             :key="category.id">
                             {{ category.name }}
@@ -220,8 +220,9 @@ const findInArray = computed(() => {
                     <img v-if="dataApi.value?.type == 1" class="w-10 h-10" src="/images/2d.png" alt="">
                     <img v-else-if="dataApi.value?.type == 2" class="w-10 h-10" src="/images/3d.png" alt="">
                 </div>
+                <p class="pl-5 pt-3 text-white">{{ dataApi?.value?.description }}</p>
                 <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="pt-2 w-20 text-white">Đánh giá:</h3>
+                    <h3 class="font-Arial pt-2 w-20 text-white">Đánh giá:</h3>
                     <div class="flex gap-2">
                         <img src="/images/start-comment.png" alt="">
                         <img src="/images/start-comment.png" alt="">
@@ -230,29 +231,31 @@ const findInArray = computed(() => {
                         <img src="/images/start-comment.png" alt="">
                     </div>
                 </div>
-                <img src="/images/2d.png" alt="" class="pl-5 w-20 pt-3">
-                <p class="pl-5 pt-3 text-white">{{ dataApi?.value?.description }}</p>
-
                 <div class="flex flex-cols-3 pt-3 pl-52 gap-3">
-                    <div @click="trailerHandler(dataApi?.value?.trailer)" class="pt-6 cursor-pointer">
-                        <div class="flex flex-col-2 bg-blue-900 w-40 h-10 items-center justify-center">
+                    <div @click="trailerHandler(dataApi?.value?.trailer)" class="pt-7 cursor-pointer">
+                        <div class="flex flex-col-2 bg-[rgba(0,0,0,0.5)] w-[160px] h-[54px] items-center rounded-[30px] hover:bg-black">
                             <Nuxt-link to="#">
-                                <img src="/images/th.jpg" alt="" class="w-14 h-7">
+                                <img src="/images/icon-play.png" class="">
                             </Nuxt-link>
-                            <p>trailer</p>
+                            <p class="font-Futurab text-[#fff] px-3 text-[24px] ">TRAILER</p>
                         </div>
                     </div>
-                    <div class="pt-6">
+                    <div class="pt-7">
                         <Nuxt-link :to="`/booking/${dataApi?.value?.id}`"
-                            class="flex flex-col-2 bg-blue-900 w-40 h-10 items-center justify-center">
-                            Mua Vé
+                            class="flex flex-col-2 hover:bg-yellow-300 bg-[#e00d7a] text-[#fff] font-Futurab w-[160px] h-[54px] text-[24px] items-center justify-center rounded-ee-[30px] rounded-s-[30px]">
+                            MUA VÉ
                         </Nuxt-link>
                     </div>
                     <div>
+                        <div>
+                            <p class="text-[18px] text-[#fff] font-MyriadLight pl-6">Chia sẻ</p>
+                        </div>
                         <div class="flex items-center justify-center">
-                            <Nuxt-link to="#">
-                                <p>chia se</p>
-                                <img src="/images/facebook_icon-icons.com_59205.png" alt="" class="w-10 h-10">
+                            <Nuxt-link to="#" class="">
+                                <img src="/images/scl_facebook.png" alt="" class="w-[54px] h-[54px]">
+                            </Nuxt-link>
+                            <Nuxt-link to="#" class="">
+                                <img src="/images/scl_google.png" alt="" class="w-[54px] h-[54px]">
                             </Nuxt-link>
                         </div>
                     </div>
@@ -260,123 +263,47 @@ const findInArray = computed(() => {
             </div>
         </div>
 
-
-        <div class="bg-red-400">
-            <h1 class="text-center text-5xl pt-2">Phim hay trong tuần</h1>
-            <div class="grid grid-cols-5 gap-x-8 max-w-6xl mx-auto pt-2">
-                <div v-for="movie in dataApiMovie.value" :key="movie.id">
-                    <div class="h-96 md-5">
-                        <img :src="config.public.baseURLDefault + movie?.image" alt=""
-                            class="w-full h-full rounded-lg object-cover">
+        <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
+            <div class="">
+                <h1 class="text-center text-[30px] text-[#fff] font-Futurab py-[40px]">PHIM HAY TRONG TUẦN</h1>
+                <div class="grid grid-cols-5 gap-x-8 max-w-6xl mx-auto pt-2">
+                    <div v-for="movie in dataApiMovie.value" :key="movie.id">
+                        <div class="h-96 md-5">
+                            <img :src="config.public.baseURLDefault + movie?.image" alt=""
+                                class="w-full h-full rounded-lg object-cover">
+                        </div>
+                        <div class="text-center text-[#fff] font-Futurab text-[16px]">
+                            <h3>{{ movie.name }}</h3>
+                        </div>
+                        <div class="flex justify-center">
+                            <img v-if="movie.type == 1" class="w-10 h-10" src="/images/2d.png" alt="">
+                            <img v-else-if="movie.type == 2" class="w-10 h-10" src="/images/3d.png" alt="">
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <h3>{{ movie.name }}</h3>
-                    </div>
-                    <img v-if="movie.type == 1" class="w-10 h-10" src="/images/2d.png" alt="">
-                    <img v-else-if="movie.type == 2" class="w-10 h-10" src="/images/3d.png" alt="">
                 </div>
             </div>
-        </div>
 
-        <!-- uu dai và tin tức -->
-        <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
-            <div class="flex flex-col items-center justify-center">
-                <!-- ưu đãi -->
-                <div class="w-[70%] flex gap-6 my-10 items-center">
-                    <div class="flex flex-col w-24 h-24">
-                        <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
-                            ƯU ĐÃI
-                        </h3>
-                        <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
-                    </div>
-                    <div>
-                        <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
-                            <Slide v-for="slide in 10" :key="slide">
-                                <div
-                                    class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
-                                    <img src="/images/c_monday.jpg" alt=""
-                                        class="w-120 h-120 rounded-lg object-cover mr-[16px]">
-                                </div>
-                            </Slide>
-                        </carousel>
-                    </div>
-                </div>
-                <!-- tin tức -->
-                <div class="w-[70%] flex gap-6 my-10 items-center">
-                    <div class="flex flex-col w-24 h-24">
-                        <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
-                            Tin tức
-                        </h3>
-                        <img class="w-24 h-24" :src="useAsset('images/home/icon-news.png')" alt="promotion">
-                    </div>
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
-                            <div class="text-white font-MyriadRegular">
-                                <h1 class="text-base mb-2">
-                                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
-                                </h1>
-                                <p class="text-sm">
-                                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến
-                                    ngay
-                                    Cinestar
-                                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
-                                </p>
-                            </div>
-                            <div class="w-full h-full">
-                                <img src="/images/c_monday.jpg" alt=""
-                                    class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
-                            </div>
+            <!-- uu dai và tin tức -->
+            <div class="">
+                <div class="flex flex-col items-center justify-center">
+                    <!-- ưu đãi -->
+                    <div class="w-[70%] flex gap-6 my-10 items-center">
+                        <div class="flex flex-col w-24 h-24">
+                            <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
+                                ƯU ĐÃI
+                            </h3>
+                            <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
                         </div>
-                        <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
-                            <div class="text-white font-MyriadRegular">
-                                <h1 class="text-base mb-2">
-                                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
-                                </h1>
-                                <p class="text-sm">
-                                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến
-                                    ngay
-                                    Cinestar
-                                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
-                                </p>
-                            </div>
-                            <div class="w-full h-full">
-                                <img src="/images/c_monday.jpg" alt=""
-                                    class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tl-3xl rounded-br-3xl">
-                            <div class="text-white font-MyriadRegular">
-                                <h1 class="text-base mb-2">
-                                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
-                                </h1>
-                                <p class="text-sm">
-                                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến
-                                    ngay
-                                    Cinestar
-                                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
-                                </p>
-                            </div>
-                            <div class="w-full h-full">
-                                <img src="/images/c_monday.jpg" alt=""
-                                    class="w-full h-full rounded-br-3xl object-cover mr-[16px]">
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-tr-3xl rounded-bl-3xl">
-                            <div class="text-white font-MyriadRegular">
-                                <h1 class="text-base mb-2">
-                                    Khai trương chi nhánh mới khuyến mãi 100% cho các vé xem phim
-                                </h1>
-                                <p class="text-sm">
-                                    Cùng trở thành nhân viên rạp phim để được làm việc trong môi trường chuyên nghiệp. Đến
-                                    ngay
-                                    Cinestar
-                                    Vietnam để trao cho mình cơ hội tuyển dụng đặc biệt vào 13.12.2022 nhé!
-                                </p>
-                            </div>
-                            <div class="w-full h-full">
-                                <img src="/images/c_monday.jpg" alt=""
-                                    class="w-full h-full rounded-tr-3xl object-cover mr-[16px]">
-                            </div>
+                        <div>
+                            <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
+                                <Slide v-for="slide in 10" :key="slide">
+                                    <div
+                                        class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
+                                        <img src="/images/c_monday.jpg" alt=""
+                                            class="w-120 h-120 rounded-lg object-cover mr-[16px]">
+                                    </div>
+                                </Slide>
+                            </carousel>
                         </div>
                     </div>
                 </div>
