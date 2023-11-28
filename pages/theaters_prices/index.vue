@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import useAsset from "@/helpers/useAsset"
+import {Carousel, Navigation, Pagination, Slide} from "vue3-carousel";
+import 'vue3-carousel/dist/carousel.css'
 useHead({ title: "Rạp và giá" })
 </script>
 

@@ -4,8 +4,6 @@ import { Modal } from 'flowbite-vue'
 import { useAuthStore } from '~/stores/auth'
 import Cookies from 'js-cookie'
 
-const authStore = useAuthStore()
-
 const router = [
   {
     path: "/movies",

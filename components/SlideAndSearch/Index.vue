@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {ref} from "vue";
 import {Carousel, Navigation, Pagination, Slide} from "vue3-carousel";
+import 'vue3-carousel/dist/carousel.css'
 import useAsset from "~/helpers/useAsset";
 import { useMoviesStore } from '~/stores/movies';
 
