@@ -26,33 +26,6 @@ useAsyncData("fetch", async () => {
 const activeTab = ref('first')
 
 useHead({ title: "Trang chủ" })
-const pictures = [
-    {
-        'src': useAsset('images/home/z2161740555616_cf6d683f88aa9447af57b89917e84acb.jpg'),
-        'alt': 'Picture 1',
-    },
-    {
-        'src': useAsset('images/home/z2161740555387_88fc044837bea7695ee9ec8320a39cef.jpg'),
-        'alt': 'Picture 2',
-    },
-]
-
-
-const slideshowCurrent = ref(0)
-
-const actionSlide = (status: boolean): void => {
-    if (status) {
-        if (slideshowCurrent.value == 6) {
-            return
-        }
-        slideshowCurrent.value += 1
-    } else {
-        if (slideshowCurrent.value == 0) {
-            return
-        }
-        slideshowCurrent.value -= 1
-    }
-}
 
 const handlePaneClick = (): void => {
     console.log("Click!")
@@ -82,66 +55,6 @@ const trailerHandler = (link: any): void => {
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
-        </div>
-    </div>
-    <carousel :autoplay="3000" :wrap-around="true" class="relative slideshow" ref="slideshow">
-        <slide v-for="(item, index) in pictures" :key="index">
-            <img :src="item.src" :alt="item.alt" class="carousel-image" />
-        </slide>
-        <template #addons>
-            <navigation />
-            <pagination class="sm:block hidden" />
-        </template>
-    </carousel>
-    <div
-        class="relative bg-[url('/images/pattern.png')] bg-repeat bg-top max-w-full flex flex-wrap items-center justify-center">
-        <div class="relative w-full">
-            <img src="/images/background-header.png" alt="Top header">
-        </div>
-        <div class="flex flex-wrap lg:gap-x-32 gap-5 justify-center items-center py-5">
-            <div class="flex items-center justify-between gap-x-10 relative">
-                <div class="w-[114px] h-[130px] sm:block hidden">
-                    <img class="absolute -top-10 left-0" :src="useAsset('images/home/icon-ticket.png')" alt="ticket banner">
-                </div>
-                <h2
-                    class="uppercase font-bold text-[#e00d7a] leading-[32px] text-[32px] text-shadow-xs text-shadow font-Futurab">
-                    mua vé <br>
-                    online
-                </h2>
-            </div>
-            <div class="grid grid-cols-2 gap-5">
-                <select-search model-value=""
-                    class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                    :options="[
-                        { label: 'Chuyến xe cuối cùng', value: '1' },
-                        { label: 'Shin - Cậu bé bút chì', value: '2' },
-                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
-                    ]" placeholder="Chọn phim" />
-                <select-search model-value=""
-                    class="rounded-tl-[24px] rounded-bl-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                    :options="[
-                        { label: 'Chuyến xe cuối cùng', value: '1' },
-                        { label: 'Shin - Cậu bé bút chì', value: '2' },
-                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
-                    ]" placeholder="Chọn rạp" />
-                <select-search model-value=""
-                    class="rounded-tl-[24px] rounded-tr-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                    :options="[
-                        { label: 'Chuyến xe cuối cùng', value: '1' },
-                        { label: 'Shin - Cậu bé bút chì', value: '2' },
-                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
-                    ]" placeholder="Chọn ngày" />
-                <select-search model-value=""
-                    class="rounded-tl-[24px] rounded-tr-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                    :options="[
-                        { label: 'Chuyến xe cuối cùng', value: '1' },
-                        { label: 'Shin - Cậu bé bút chì', value: '2' },
-                        { label: 'Doraemon - Xứ sở thần tiên', value: '3' },
-                    ]" placeholder="Chọn suất chiếu" />
-            </div>
-        </div>
-        <div>
-
         </div>
     </div>
 
