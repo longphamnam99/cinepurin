@@ -14,15 +14,15 @@ const router = [
     name: "Lịch chiếu",
   },
   {
-    path: "/theaters_prices",
+    path: "/prices",
     name: "Rạp và giá",
   },
   {
-    path: "/promotion",
+    path: "/sales",
     name: "Khuyến mãi",
   },
   {
-    path: "/askandanswer",
+    path: "/ask-and-answer",
     name: "Hỏi và đáp",
   },
   {
@@ -30,7 +30,7 @@ const router = [
     name: "Tin tức",
   },
   {
-    path: "/introduce",
+    path: "/about-us",
     name: "Giới thiệu",
   },
   {

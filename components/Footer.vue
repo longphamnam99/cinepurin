@@ -3,13 +3,13 @@
     <img class="w-full" src="/images/background-header.png" alt="">
   </div>
   <!-- chan trang -->
-  <div class="bg-cover from-[#4E0045] to-[#23001C] relative" style="background-image: url(/images/footer.jpg)">
+  <div class="bg-cover from-[#4E0045] to-[#23001C] relative" style="background-image: url(/images/Hinh-nen-may-tinh-toi-gian-800x450.jpg)">
         <div class="flex justify-center pt-2">
             <!-- logo -->
             <img src="/images/logo.png" alt="" class="w-50 h-20">
         </div>
     <div class="flex justify-center items-center">
-      <div class="grid xl:grid-cols-5 sm:grid-cols-2 lg:grid-cols-2 lg:w-[1080px] sm:w-[640px] xl:w-[1280px] text-center justify-center pt-4 pl-24">
+      <div class="grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-2 xs:grid-cols-2 xl:w-[1280px] lg:w-[1024px] sm:w-[786px] xs:w-[640px] text-center justify-center pt-4">
         <div class="">
           <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
             <h2 class="">LIÊN KẾT</h2>
@@ -26,6 +26,21 @@
                                 <img src="/images/scl_youtube.png" alt="" class="w-10 h-10 ">
                             </span>
               </nuxt-link>
+            </div>
+            <div>
+              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+                <h2>HOTLINE</h2>
+              </div>
+
+              <div class="pt-2 text-[#e1dae2]">
+                <div>
+                  <nuxt-link to="#" class="hover:bg-pink-400">
+                                <span class="hover:opacity-50 hover:text-orange-500">
+                                    <h3 class="font-avantgarde text-2xl">0389 010 316</h3>
+                                </span>
+                  </nuxt-link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -114,8 +129,8 @@
             </div>
           </div>
         </div>
-        <div>
-          <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+        <div class="">
+          <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercasesm:justify-center sm:items-center text-center mb-2 inline-block">
             <h2>CHÍNH SÁCH VÀ QUY ĐỊNH</h2>
           </div>
 
@@ -138,21 +153,6 @@
             <div>
               <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
                 <h3>Thông Tin Công Ty</h3>
-              </nuxt-link>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-            <h2>HOTLINE</h2>
-          </div>
-
-          <div class="pt-2 text-[#e1dae2]">
-            <div>
-              <nuxt-link to="#" class="hover:bg-pink-400">
-                            <span class="hover:opacity-50 hover:text-orange-500">
-                                <h3 class="font-avantgarde text-2xl">0389 010 316</h3>
-                            </span>
               </nuxt-link>
             </div>
           </div>
@@ -219,10 +219,7 @@
     <div class="flex bg-black justify-center">
         <div>
             <div><p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO <br> </p>
-                <!-- ĐỊA CHỈ: 135 HAI BÀ TRƯNG, PHƯỜNG BẾN NGHÉ, QUẬN 1, TP.HCM <br>
-                GIẤY CNĐKDN SỐ: 0312742744, ĐĂNG KÝ LẦN ĐẦU NGÀY 18/04/2014, ĐĂNG KÝ THAY ĐỔI LẦN THỨ 2 NGÀY 15/09/2014, CẤP BỞI SỞ KH&ĐT TP.HCM
-                <br>
-                <br>2015 © CINESTAR. ALL RIGHTS RESERVED.</p> -->
+              
             </div>
         </div>
     </div>
