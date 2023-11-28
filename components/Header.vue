@@ -192,6 +192,7 @@ const register = async () => {
       </div>
     </div>
   </nav>
+  <SlideAndSearch/>
   <teleport to="body">
     <Modal v-if="isShowModalRegister" @close="isShowModalRegister = false">
       <template #header>
