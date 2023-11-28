@@ -157,84 +157,84 @@ const actionSlide = (status: boolean): void => {
 
             </div>
         </div>
-
-        <div
-            class="flex items-center justify-center flex-col-2 px-[10%] bg-[url('/public/images/film-bg.jpg')] pt-5 pb-5 gap-5">
-            <div class="border-[9px] border-solid border-[#fae2a2] w-[40%]">
-                <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
+        <div class="px-[10%] bg-[url('/public/images/film-bg.jpg')] pt-5 pb-5">
+          <div class="flex items-center justify-center gap-5 h-[750px]">
+            <div class="border-[9px] border-solid border-[#fae2a2] w-[40%] h-full">
+              <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
             </div>
-            <div class="film-details-wrap w-[60%] shadow-lg hover:shadow-inner-md bg-[#f18720] p-12">
-                <h1 class="text-[28px] font-Futurab text-white pl-5 pr-5 mb-4">{{ dataApi?.value?.tenPhim }}
-                </h1>
-                <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Khởi chiếu</h3>
-                    <h3
-                        class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
-                        Từ {{
-                            formatDate(dataApi?.value?.ngayKhoiChieu) }}</h3>
+            <div class="film-details-wrap w-[60%] shadow-lg hover:shadow-inner-md bg-[#f18720] p-12 h-[750px]">
+              <h1 class="text-[28px] font-Futurab text-white pl-5 pr-5 mb-4">{{ dataApi?.value?.tenPhim }}
+              </h1>
+              <div class="flex flex-col-2 pt-3 gap-5 pl-5">
+                <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Khởi chiếu</h3>
+                <h3
+                    class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
+                  Từ {{
+                    formatDate(dataApi?.value?.ngayKhoiChieu) }}</h3>
+              </div>
+              <div class="flex flex-col-2 pt-3 gap-5 pl-5">
+                <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Thể loại:</h3>
+                <h3
+                    class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
+                  {{
+                    dataApi?.value?.tenTheLoai }}</h3>
+              </div>
+              <div class="flex flex-col-2 pt-3 gap-5 pl-5">
+                <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Diễn viên:</h3>
+                <h3
+                    class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
+                  {{
+                    dataApi?.value?.dienVien }}</h3>
+              </div>
+              <div class="flex flex-col-2 pt-3 gap-5 pl-5">
+                <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Đạo diễn:</h3>
+                <h3
+                    class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
+                  {{
+                    dataApi?.value?.daoDien }}</h3>
+              </div>
+              <div class="flex flex-col-2 pt-3 gap-5 pl-5">
+                <img v-if="dataApi.value?.type == 1" class="w-10 h-10" src="/images/2d.png" alt="">
+                <img v-else-if="dataApi.value?.type == 2" class="w-10 h-10" src="/images/3d.png" alt="">
+              </div>
+              <p class="pl-5 pt-3 text-white">{{ dataApi?.value?.description }}</p>
+              <div class="flex flex-col-2 pt-3 gap-5 pl-5">
+                <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Đánh giá:</h3>
+                <div class="flex gap-2" v-for="danhgia in dataApi.value?.danhGia" :key="danhgia">
+                  <img src="/images/start-comment.png" alt="">
                 </div>
-                <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Thể loại:</h3>
-                    <h3
-                        class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
-                        {{
-                            dataApi?.value?.tenTheLoai }}</h3>
-                </div>
-                <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Diễn viên:</h3>
-                    <h3
-                        class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
-                        {{
-                            dataApi?.value?.dienVien }}</h3>
-                </div>
-                <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Đạo diễn:</h3>
-                    <h3
-                        class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
-                        {{
-                            dataApi?.value?.daoDien }}</h3>
-                </div>
-                <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <img v-if="dataApi.value?.type == 1" class="w-10 h-10" src="/images/2d.png" alt="">
-                    <img v-else-if="dataApi.value?.type == 2" class="w-10 h-10" src="/images/3d.png" alt="">
-                </div>
-                <p class="pl-5 pt-3 text-white">{{ dataApi?.value?.description }}</p>
-                <div class="flex flex-col-2 pt-3 gap-5 pl-5">
-                    <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Đánh giá:</h3>
-                    <div class="flex gap-2" v-for="danhgia in dataApi.value?.danhGia" :key="danhgia">
-                        <img src="/images/start-comment.png" alt="">
-                    </div>
-                </div>
-                <img src="/images/2d.png" alt="" class="pl-5 w-20 pt-3">
-                <p class="pl-5 pt-3 text-white">{{ dataApi?.value?.moTa }}</p>
+              </div>
+              <img src="/images/2d.png" alt="" class="pl-5 w-20 pt-3">
+              <p class="pl-5 pt-3 text-white">{{ dataApi?.value?.moTa }}</p>
 
-                <div class="flex flex-cols-3 pt-3 items-center justify-center gap-3">
-                    <div @click="trailerHandler(dataApi?.value?.trailer)" class="pt-6 cursor-pointer">
-                        <div
-                            class="rounded-[1000px] p-6 bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.8)] flex flex-col-2 w-[180px] h-[52px] items-center justify-center">
-                            <img src="/images/icon-play.png" alt="" class="w-[80px] h-[80px] -ml-8">
-                            <p class="font-Futurab text-[24px] text-white uppercase">trailer</p>
-                        </div>
-                    </div>
-                    <div class="pt-6">
-                        <Nuxt-link :to="`/booking/${dataApi?.value?.maPhim}`"
-                            class="rounded-tl-[1000px] rounded-bl-[1000px] rounded-br-[1000px] p-6 bg-[#e00d7a] hover:bg-[#fecf06] flex flex-col-2 w-[180px] h-[52px] items-center justify-center font-Futurab text-[24px] text-white uppercase">
-                            Mua Vé
-                        </Nuxt-link>
-                    </div>
-                    <div>
-                        <div class="flex flex-col justify-center items-center">
-                            <p class="text-[18px] font-MyriadLight text-white">Chia sẻ</p>
-
-                            <div class="flex items-center justify-center gap-2">
-                                <img src="/images/facebook_icon-icons.com_59205.png" alt=""
-                                    class="w-14 h-14 shadow-custom overflow-hidden">
-                                <img src="/images/scl_google.png" alt="" class="w-14 h-14 shadow-custom overflow-hidden">
-                            </div>
-                        </div>
-                    </div>
+              <div class="flex flex-cols-3 pt-3 items-center justify-center gap-3">
+                <div @click="trailerHandler(dataApi?.value?.trailer)" class="pt-6 cursor-pointer">
+                  <div
+                      class="rounded-[1000px] p-6 bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.8)] flex flex-col-2 w-[180px] h-[52px] items-center justify-center">
+                    <img src="/images/icon-play.png" alt="" class="w-[80px] h-[80px] -ml-8">
+                    <p class="font-Futurab text-[24px] text-white uppercase">trailer</p>
+                  </div>
                 </div>
+                <div class="pt-6">
+                  <Nuxt-link :to="`/booking/${dataApi?.value?.maPhim}`"
+                             class="rounded-tl-[1000px] rounded-bl-[1000px] rounded-br-[1000px] p-6 bg-[#e00d7a] hover:bg-[#fecf06] flex flex-col-2 w-[180px] h-[52px] items-center justify-center font-Futurab text-[24px] text-white uppercase">
+                    Mua Vé
+                  </Nuxt-link>
+                </div>
+                <div>
+                  <div class="flex flex-col justify-center items-center">
+                    <p class="text-[18px] font-MyriadLight text-white">Chia sẻ</p>
+
+                    <div class="flex items-center justify-center gap-2">
+                      <img src="/images/facebook_icon-icons.com_59205.png" alt=""
+                           class="w-14 h-14 shadow-custom overflow-hidden">
+                      <img src="/images/scl_google.png" alt="" class="w-14 h-14 shadow-custom overflow-hidden">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
 
 
