@@ -8,31 +8,32 @@
             <!-- logo -->
             <img src="/images/logo.png" alt="" class="w-50 h-20">
         </div>
-        <div class="grid xl:grid-cols-5 sm:grid-cols-2 lg:grid-cols-2 lg:w-[1080px] sm:w-[640px] xl:w-[1280px] text-center justify-center pt-4 pl-24">
-            <div class="">
-              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                <h2 class="">LIÊN KẾT</h2>
-              </div>
-                <div class="pt-2">
-                    <div class="flex justify-center items-center pt-2 gap-2" >
-                        <nuxt-link to="#" class="hover:bg-black">
+    <div class="flex justify-center items-center">
+      <div class="grid xl:grid-cols-5 sm:grid-cols-2 lg:grid-cols-2 lg:w-[1080px] sm:w-[640px] xl:w-[1280px] text-center justify-center pt-4 pl-24">
+        <div class="">
+          <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+            <h2 class="">LIÊN KẾT</h2>
+          </div>
+          <div class="pt-2">
+            <div class="flex justify-center items-center pt-2 gap-2" >
+              <nuxt-link to="#" class="hover:bg-black">
                             <span class="hover:opacity-50">
                                 <img src="/images/scl_facebook.png" alt="" class="w-10 h-10">
                             </span>
-                        </nuxt-link>
-                        <nuxt-link to="#" class="hover:bg-black">
+              </nuxt-link>
+              <nuxt-link to="#" class="hover:bg-black">
                             <span class="hover:opacity-50">
                                 <img src="/images/scl_youtube.png" alt="" class="w-10 h-10 ">
                             </span>
-                        </nuxt-link>
-                    </div>
-                </div>
+              </nuxt-link>
             </div>
-            <div >
-              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                <h2>HỆ THỐNG RẠP</h2>
-              </div>
-                <div class="pt-2 text-[#e1dae2] font-MyriadLight">
+          </div>
+        </div>
+        <div >
+          <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+            <h2>HỆ THỐNG RẠP</h2>
+          </div>
+          <div class="pt-2 text-[#e1dae2] font-MyriadLight">
                     <span>
                         <div class="hover:opacity-50 hover:text-orange-500">
                             <nuxt-link to="#">
@@ -55,108 +56,110 @@
                             </nuxt-link>
                         </div>
                     </span>
-                    
-                </div>
+
+          </div>
+        </div>
+        <div>
+          <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+            <h2>CINEPURIN</h2>
+          </div>
+          <div class="pt-2 text-[#e1dae2] font-MyriadLight">
+            <div>
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>Phim Đang Chiếu</h3>
+              </nuxt-link>
             </div>
             <div>
-              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                <h2>CINEPURIN</h2>
-              </div> 
-                <div class="pt-2 text-[#e1dae2] font-MyriadLight">
-                    <div>
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>Phim Đang Chiếu</h3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>Phim Sắp Chiếu</h3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>Xuất Chiếu Đặc Biệt</h3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>CINE Bình Dương</h3>
-                        </nuxt-link>
-                    </div>
-                </div>
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>Phim Sắp Chiếu</h3>
+              </nuxt-link>
             </div>
             <div>
-              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                <h2>THÔNG TIN</h2>
-              </div> 
-                
-                <div class="pt-2 text-[#e1dae2] font-MyriadLight">
-                    <div>
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>Giới Thiệu</h3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>Tin Tức</h3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>Hỏi và Đáp</h3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>Liên Hệ</h3>
-                        </nuxt-link>
-                    </div>
-                </div>
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>Xuất Chiếu Đặc Biệt</h3>
+              </nuxt-link>
             </div>
             <div>
-              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                <h2>CHÍNH SÁCH VÀ QUY ĐỊNH</h2>
-              </div> 
-                
-                <div class="pt-2 text-[#e1dae2] font-MyriadLight">
-                    <div>
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>Quy Định Chung</h3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>Điều Khoản Giao Dịch</h3>
-                        </nuxt-link>
-                    </div>
-                    <div> 
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>Chính Sách Bảo Mật</h3>
-                        </nuxt-link>
-                    </div>
-                    <div>
-                        <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
-                            <h3>Thông Tin Công Ty</h3>
-                        </nuxt-link>
-                    </div>
-                </div>
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>CINE Bình Dương</h3>
+              </nuxt-link>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+            <h2>THÔNG TIN</h2>
+          </div>
+
+          <div class="pt-2 text-[#e1dae2] font-MyriadLight">
+            <div>
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>Giới Thiệu</h3>
+              </nuxt-link>
             </div>
             <div>
-              <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
-                <h2>HOTLINE</h2>
-              </div> 
-                
-                <div class="pt-2 text-[#e1dae2]">
-                    <div>
-                        <nuxt-link to="#" class="hover:bg-pink-400">
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>Tin Tức</h3>
+              </nuxt-link>
+            </div>
+            <div>
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>Hỏi và Đáp</h3>
+              </nuxt-link>
+            </div>
+            <div>
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>Liên Hệ</h3>
+              </nuxt-link>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+            <h2>CHÍNH SÁCH VÀ QUY ĐỊNH</h2>
+          </div>
+
+          <div class="pt-2 text-[#e1dae2] font-MyriadLight">
+            <div>
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>Quy Định Chung</h3>
+              </nuxt-link>
+            </div>
+            <div>
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>Điều Khoản Giao Dịch</h3>
+              </nuxt-link>
+            </div>
+            <div>
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>Chính Sách Bảo Mật</h3>
+              </nuxt-link>
+            </div>
+            <div>
+              <nuxt-link to="#" class="hover:opacity-50 hover:text-orange-500">
+                <h3>Thông Tin Công Ty</h3>
+              </nuxt-link>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
+            <h2>HOTLINE</h2>
+          </div>
+
+          <div class="pt-2 text-[#e1dae2]">
+            <div>
+              <nuxt-link to="#" class="hover:bg-pink-400">
                             <span class="hover:opacity-50 hover:text-orange-500">
                                 <h3 class="font-avantgarde text-2xl">0389 010 316</h3>
                             </span>
-                        </nuxt-link>
-                    </div>
-                </div>
+              </nuxt-link>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
+
         <div class="flex flex-col-5 justify-center items-center pt-5 gap-4">
             <div>
                 <nuxt-link to="#">
@@ -224,3 +227,5 @@
         </div>
     </div>
 </template>
+<script setup lang="ts">
+</script>
