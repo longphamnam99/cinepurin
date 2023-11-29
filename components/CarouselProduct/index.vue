@@ -2,7 +2,6 @@
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 
-
 interface IProps {
   modelValue: number,
   data: Array<any>
@@ -91,7 +90,7 @@ const trailerHandler = (link: any): void => {
             Xem trailer
           </button>
           <div class="relative group">
-            <button
+            <button @click="useRouter().push(`/booking/${slide.maPhim}`)"
               class="text-white rounded-tr-[1000px] rounded-br-[1000px] rounded-bl-[1000px] bg-[#e00d7a] w-[150px] text-[22px] py-2 group-hover:bg-[#f18720] transition ease-in-out delay-50">
               Mua vé
             </button>
