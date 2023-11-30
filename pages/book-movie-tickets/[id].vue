@@ -57,8 +57,10 @@ const toggleActive = (row: object, itemIndex: number) => {
   if (row.daDat) {
     return
   }
+
   row.active = !row.active
   row.index = itemIndex
+  row.tenDayDu = row.hangGhe + (itemIndex < 10 ? '0' + itemIndex : itemIndex)
 
   if (row.active) {
     gheDuocChon.value.push(row)
@@ -70,6 +72,31 @@ const toggleActive = (row: object, itemIndex: number) => {
     }
     tongtien.value -= row.giaVe
   }
+}
+
+const thanhtoan = async () => {
+  const danhSachVe = gheDuocChon.value
+
+  const data = {
+    amount: tongtien.value,
+    maLichChieu: id,
+    taiKhoanNguoiDung: "Admin"
+  }
+
+  danhSachVe.forEach((value, index) => {
+    data[`danhSachVe[${index}]`] = value;
+  });
+
+  const queryString = Object.keys(data)
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .join('&');
+
+  const response = await useApiBridge({
+    url: "create_payment_url?" + queryString,
+    method: "get",
+  });
+
+  window.location.href = response
 }
 </script>
 
@@ -112,7 +139,7 @@ const toggleActive = (row: object, itemIndex: number) => {
               <h2 class="text-white text-sm font-Futurab w-auto">SỐ GHẾ</h2>
             </div>
             <div class="bg-[#450828] p-4 flex-1 flex gap-2">
-              <div class="font-Futurab text-[18px" v-for="ghechon in gheDuocChon" :key="ghechon.maGhe">
+              <div class="font-Futurab text-[18px]" v-for="ghechon in gheDuocChon" :key="ghechon.maGhe">
                 {{ ghechon.hangGhe + ghechon.index }}
               </div>
             </div>
@@ -126,7 +153,7 @@ const toggleActive = (row: object, itemIndex: number) => {
       </div>
     </div>
   </div>
-  <div class="px-[20%]">
+  <div class="px-[5%]">
     <h3 class="leading-[42px] text-center text-2xl font-Futurab bg-[#969696] rounded-[1000px] text-white uppercase my-5 shadow-custom">
       Màn hình
     </h3>
@@ -170,8 +197,8 @@ const toggleActive = (row: object, itemIndex: number) => {
           Chọn đồ
           ăn
         </button>
-        <button
-            class="bg-[#f37520] text-[22px] uppercase font-Futurab py-[10px] px-[30px] rounded-tl-[24px] rounded-br-[24px] text-white hover:bg-[#e00d7a]">
+        <button @click="thanhtoan"
+                class="bg-[#f37520] text-[22px] uppercase font-Futurab py-[10px] px-[30px] rounded-tl-[24px] rounded-br-[24px] text-white hover:bg-[#e00d7a]">
           Thanh toán
         </button>
       </div>

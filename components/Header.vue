@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-import { Modal } from 'flowbite-vue'
-import { useAuthStore } from '~/stores/auth'
+import {ref, watch} from 'vue'
+import {Modal} from 'flowbite-vue'
+import {useAuthStore} from '~/stores/auth'
 import Cookies from 'js-cookie'
 
 const router = [
@@ -20,14 +20,6 @@ const router = [
   {
     path: "/sales",
     name: "Khuyến mãi",
-  },
-  {
-    path: "/ask-and-answer",
-    name: "Hỏi và đáp",
-  },
-  {
-    path: "/news",
-    name: "Tin tức",
   },
   {
     path: "/about-us",
@@ -127,30 +119,26 @@ const register = async () => {
 
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-4">
         <nuxt-link to="/" class="logo flex items-center w-[220px] h-[110px] cursor-pointer">
-          <img src="/images/logo.png" class="z-10" alt="Flowbite Logo" />
+          <img src="/images/logo.png" class="z-10" alt="Flowbite Logo"/>
         </nuxt-link>
         <div class="xl:flex flex-col gap-y-3 py-2 hidden md:w-auto justify-between items-end z-10">
           <div class="flex gap-5">
             <form @click.prevent class="relative">
               <input
-                class="rounded-[30px] bg-[#000000] opacity-[0.7] border-0 pr-28 pl-[20px] py-3 placeholder-[#d1d1d1] text-sm text-[#d1d1d1] focus:ring-0 focus:placeholder-transparent placeholder:font-avantgarde"
-                type="text" placeholder="Tìm kiếm...">
+                  class="rounded-[30px] bg-[#000000] opacity-[0.7] border-0 pr-28 pl-[20px] py-3 placeholder-[#d1d1d1] text-sm text-[#d1d1d1] focus:ring-0 focus:placeholder-transparent placeholder:font-avantgarde"
+                  type="text" placeholder="Tìm kiếm...">
               <button type="submit" class="absolute top-1/2 right-0 transform -translate-y-1/2">
                 <img src="/images/icon-search.png" alt="search">
               </button>
             </form>
-            <button
-              class="rounded-[1000px] bg-[#ba3469] w-[39px] h-[39px] flex items-center justify-center text-white font-bold leading-[39px] text-sm">
-              EN
-            </button>
           </div>
           <div class="rounded-[30px] border border-[#e00d7a] p-1">
             <ul class="nav z-20 bg-[#e00d7a] rounded-[30px] flex font-avantgarde-demi text-shadow">
               <li v-for="item in router" :key="item.name"
-                class="hover:bg-[#f37520] transition-all duration-300 ease-in-out text-[18px] leading-[24px]">
+                  class="hover:bg-[#f37520] transition-all duration-300 ease-in-out text-[18px] leading-[24px]">
                 <nuxt-link :to="item.path" class="block py-2 pl-3 pr-4 text-white uppercase">{{
-                  item.name
-                }}
+                    item.name
+                  }}
                 </nuxt-link>
               </li>
             </ul>
@@ -220,52 +208,52 @@ const register = async () => {
           <div class="flex gap-[10px]">
             <div>
               <input type="text"
-                class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
-                placeholder="Họ tên">
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
+                     placeholder="Họ tên">
             </div>
             <div>
               <input type="date"
-                class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
-                placeholder="Ngày sinh" v-model="formRegister.birthday">
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
+                     placeholder="Ngày sinh" v-model="formRegister.birthday">
             </div>
           </div>
           <div class="pt-2">
             <input type="text"
-              class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[590px]"
-              placeholder="Địa chỉ" v-model="formRegister.address">
+                   class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[590px]"
+                   placeholder="Địa chỉ" v-model="formRegister.address">
           </div>
           <div class="flex gap-[10px] pt-2">
             <div>
               <input type="text"
-                class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[200px]"
-                placeholder="Số CMND/BLX" v-model="formRegister.idcard">
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[200px]"
+                     placeholder="Số CMND/BLX" v-model="formRegister.idcard">
             </div>
             <div>
               <input type="tel"
-                class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[180px]"
-                placeholder="Điện Thoại" v-model="formRegister.phone">
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[180px]"
+                     placeholder="Điện Thoại" v-model="formRegister.phone">
             </div>
             <div>
               <input type="email"
-                class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[190px]"
-                placeholder="Email" v-model="formRegister.email">
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[190px]"
+                     placeholder="Email" v-model="formRegister.email">
             </div>
           </div>
           <div class="pt-2">
             <input type="text"
-              class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[590px]"
-              placeholder="Tên đăng nhập(*)" v-model="formRegister.username">
+                   class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[590px]"
+                   placeholder="Tên đăng nhập(*)" v-model="formRegister.username">
           </div>
           <div class="flex gap-[10px] pt-2">
             <div>
               <input type="text"
-                class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
-                placeholder="Mật khẩu(*)" v-model="formRegister.password">
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
+                     placeholder="Mật khẩu(*)" v-model="formRegister.password">
             </div>
             <div>
               <input type="text"
-                class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
-                placeholder="Nhập lại mật khẩu(*)" v-model="formRegister.repassword">
+                     class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 placeholder-gray-500 w-[290px]"
+                     placeholder="Nhập lại mật khẩu(*)" v-model="formRegister.repassword">
             </div>
           </div>
           <div>
@@ -393,11 +381,11 @@ const register = async () => {
       <template #footer>
         <div class="flex justify-between">
           <button @click="closeModal" type="button"
-            class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+                  class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
             Từ Chối
           </button>
           <button @click="register" type="button"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Đồng Ý
           </button>
         </div>
@@ -413,21 +401,22 @@ const register = async () => {
         <form @submit.prevent="submitForm">
           <div class="relative z-0 w-full mb-6 group">
             <input v-model="form.username" type="text" name="floating_email" id="floating_email"
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder=" " required />
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" " required/>
             <label for="floating_email"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tài khoản</label>
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tài
+              khoản</label>
           </div>
           <div class="relative z-0 w-full mb-6 group">
             <input v-model="form.password" type="password" name="floating_password" id="floating_password"
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder=" " required />
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" " required/>
             <label for="floating_password"
-              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mật
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mật
               khẩu</label>
           </div>
           <button type="submit"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Đăng nhập
           </button>
         </form>
@@ -440,6 +429,7 @@ const register = async () => {
 .logo.active {
   background: transparent;
 }
+
 .active {
   background: #f37520;
 }
