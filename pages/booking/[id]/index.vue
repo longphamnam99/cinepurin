@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import useAsset from "@/helpers/useAsset"
+import {Carousel, Slide, Pagination, Navigation} from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css'
 
 import {ref} from 'vue'
 

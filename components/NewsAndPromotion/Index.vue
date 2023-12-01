@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import useAsset from "~/helpers/useAsset";
+import {Carousel, Slide} from "vue3-carousel";
+
+const dataSlide = ref([
+  {
+    image: '/images/c_monday.jpg'
+  },
+  {
+    image: '/images/c_monday.jpg'
+  },
+  {
+    image: '/images/c_monday.jpg'
+  },
+])
+</script>
+
 <template>
   <div class="flex flex-col items-center justify-center overflow-auto px-5">
     <div class="sm:w-[70%] w-full flex gap-6 my-10 items-center">
@@ -9,10 +26,10 @@
       </div>
       <div>
         <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
-          <Slide v-for="slide in 10" :key="slide">
+          <Slide v-for="slide in dataSlide" :key="slide">
             <div
                 class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
-              <img src="/images/c_monday.jpg" alt="" class="w-120 h-120 rounded-lg object-cover mr-[16px]">
+              <img :src="slide.image" alt="" class="w-120 h-120 rounded-lg object-cover mr-[16px]">
             </div>
           </Slide>
         </carousel>
@@ -86,7 +103,3 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
-import useAsset from "~/helpers/useAsset";
-import {Carousel, Slide} from "vue3-carousel";
-</script>
