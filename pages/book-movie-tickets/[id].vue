@@ -194,8 +194,8 @@ const thanhtoan = async () => {
       <div class="flex gap-10 items-center justify-center mb-10">
         <button
             class="bg-[#f37520] text-[22px] uppercase font-Futurab py-[10px] px-[30px] rounded-tl-[24px] rounded-br-[24px] text-white hover:bg-[#e00d7a]">
-          Chọn đồ
-          ăn
+          <nuxt-link to="/foods">Chọn đồ ăn</nuxt-link>
+            
         </button>
         <button @click="thanhtoan"
                 class="bg-[#f37520] text-[22px] uppercase font-Futurab py-[10px] px-[30px] rounded-tl-[24px] rounded-br-[24px] text-white hover:bg-[#e00d7a]">

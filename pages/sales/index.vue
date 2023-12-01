@@ -5,6 +5,7 @@ import 'vue3-carousel/dist/carousel.css'
 import { ref } from 'vue'
 import { Tabs } from 'flowbite-vue'
 const activeTab = ref('first')
+const dangChieu = ref([])
 
 useHead({ title: "Khuyến mãi" })
 
@@ -23,6 +24,15 @@ const actionSlide = (status: boolean): void => {
         slideshowCurrent.value -= 1
     }
 }
+
+useAsyncData("fetch", async () => {
+    try {
+        dangChieu.value = await useFetchApi('QuanLyPhim/LayDanhSachPhim?dangchieu=1')
+    } catch (error) {
+        console.error(error);
+    }
+})
+
 </script>
 
 <template>
@@ -127,64 +137,27 @@ const actionSlide = (status: boolean): void => {
         </div>
 
         <!-- phim đang chiếu -->
-        <div class="relative z-10 tabs-panel">
-            <tabs ref="tabsref" variant="default" v-model="activeTab">
-                <!-- <tab name="first" title="Các phim đang chiếu"> -->
-                <div class="bg-[#f18720] relative">
-                    <div
-                        class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                            @click="actionSlide(false)">
-                            <img :src="useAsset('images/home/icon-start.png')" alt="prev">
-                        </button>
-                        <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                            @click="actionSlide(true)">
-                            <img :src="useAsset('images/home/icon-start.png')" alt="next">
-                        </button>
-                    </div>
-                    <h1 class="flex justify-center text-center font-bold text-white pt-5 text-2xl">CÁC PHIM ĐANG CHIẾU</h1>
-                    <div class="mx-auto max-w-[1200px] py-5">
-                        <CarouselProduct v-model:model-value="slideshowCurrent" />
-                    </div>
-                </div>
-                <!-- </tab> -->
-                <!-- <tab name="second" title="Phim sắp chiếu">
-                <div class="bg-[#f18720] relative">
-                    <div
-                        class="absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div class="overflow-x-hidden">
+            <div class="bg-gradient-to-tr from-[#4E0045] to-[#410434]">
+            <h1 class="text-center text-[30px] py-[40px] uppercase text-white font-Futurab">Phim hay trong tuần</h1>
+            <div class="relative">
+                <div
+                    class="px-[10%] absolute flex justify-between w-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                            @click="actionSlide(false)">
+                        @click="actionSlide(false)">
                         <img :src="useAsset('images/home/icon-start.png')" alt="prev">
                     </button>
                     <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                            @click="actionSlide(true)">
+                        @click="actionSlide(true)">
                         <img :src="useAsset('images/home/icon-start.png')" alt="next">
                     </button>
-                    </div>
-                    <div class="mx-auto max-w-[1200px] py-10">
-                    <CarouselProduct v-model:model-value="slideshowCurrent"/>
-                    </div>
                 </div>
-                </tab>
-                <tab name="third" title="Suất chiếu đặc biệt">
-                <div class="bg-[#f18720] relative">
-                    <div
-                        class="absolute flex justify-between w-[70%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                            @click="actionSlide(false)">
-                        <img :src="useAsset('images/home/icon-start.png')" alt="prev">
-                    </button>
-                    <button class="border rounded-full shadow-[0 0 20px rgba(0,0,0,0.1)] opacity-1 transition-all"
-                            @click="actionSlide(true)">
-                        <img :src="useAsset('images/home/icon-start.png')" alt="next">
-                    </button>
-                    </div>
-                    <div class="mx-auto max-w-[1200px] py-10">
-                    <CarouselProduct v-model:model-value="slideshowCurrent"/>
-                    </div>
+                <div class="mx-auto max-w-[1200px] py-10">
+                    <CarouselProduct v-model:model-value="slideshowCurrent" :data="dangChieu" />
                 </div>
-                </tab> -->
-            </tabs>
+            </div>
+            <NewsAndPromotion />
+        </div>   
         </div>
     </div>
 </template>
