@@ -201,9 +201,14 @@ const isOpen = ref(false)
 
     <Modal v-if="isShowModalLogin" @close="isShowModalLogin = false" class="">
       <template #header>
+<<<<<<< Updated upstream
         <div class="">
           <p class="flex justify-center text-center font-MyriadRegular text-[#707070] text-[18px]"> Vui lòng nhập tên
             người dùng(email) và mật khẩu</p>
+=======
+        <div class="flex justify-center text-center items-center w-full flex-1">
+          <p class="font-MyriadRegular text-[#707070] text-[18px]"> Vui lòng nhập tên người dùng(email) và mật khẩu</p>
+>>>>>>> Stashed changes
         </div>
       </template>
       <template #body>

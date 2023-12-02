@@ -96,12 +96,12 @@ const actionSlide = (status: boolean): void => {
         </div>
     </div>
     <div class="overflow-x-hidden">
-        <div class="px-[10%] bg-[url('/public/images/film-bg.jpg')] pt-5 pb-5">
-          <div class="flex items-center justify-center gap-5">
-            <div class="border-[9px] border-solid border-[#fae2a2] w-[40%] h-full">
+        <div class="px-[10%] bg-[url('/public/images/film-bg.jpg')] py-5 flex">
+          <div class="flex items-center justify-center gap-5 lg:gap-0 flex-1 w-[100%]">
+            <div class="border-[9px] border-solid border-[#fae2a2] lg:border-[0px] w-[40%] h-full">
               <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
             </div>
-            <div class="film-details-wrap w-[60%] shadow-lg hover:shadow-inner-md bg-[#f18720] p-12">
+            <div class="film-details-wrap w-[auto] h-full shadow-lg hover:shadow-inner-md bg-[#f18720] p-12 flex-1">
               <h1 class="text-[28px] font-Futurab text-white pl-5 pr-5 mb-4">{{ dataApi?.value?.tenPhim }}
               </h1>
               <div class="flex flex-col-2 pt-3 gap-5 pl-5">

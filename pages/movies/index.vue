@@ -93,7 +93,7 @@ const trailerHandler = (link: any): void => {
                                         <div>
                                             <nuxt-link :to="`/movies/${movie.id}`">
                                                 <img :src="config.public.baseURLDefault + movie.image" alt=""
-                                                    class="w-[full] h-[380px] pt-5 pl-3">
+                                                    class="w-[full] h-[full] pt-5 pl-3">
                                             </nuxt-link>
                                         </div>
                                         <div class="w-[50%]">
