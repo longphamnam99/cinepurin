@@ -26,10 +26,14 @@ useAsyncData("fetch", async () => {
   }
 })
 
-const getNgay = (ngaychieu: string) => {
+const getNgay = (ngaychieu: string): string => {
   const dateTimeObject = new Date(ngaychieu);
-  const ngayChieu = dateTimeObject.toISOString().split('T')[0];
-  return ngayChieu;
+
+  const ngay = dateTimeObject.getDate().toString().padStart(2, '0');
+  const thang = (dateTimeObject.getMonth() + 1).toString().padStart(2, '0'); // Tháng trong JavaScript bắt đầu từ 0
+  const nam = dateTimeObject.getFullYear().toString();
+
+  return `${ngay}-${thang}-${nam}`;
 }
 
 const getGio = (ngaychieu: string) => {

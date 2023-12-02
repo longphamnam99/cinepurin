@@ -208,7 +208,7 @@ const onSubmit = async () => {
     <div>
         <div class="flex flex-col-2 gap-4 justify-center pt-3">
             <div class="bg-orange-600 w-[140px] h-[40px] text-center pt-2 rounded-xl">
-                <nuxt-link to="/shin">Quay lại</nuxt-link>
+                <nuxt-link to="/">Quay lại</nuxt-link>
             </div>
             <div class="bg-orange-600 w-[140px] h-[40px] text-center pt-2 rounded-xl">
                 <nuxt-link to="/book_tables">Chọn ghế</nuxt-link>

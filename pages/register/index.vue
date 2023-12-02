@@ -41,7 +41,7 @@ const submitForm = async () => {
   <div class="flex bg-[url('/images/bgAuth.a1f0f6cc05af1af82f9b.jpg')] px-[360px] py-[100px]">
     <div class="flex">
       <div>
-        <img src="/images/th (1).jpg" alt="" class="w-[384px] h-[606px]">
+        <img src="/images/th1.jpg" alt="" class="w-[384px] h-[606px]">
       </div>
       <div class="bg-white w-[auto] h-[auto] ">
         <div class="bg-white p-8 rounded shadow-md w-96">
