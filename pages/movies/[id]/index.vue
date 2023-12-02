@@ -98,7 +98,7 @@ const actionSlide = (status: boolean): void => {
     <div class="overflow-x-hidden">
         <div class="px-[10%] bg-[url('/public/images/film-bg.jpg')] py-5 flex">
           <div class="flex md:flex-1 items-center justify-center gap-5 lg:gap-0 md:gap-0 flex-1 w-[100%]">
-            <div class="border-[9px] border-solid border-[#fae2a2] lg:border-[0px] md:border-0 w-[40%] md:w-[400px] h-full hidden lg:block">
+            <div class="xl:border-[9px] border-solid border-[#fae2a2] lg:border-[0px] md:border-0 w-[40%] md:w-[400px] h-full hidden lg:block">
               <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
             </div>
             <div class="film-details-wrap w-[auto] md:w-[370px] h-full shadow-lg hover:shadow-inner-md bg-[#f18720] p-12 flex-1">
@@ -150,26 +150,25 @@ const actionSlide = (status: boolean): void => {
               <div class="flex flex-cols-3 pt-3 items-center justify-center gap-3">
                 <div @click="trailerHandler(dataApi?.value?.trailer)" class="pt-6 cursor-pointer">
                   <div
-                      class="rounded-[1000px] p-6 bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.8)] flex flex-col-2 w-[180px] h-[52px] lg:w-[120px] items-center justify-center">
-        }
-                    <img src="/images/icon-play.png" alt="" class="w-[80px] h-[80px] lg:w-[60px] lg:h-[60px] -ml-8 lg:pl-1">
-                    <p class="font-Futurab lg:font-avantgarde-demi text-[24px] lg:text-[16px] text-white uppercase">TRAILER</p>
+                      class="rounded-[1000px] p-6 bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.8)] flex flex-col-2 xl:w-[180px] h-[52px] lg:w-[120px] items-center justify-center">
+                    <img src="/images/icon-play.png" alt="" class="xl:w-[80px] xl:h-[80px] lg:w-[60px] lg:h-[60px] -ml-8 lg:pl-1">
+                    <p class="xl:font-Futurab lg:font-avantgarde-demi xl:text-[24px] lg:text-[16px] text-white uppercase">TRAILER</p>
                   </div>
                 </div>
                 <div class="pt-6">
                   <Nuxt-link :to="`/booking/${dataApi?.value?.maPhim}`"
-                             class="rounded-tl-[1000px] rounded-bl-[1000px] rounded-br-[1000px] p-6 bg-[#e00d7a] hover:bg-[#fecf06] flex flex-col-2 w-[180px] h-[52px] lg:w-[120px] items-center justify-center font-Futurab lg:font-avantgarde-demi text-[24px] lg:text-[16px] text-white uppercase">
+                             class="rounded-tl-[1000px] rounded-bl-[1000px] rounded-br-[1000px] p-6 bg-[#e00d7a] hover:bg-[#fecf06] flex flex-col-2 xl:w-[180px] h-[52px] lg:w-[120px] items-center justify-center xl:font-Futurab lg:font-avantgarde-demi xl:text-[24px] lg:text-[16px] text-white uppercase">
                     MUA VÉ
                   </Nuxt-link>
                 </div>
                 <div>
                   <div class="flex flex-col justify-center items-center">
-                    <p class="text-[18px] font-MyriadLight text-white">Chia sẻ</p>
+                    <p class="xl:text-[18px] lg:text-[15px] font-MyriadLight text-white">Chia sẻ</p>
 
                     <div class="flex items-center justify-center gap-2">
                       <img src="/images/facebook_icon-icons.com_59205.png" alt=""
-                           class="w-14 h-14 lg:w-11 lg:h-11 shadow-custom overflow-hidden">
-                      <img src="/images/scl_google.png" alt="" class="w-11 h-11 shadow-custom overflow-hidden">
+                           class="xl:w-14 xl:h-14 lg:w-[35px] lg:h-[35px] shadow-custom overflow-hidden">
+                      <img src="/images/scl_google.png" alt="" class="xl:w-14 xl:h-14 lg:w-[35px] h-[35px] shadow-custom overflow-hidden">
                     </div>
                   </div>
                 </div>
