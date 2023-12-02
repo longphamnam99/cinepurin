@@ -103,6 +103,10 @@ const actionSlide = (status: boolean): void => {
             </div>
             <div class="film-details-wrap w-[auto] md:w-[370px] h-full shadow-lg hover:shadow-inner-md bg-[#f18720] p-12 flex-1">
                 
+                <div class="image-container lg:hidden ">
+                    <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
+                </div>
+
                 <h1 class="text-[28px] font-Futurab text-white pl-5 pr-5 mb-4">{{ dataApi?.value?.tenPhim }}
               </h1>
               <div class="flex flex-col-2 pt-3 gap-5 pl-5">
@@ -167,7 +171,7 @@ const actionSlide = (status: boolean): void => {
 
                     <div class="flex items-center justify-center gap-2">
                       <img src="/images/facebook_icon-icons.com_59205.png" alt=""
-                           class="xl:w-14 xl:h-14 lg:w-[35px] lg:h-[35px] shadow-custom overflow-hidden">
+                           class="xl:w-14 xl:h-14 lg:w-[35px] lg:h-[35px] md:w-[35px] shadow-custom overflow-hidden">
                       <img src="/images/scl_google.png" alt="" class="xl:w-14 xl:h-14 lg:w-[35px] h-[35px] shadow-custom overflow-hidden">
                     </div>
                   </div>
@@ -191,7 +195,7 @@ const actionSlide = (status: boolean): void => {
                         <img :src="useAsset('images/home/icon-start.png')" alt="next">
                     </button>
                 </div>
-                <div class="mx-auto max-w-[1200px] py-10">
+                <div class="mx-auto lg:max-w-[1200px] md:max-w-[300px] py-10">
                     <CarouselProduct v-model:model-value="slideshowCurrent" :data="dangChieu" />
                 </div>
             </div>

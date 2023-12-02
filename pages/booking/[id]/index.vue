@@ -67,11 +67,15 @@ const getGio = (ngaychieu: string) => {
 
   <div class="flex justify-center bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
     <div class=" flex flex-col-2  bg-[#f37520] gap-5 p-10">
-      <div>
-        <img :src="dataApi?.value?.hinhAnh" alt=""
-             class="w-[450px] h-[430px] showdow-custom">
+      <div class="xl:border-[9px] border-solid border-[#fae2a2] lg:border-[0px] md:border-0 w-[40%] md:w-[400px] h-full hidden sm:block">
+        <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full md:h-[420px] sm:h-full object-cover">
       </div>
-      <div class="relative w-full h-auto overflow-hidden mb-5">
+
+      <div class="relative w-full h-auto overflow-hidden mb-5 flex-1">
+        <div class="image-container sm:hidden ">
+          <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
+        </div>
+
         <h3 class="text-[28px] uppercase text-white pb-3 font-Futurab cinema-item">{{ dataApi?.value?.tenPhim }}</h3>
         <template v-for="rapchieu in dataApi?.value?.heThongRapChieu" :key="rapchieu?.maHeThongRap">
           <div v-for="cumchieu in rapchieu?.cumRapChieu" :key="cumchieu?.maHeThongRap"
@@ -93,13 +97,6 @@ const getGio = (ngaychieu: string) => {
                   </li>
                 </ul>
               </div>
-              <!--                    <h3 class="flex bg-yellow-300 w-[70px] h-[60px] justify-center items-center pl-2">16/09 2023-->
-              <!--                    </h3>-->
-              <!--                    <div class="flex flex-col-2 bg-yellow-100 w-[700px] h-[60px] pt-1 pl-5 pr-8 gap-2">-->
-              <!--                      <nuxt-link :to="`/payment/${id}`">-->
-              <!--                        <p class="bg-yellow-50 w-[50px] h-[50px] text-center pt-3"><button>12:30</button></p>-->
-              <!--                      </nuxt-link>-->
-              <!--                    </div>-->
             </div>
           </div>
         </template>
