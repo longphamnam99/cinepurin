@@ -1,7 +1,13 @@
 <script setup lang="ts">
+import Cookies from 'js-cookie'
+
 definePageMeta({
   layout: 'register'
 })
+
+const token = Cookies.get("token")
+
+if (token) useRouter().push('/')
 
 const formRegister = ref({
   email: "",
@@ -21,7 +27,8 @@ const submitForm = async () => {
   })
 
   if (data == 'Success') {
-    alert('Đăng kí thành cong')
+    // alert('Đăng kí thành cong')
+    useRouter().push('/')
   }
   console.log(data)
 }

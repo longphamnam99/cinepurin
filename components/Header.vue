@@ -3,7 +3,6 @@ import {ref, watch} from 'vue'
 import {Modal} from 'flowbite-vue'
 import {useAuthStore} from '~/stores/auth'
 import Cookies from 'js-cookie'
-import Directors from 'pages/manager/directors.vue';
 
 interface IProps {
   showBannerAndSearch?: boolean
@@ -96,6 +95,8 @@ const submitForm = async () => {
     userData.value = Cookies.get('userData')
     isShowLogin.value = false
     isShowModalLogin.value = false
+    form.value.taiKhoan = ""
+    form.value.matKhau = ""
   }
 }
 
@@ -172,8 +173,8 @@ const isOpen = ref(false)
         <div class="flex items-center sm:gap-x-10 gap-x-8">
           <div class="flex items-center gap-x-2 cursor-pointer" @click="isShowModalRegister = true">
             <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-register.png" alt="icon register">
-            <span class="cursor-pointer" @click="useRouter().push('/register')">
-              <span v-if="isShowLogin"
+            <span class="cursor-pointer">
+              <span v-if="isShowLogin" @click="useRouter().push('/register')"
                     class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs font-avantgarde-demi">
                 Đăng ký thành viên
               </span>

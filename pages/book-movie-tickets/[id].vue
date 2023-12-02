@@ -1,6 +1,12 @@
 <script setup lang="ts">
+import Cookies from "js-cookie";
+
 const id = useRoute().params.id;
 const dataApi = reactive({})
+
+const token = Cookies.get("token")
+
+if (!token) useRouter().push('/login?page=book-movie-tickets/' + id)
 
 useAsyncData("fetch", async () => {
   try {
@@ -8,6 +14,8 @@ useAsyncData("fetch", async () => {
       url: "QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=" + id,
       method: "get",
     });
+
+    console.log(response)
 
     dataApi.value = response
 
@@ -115,8 +123,7 @@ const updateCountdown = () => {
   formattedTime.value = formatTime(countdownSeconds.value);
 
   if (formattedTime.value == '00:00') {
-    console.log('het gio')
-    alert('het thoi gian chon')
+    useRouter().push('/')
   }
 
   if (countdownSeconds.value === 0) {
