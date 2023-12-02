@@ -109,6 +109,8 @@ const register = async () => {
   })
   console.log(data)
 }
+
+const isOpen = ref(false)
 </script>
 
 <template>
@@ -118,12 +120,23 @@ const register = async () => {
         <img src="/images/background-header.png" alt="Top header">
       </div>
 
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-4">
+      <div
+          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-4">
         <nuxt-link to="/" class="logo flex items-center w-[220px] h-[110px] cursor-pointer">
           <img src="/images/logo.png" class="z-10" alt="Flowbite Logo"/>
         </nuxt-link>
-        <div class="xl:flex flex-col gap-y-3 py-2 hidden md:w-auto justify-between items-end z-10">
-          <div class="flex gap-5">
+        <button @click="isOpen = !isOpen" data-collapse-toggle="navbar-default" type="button"
+                class="inline-flex items-center z-10 p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#e00d7a] focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:focus:ring-gray-600"
+                aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="#f37520" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+        </button>
+        <div :class="{'hidden': !isOpen, 'w-full relative': isOpen}"
+             class="xl:flex flex-col gap-y-3 py-2 md:w-auto justify-between items-end z-10">
+          <div class="lg:flex hidden gap-5">
             <form @click.prevent class="relative">
               <input
                   class="rounded-[30px] bg-[#000000] opacity-[0.7] border-0 pr-28 pl-[20px] py-3 placeholder-[#d1d1d1] text-sm text-[#d1d1d1] focus:ring-0 focus:placeholder-transparent placeholder:font-avantgarde"
@@ -133,8 +146,9 @@ const register = async () => {
               </button>
             </form>
           </div>
-          <div class="rounded-[30px] border border-[#e00d7a] p-1">
-            <ul class="nav z-20 bg-[#e00d7a] rounded-[30px] flex font-avantgarde-demi text-shadow">
+          <div :class="{'absolute top-2 left-0 w-full': isOpen}" class="rounded-[30px] border border-[#e00d7a] p-1">
+            <ul :class="{'flex-col flex-1': isOpen}"
+                class="nav z-20 bg-[#e00d7a] rounded-[30px] flex font-avantgarde-demi text-shadow">
               <li v-for="item in router" :key="item.name"
                   class="hover:bg-[#f37520] transition-all duration-300 ease-in-out text-[18px] leading-[24px]">
                 <nuxt-link :to="item.path" class="block py-2 pl-3 pr-4 text-white uppercase">{{
@@ -183,12 +197,13 @@ const register = async () => {
   </nav>
   <SlideAndSearch/>
   <teleport to="body">
-      <!--đăng nhập -->
-      
+    <!--đăng nhập -->
+
     <Modal v-if="isShowModalLogin" @close="isShowModalLogin = false" class="">
       <template #header>
         <div class="">
-          <p class="flex justify-center text-center font-MyriadRegular text-[#707070] text-[18px]"> Vui lòng nhập tên người dùng(email) và mật khẩu</p>
+          <p class="flex justify-center text-center font-MyriadRegular text-[#707070] text-[18px]"> Vui lòng nhập tên
+            người dùng(email) và mật khẩu</p>
         </div>
       </template>
       <template #body>
@@ -196,13 +211,13 @@ const register = async () => {
           <div class="relative z-0 w-full mb-6 group">
             <div class="relative">
               <!-- Input với hình ảnh nền -->
-              <input v-model="form.username" type="text" name="floating_email" id="floating_email" 
-                    class="w-full pl-10 pr-4 py-2 border-1 border-solid border-rose-500 rounded-ss-[30px] rounded-se-[30px] rounded-ee-[30px] rounded-es-[30px]"
-                    placeholder=" " required/>
+              <input v-model="form.username" type="text" name="floating_email" id="floating_email"
+                     class="w-full pl-10 pr-4 py-2 border-1 border-solid border-rose-500 rounded-ss-[30px] rounded-se-[30px] rounded-ee-[30px] rounded-es-[30px]"
+                     placeholder=" " required/>
 
               <!-- Hình ảnh nền cho input -->
               <div class="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
-                <img src="../images/icon-user.png" alt="Hình ảnh" class="h-6 w-6" />
+                <img src="../images/icon-user.png" alt="Hình ảnh" class="h-6 w-6"/>
               </div>
             </div>
           </div>
@@ -210,30 +225,30 @@ const register = async () => {
           <div class="relative z-0 w-full mb-6 group">
             <div class="relative">
               <!-- Input với hình ảnh nền -->
-              <input v-model="form.username" type="text" name="floating_email" id="floating_email" 
-                    class="w-full pl-10 pr-4 py-2 border-1 border-solid border-rose-500 rounded-ss-[30px] rounded-se-[30px] rounded-ee-[30px] rounded-es-[30px]"
-                    placeholder=" " required/>
+              <input v-model="form.username" type="text" name="floating_email" id="floating_email"
+                     class="w-full pl-10 pr-4 py-2 border-1 border-solid border-rose-500 rounded-ss-[30px] rounded-se-[30px] rounded-ee-[30px] rounded-es-[30px]"
+                     placeholder=" " required/>
 
               <!-- Hình ảnh nền cho input -->
               <div class="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
-                <img src="../images/icon-pass.png" alt="Hình ảnh" class="h-6 w-6" />
+                <img src="../images/icon-pass.png" alt="Hình ảnh" class="h-6 w-6"/>
               </div>
             </div>
           </div>
           <div class="flex ">
             <div class="flex items-start">
               <button type="submit"
-                    class="bg-[#f37520] text-[#fff] font-Futurab text-[24px] px-[31px] py-[15px] rounded-ss-[30px] rounded-se-[30px] rounded-ee-[30px]">
-              ĐĂNG NHẬP
+                      class="bg-[#f37520] text-[#fff] font-Futurab text-[24px] px-[31px] py-[15px] rounded-ss-[30px] rounded-se-[30px] rounded-ee-[30px]">
+                ĐĂNG NHẬP
               </button>
             </div>
             <div class="flex">
               <button type="submit"
-                    class="bg-wwhite px-[31px] py-[15px] text-[#c0bebe] font-avantgarde-demi text-[16px] pr-[10px] text-right">
-              QUÊN MẬT KHẨU
+                      class="bg-wwhite px-[31px] py-[15px] text-[#c0bebe] font-avantgarde-demi text-[16px] pr-[10px] text-right">
+                QUÊN MẬT KHẨU
               </button>
             </div>
-            
+
           </div>
         </form>
 

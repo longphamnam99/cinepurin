@@ -98,6 +98,40 @@ const thanhtoan = async () => {
 
   window.location.href = response
 }
+
+const countdownSeconds = ref(5 * 60);
+const formattedTime = ref('');
+
+const formatTime = (seconds: number): string => {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+};
+
+let intervalId: NodeJS.Timeout;
+
+const updateCountdown = () => {
+  countdownSeconds.value -= 1;
+  formattedTime.value = formatTime(countdownSeconds.value);
+
+  if (formattedTime.value == '00:00') {
+    console.log('het gio')
+    alert('het thoi gian chon')
+  }
+
+  if (countdownSeconds.value === 0) {
+    clearInterval(intervalId);
+  }
+};
+
+onMounted(() => {
+  intervalId = setInterval(updateCountdown, 1000);
+});
+
+onBeforeUnmount(() => {
+  clearInterval(intervalId);
+});
+
 </script>
 
 <template>
@@ -147,8 +181,8 @@ const thanhtoan = async () => {
         </div>
 
         <div class="flex flex-col justify-center items-center py-1 px-3">
-          <h2 class="text-[20px] uppercase font-MyriadLight">thời gian giứ ghế</h2>
-          <h1 class="text-5xl">05:00</h1>
+          <h2 class="text-[20px] uppercase font-MyriadLight">thời gian giữ ghế</h2>
+          <h1 class="text-5xl">{{ formattedTime }}</h1>
         </div>
       </div>
     </div>
@@ -192,11 +226,6 @@ const thanhtoan = async () => {
         </div>
       </div>
       <div class="flex gap-10 items-center justify-center mb-10">
-        <button
-            class="bg-[#f37520] text-[22px] uppercase font-Futurab py-[10px] px-[30px] rounded-tl-[24px] rounded-br-[24px] text-white hover:bg-[#e00d7a]">
-          <nuxt-link to="/foods">Chọn đồ ăn</nuxt-link>
-            
-        </button>
         <button @click="thanhtoan"
                 class="bg-[#f37520] text-[22px] uppercase font-Futurab py-[10px] px-[30px] rounded-tl-[24px] rounded-br-[24px] text-white hover:bg-[#e00d7a]">
           Thanh toán
