@@ -88,16 +88,32 @@ const thanhtoan = async () => {
   const data = {
     amount: tongtien.value,
     maLichChieu: id,
-    taiKhoanNguoiDung: "Admin"
+    taiKhoanNguoiDung: "Admin",
+    danhSachVe: danhSachVe
   }
 
-  danhSachVe.forEach((value, index) => {
-    data[`danhSachVe[${index}]`] = value;
-  });
+  // danhSachVe.forEach((value, index) => {
+  //   data[`danhSachVe[${index}]`] = value;
+  // });
 
   const queryString = Object.keys(data)
-      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .map((key) => {
+        if (key === 'danhSachVe' && Array.isArray(data[key])) {
+          // Xử lý mảng danhSachVe thành chuỗi JSON
+          const veQueryStrings = data[key].map((ve, index) => {
+            const veData = ['maGhe', 'tenDayDu', 'giaVe']
+                .map((veKey) => `${veKey}:${JSON.stringify(ve[veKey])}`)
+                .join(',');
+            return `${encodeURIComponent(`${key}[${index}]`)}=${encodeURIComponent(`{${veData}}`)}`;
+          });
+          return veQueryStrings.join('&');
+        } else {
+          // Xử lý giá trị không phải mảng
+          return `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`;
+        }
+      })
       .join('&');
+
 
   const response = await useApiBridge({
     url: "create_payment_url?" + queryString,
