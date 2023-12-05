@@ -124,7 +124,6 @@ const isOpen = ref(false)
       <div class="relative">
         <img src="/images/background-header.png" alt="Top header">
       </div>
-
       <div
           class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-4">
         <nuxt-link to="/" class="logo flex items-center w-[220px] h-[110px] cursor-pointer">
@@ -168,6 +167,8 @@ const isOpen = ref(false)
       <div class="absolute top-0 left-0 h-full w-full bg-no-repeat bg-center bg-[url('/images/bg-top.png')] z-1">
       </div>
     </div>
+
+
     <div class="bg-[url('/images/pattern.png')] bg-repeat bg-top max-w-full flex items-center justify-center">
       <div class="lg:w-[90%] w-full items-center flex flex-wrap lg:justify-between justify-center gap-x-10">
         <div class="flex items-center sm:gap-x-10 gap-x-8">

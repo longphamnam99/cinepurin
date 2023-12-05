@@ -96,14 +96,14 @@ const actionSlide = (status: boolean): void => {
         </div>
     </div>
     <div class="overflow-x-hidden">
-        <div class="px-[10%] bg-[url('/public/images/film-bg.jpg')] py-5 flex">
-          <div class="flex md:flex-1 items-center justify-center gap-5 lg:gap-0 md:gap-0 flex-1 w-[100%]">
-            <div class="xl:border-[9px] border-solid border-[#fae2a2] lg:border-[0px] md:border-0 w-[40%] md:w-[400px] h-full hidden lg:block">
+        <div class="px-[10%] bg-[url('/images/film-bg.jpg')] py-5 flex">
+          <div class="flex flex-1 items-center justify-center gap-3 w-[100%]">
+            <div class="border-[9px] border-solid border-[#fae2a2] w-[50%] h-full">
               <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
             </div>
-            <div class="film-details-wrap w-[auto] md:w-[370px] h-full shadow-lg hover:shadow-inner-md bg-[#f18720] p-12 flex-1">
+            <div class="film-details-wrap w-[auto] h-full shadow-lg hover:shadow-inner-md bg-[#f18720] p-12 flex-1">
                 
-                <div class="image-container lg:hidden ">
+                <div class="image-container lg:block hidden ">
                     <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
                 </div>
 
@@ -137,11 +137,11 @@ const actionSlide = (status: boolean): void => {
                   {{
                     dataApi?.value?.daoDien }}</h3>
               </div>
-              <div class="flex flex-col-2 pt-3 lg:pt-0 gap-5 pl-5">
+              <div class="flex flex-col-2 pt-3 pt-0 gap-5 pl-5">
                 <img v-if="dataApi.value?.type == 1" class="w-10 h-10" src="/images/2d.png" alt="">
                 <img v-else-if="dataApi.value?.type == 2" class="w-10 h-10" src="/images/3d.png" alt="">
               </div>
-              <p class="pl-5 pt-3 lg:pt-0 text-white">{{ dataApi?.value?.description }}</p>
+              <p class="pl-5 pt-3  text-white">{{ dataApi?.value?.description }}</p>
               <div class="flex flex-col-2 pt-3 gap-5 pl-5">
                 <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Đánh giá:</h3>
                 <div class="flex gap-2" v-for="danhgia in dataApi.value?.danhGia" :key="danhgia">
@@ -154,25 +154,25 @@ const actionSlide = (status: boolean): void => {
               <div class="flex flex-cols-3 pt-3 items-center justify-center gap-3">
                 <div @click="trailerHandler(dataApi?.value?.trailer)" class="pt-6 cursor-pointer">
                   <div
-                      class="rounded-[1000px] p-6 bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.8)] flex flex-col-2 xl:w-[180px] h-[52px] lg:w-[120px] items-center justify-center">
-                    <img src="/images/icon-play.png" alt="" class="xl:w-[80px] xl:h-[80px] lg:w-[60px] lg:h-[60px] -ml-8 lg:pl-1">
-                    <p class="xl:font-Futurab lg:font-avantgarde-demi xl:text-[24px] lg:text-[16px] text-white uppercase">TRAILER</p>
+                      class="rounded-[1000px] p-6 bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.8)] flex flex-col-2 w-[180px] h-[52px] items-center justify-center">
+                    <img src="/images/icon-play.png" alt="" class="w-[80px] h-[80px] -ml-8 pl-1">
+                    <p class="font-Futurab lg:font-avantgarde-demi text-[24px] lg:text-[16px] text-white uppercase">TRAILER</p>
                   </div>
                 </div>
                 <div class="pt-6">
                   <Nuxt-link :to="`/booking/${dataApi?.value?.maPhim}`"
-                             class="rounded-tl-[1000px] rounded-bl-[1000px] rounded-br-[1000px] p-6 bg-[#e00d7a] hover:bg-[#fecf06] flex flex-col-2 xl:w-[180px] h-[52px] lg:w-[120px] items-center justify-center xl:font-Futurab lg:font-avantgarde-demi xl:text-[24px] lg:text-[16px] text-white uppercase">
+                             class="rounded-tl-[1000px] rounded-bl-[1000px] rounded-br-[1000px] p-6 bg-[#e00d7a] hover:bg-[#fecf06] flex flex-col-2 w-[180px] h-[52px] lg:w-[120px] items-center justify-center font-Futurab lg:font-avantgarde-demi text-[24px] lg:text-[16px] text-white uppercase">
                     MUA VÉ
                   </Nuxt-link>
                 </div>
                 <div>
                   <div class="flex flex-col justify-center items-center">
-                    <p class="xl:text-[18px] lg:text-[15px] font-MyriadLight text-white">Chia sẻ</p>
+                    <p class="text-[18px] lg:text-[15px] font-MyriadLight text-white">Chia sẻ</p>
 
                     <div class="flex items-center justify-center gap-2">
                       <img src="/images/facebook_icon-icons.com_59205.png" alt=""
-                           class="xl:w-14 xl:h-14 lg:w-[35px] lg:h-[35px] md:w-[35px] shadow-custom overflow-hidden">
-                      <img src="/images/scl_google.png" alt="" class="xl:w-14 xl:h-14 lg:w-[35px] h-[35px] shadow-custom overflow-hidden">
+                           class="w-14 h-14 shadow-custom overflow-hidden">
+                      <img src="/images/scl_google.png" alt="" class="w-14 h-14 shadow-custom overflow-hidden">
                     </div>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ const actionSlide = (status: boolean): void => {
                         <img :src="useAsset('images/home/icon-start.png')" alt="next">
                     </button>
                 </div>
-                <div class="mx-auto lg:max-w-[1200px] md:max-w-[300px] py-10">
+                <div class="mx-auto max-w-[1200px]  py-10">
                     <CarouselProduct v-model:model-value="slideshowCurrent" :data="dangChieu" />
                 </div>
             </div>

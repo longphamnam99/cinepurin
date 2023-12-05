@@ -9,7 +9,7 @@
             <img src="/images/logo.png" alt="" class="w-50 h-20">
         </div>
     <div class="flex justify-center items-center">
-      <div class="grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-2 xs:grid-cols-2 xl:w-[1280px] lg:w-[1024px] sm:w-[786px] xs:w-[640px] text-center justify-center pt-4">
+      <div class="grid grid-cols-5 w-[full] text-center justify-center pt-4 px-4">
         <div class="">
           <div class="bg-white bg-opacity-10 px-4 py-2 font-avantgarde-demi text-white text-sm uppercase text-center mb-2 inline-block">
             <h2 class="">LIÊN KẾT</h2>
@@ -216,13 +216,6 @@
         </div>
     </div>
     
-    <div class="flex bg-black justify-center">
-        <div>
-            <div><p class="text-white text-center text-sm">CÔNG TY CỔ PHẦN GIẢI TRÍ PHÁT HÀNH PHIM – RẠP CHIẾU PHIM NGÔI SAO <br> </p>
-              
-            </div>
-        </div>
-    </div>
 </template>
 <script setup lang="ts">
 </script>
