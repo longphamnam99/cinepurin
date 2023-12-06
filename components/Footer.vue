@@ -3,7 +3,7 @@
     <img class="w-full" src="/images/background-header.png" alt="">
   </div>
   <!-- chan trang -->
-  <div class="bg-cover from-[#4E0045] to-[#23001C] relative" style="background-image: url(/images/Hinh-nen-may-tinh-toi-gian-800x450.jpg)">
+  <div class="bg-cover from-[#4E0045] to-[#23001C] relative" style="background-image: url(/images/f1.jpg)">
         <div class="flex justify-center pt-2">
             <!-- logo -->
             <img src="/images/logo.png" alt="" class="w-50 h-20">

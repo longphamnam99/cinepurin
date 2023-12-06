@@ -50,16 +50,16 @@ const getGio = (ngaychieu: string) => {
         <select-search model-value=""
                        class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                        :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                        { label: 'cine', value: '1' },
+                        { label: 'purin', value: '2' },
+                        { label: 'cine', value: '3' },
                     ]" placeholder="Chọn rạp chiếu"/>
         <select-search model-value=""
                        class="rounded-tl-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
                        :options="[
-                        { label: 'Cô thư ký và anh giám đốc', value: '1' },
-                        { label: 'Em hàng xóm xinh đẹp', value: '2' },
-                        { label: 'Tiếp viên hàng không xinh đẹp', value: '3' },
+                        { label: 'cine', value: '1' },
+                        { label: 'purin', value: '2' },
+                        { label: 'cine', value: '3' },
                     ]" placeholder="Chọn thời gian"/>
       </div>
     </div>
@@ -67,15 +67,11 @@ const getGio = (ngaychieu: string) => {
 
   <div class="flex justify-center bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
     <div class=" flex flex-col-2  bg-[#f37520] gap-5 p-10">
-      <div class="xl:border-[9px] border-solid border-[#fae2a2] lg:border-[0px] md:border-0 w-[40%] md:w-[400px] h-full hidden sm:block">
-        <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full md:h-[420px] sm:h-full object-cover">
+      <div class="border-[9px] border-solid border-[#fae2a2] lg:border-[0px] w-[30%] h-[450px] ">
+        <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
       </div>
 
       <div class="relative w-full h-auto overflow-hidden mb-5 flex-1">
-        <div class="image-container sm:hidden ">
-          <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
-        </div>
-
         <h3 class="text-[28px] uppercase text-white pb-3 font-Futurab cinema-item">{{ dataApi?.value?.tenPhim }}</h3>
         <template v-for="rapchieu in dataApi?.value?.heThongRapChieu" :key="rapchieu?.maHeThongRap">
           <div v-for="cumchieu in rapchieu?.cumRapChieu" :key="cumchieu?.maHeThongRap"
@@ -107,29 +103,9 @@ const getGio = (ngaychieu: string) => {
 
   <!-- uu dai và tin tức -->
   <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
-    <div class="flex flex-col items-center justify-center">
-      <!-- ưu đãi -->
-      <div class="w-[70%] flex gap-6 my-10 items-center">
-        <div class="flex flex-col w-24 h-24">
-          <h3 class="text-white uppercase font-avantgarde-demi text-3xl">
-            ƯU ĐÃI
-          </h3>
-          <img class="w-24 h-24" :src="useAsset('images/home/icon-promotion.png')" alt="promotion">
-        </div>
-        <div>
-          <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="3">
-            <Slide v-for="slide in 10" :key="slide">
-              <div
-                  class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
-                <img src="/images/c_monday.jpg" alt=""
-                     class="w-120 h-120 rounded-lg object-cover mr-[16px]">
-              </div>
-            </Slide>
-          </carousel>
-        </div>
-      </div>
-    </div>
+    <NewsAndPromotion/>
   </div>
+  
 </template>
 <style>
 .slideshow .carousel__pagination {

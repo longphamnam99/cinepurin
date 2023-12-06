@@ -40,23 +40,23 @@ const dataSlide = ref([
         <h3 class="text-white uppercase font-avantgarde-demi text-2xl">
           Giới Thiệu
         </h3>
+        <p class="text-white font-MyriadRegular text-[10px] text-center pt-1">Các Rạp Chiếu Liên Kết</p>
       </div>
       <div class="grid grid-cols-2 gap-2">
         <div class=" grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-ee-3xl rounded-ss-3xl">
           <div class="text-white font-MyriadRegular">
             <h1 class=" mb-2 font-avantgarde-demi text-[19px]">
-              Cinepurin Lâm Đồng
+              Lotte Cinema
             </h1>
             <p class="text-sm">
-              Địa chỉ : Tầng 4, Trung tâm Thương mại và Dịch vụ Tài chính Sacombank, 713 Quốc lộ 20, thị trấn Liên
-              Nghĩa, huyện Đức Trọng, tỉnh Lâm Đồng. <br>
-              Hotline: +84 (89) 010 316
+              Địa chỉ : Tầng 3, TTTM Lotte, số 469 đường Nguyễn Hữu Thọ, Phường Tân Hưng, Quận 7, TPHCM, Việt Nam .<br>
+              Hotline: +(028) 3775 2524
               <nuxt-link to="https://www.facebook.com/Shu1906.cn"><p class="hover:bg-yellow-200 text-yellow-300 text-[12px] ">
-                https://www.facebook.com/Shu1906.cn</p></nuxt-link>
+                https://www.facebook.com/lottecinema/</p></nuxt-link>
             </p>
           </div>
           <div class="w-full xl:h-full">
-            <img src="/images/ld.jpg" alt="" class="w-[full] h-full  rounded-br-3xl rounded-se-3xl object-cover mr-[16px]">
+            <img src="/images/ltcnm.jpg" alt="" class="w-[full] h-full  rounded-br-3xl rounded-se-3xl object-cover mr-[16px]">
           </div>
         </div>
         <div class=" grid grid-cols-2 p-4 bg-[#e00d7a] gap-2 rounded-es-3xl rounded-se-3xl">
