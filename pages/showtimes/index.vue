@@ -28,7 +28,7 @@ useHead({title: "Lịch chiếu"})
   </div>
 
   <!-- lich chieu -->
-  <div class="bg-purple-400 px-12 py-5">
+  <div class="bg-purple-400 px-40 py-5 grid grid-cols-2 justify-center">
     <div class="flex px-3 lg:px-32 pt-3 pb-3 xl:flex-row flex-col">
       <div class="flex bg-orange-500 w-[550px] lg:w-[full] h-[315px]">
         <div class="w-[200px]">
@@ -36,7 +36,7 @@ useHead({title: "Lịch chiếu"})
             <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
           </div>
         </div>
-        <div class="w-[200px] pt-3">
+        <div class="w-[200px] pt-3 pl-1">
           <div>
             <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
             <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn
@@ -84,7 +84,7 @@ useHead({title: "Lịch chiếu"})
             <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
           </div>
         </div>
-        <div class="w-[200px] pt-3">
+        <div class="w-[200px] pt-3 pl-1">
           <div>
             <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
             <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn
@@ -131,7 +131,7 @@ useHead({title: "Lịch chiếu"})
             <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
           </div>
         </div>
-        <div class="w-[200px] pt-3">
+        <div class="w-[200px] pt-3 pl-1">
           <div>
             <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
             <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn
@@ -178,7 +178,7 @@ useHead({title: "Lịch chiếu"})
             <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
           </div>
         </div>
-        <div class="w-[200px] pt-3">
+        <div class="w-[200px] pt-3 pl-1">
           <div>
             <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
             <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn
@@ -225,7 +225,7 @@ useHead({title: "Lịch chiếu"})
             <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
           </div>
         </div>
-        <div class="w-[200px] pt-3">
+        <div class="w-[200px] pt-3 pl-1">
           <div>
             <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
             <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn
@@ -272,7 +272,7 @@ useHead({title: "Lịch chiếu"})
             <img src="/images/live1.jpg" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
           </div>
         </div>
-        <div class="w-[200px] pt-3">
+        <div class="w-[200px] pt-3 pl-1">
           <div>
             <h3 class="text-white font-semibold text-2xl">LIVE: PHÁT TRỰC TIẾP (T18)</h3>
             <p class="text-white font-sans pt-2 pb-2 w-[full]">Phim Live - Phát Trực Tiếp do Khương Ngọc làm đạo diễn

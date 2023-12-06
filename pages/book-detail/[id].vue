@@ -57,61 +57,36 @@ const parseValue = (data: string) => {
 </script>
 
 <template>
-  <table>
-    <thead>
-    <tr>
-      <td>
-        Tên phim
-      </td>
-      <td>
-        Rạp
-      </td>
-      <td>
-        Suất chiếu
-      </td>
-      <td>
-        Phòng
-      </td>
-      <td>
-        Ghế
-      </td>
-      <td>
-        Giá tiền
-      </td>
-      <td>
-        Người mua
-      </td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>
-        {{ dataApi?.value?.tenPhim }}
-      </td>
-      <td>
-        {{ dataApi?.value?.tenCumRap }}
-      </td>
-      <td>
-        {{ dataApi?.value?.ngayChieu }}
-      </td>
-      <td>
-        {{ dataApi?.value?.tenRap }}
-      </td>
-      <td>
-        <div class="flex gap-5">
-          <template v-for="(data, index) in danhSachVeArray" :key="index">
-            {{ parseValue(data)?.tenDayDu }}
-          </template>
-        </div>
-      </td>
-      <td>
-        {{ query.vnp_Amount }}
-      </td>
-      <td>
-        {{ query.taiKhoanNguoiDung }}
-      </td>
-    </tr>
-    </tbody>
+  <table class="min-w-full bg-white border border-gray-300 text-center">
+      <thead>
+          <tr>
+              <th class="py-2 px-4 border-b">Tên phim</th>
+              <th class="py-2 px-4 border-b">Rạp</th>
+              <th class="py-2 px-4 border-b">Suất chiếu</th>
+              <th class="py-2 px-4 border-b">Phòng</th>
+              <th class="py-2 px-4 border-b">Ghế</th>
+              <th class="py-2 px-4 border-b">Giá tiền</th>
+              <th class="py-2 px-4 border-b">Người mua</th>
+              <th class="py-2 px-4 border-b">Mã QR</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td class="py-2 px-4">{{ dataApi?.value?.tenPhim }}</td>
+              <td class="py-2 px-4">{{ dataApi?.value?.tenCumRap }}</td>
+              <td class="py-2 px-4">{{ dataApi?.value?.ngayChieu }}</td>
+              <td class="py-2 px-4">{{ dataApi?.value?.tenRap }}</td>
+              <td class="py-2 px-4">
+                  <div class="flex gap-5">
+                      <template v-for="(data, index) in danhSachVeArray" :key="index">
+                          {{ parseValue(data)?.tenDayDu }}
+                      </template>
+                  </div>
+              </td>
+              <td class="py-2 px-4">{{ query.vnp_Amount }}</td>
+              <td class="py-2 px-4">{{ query.taiKhoanNguoiDung }}</td>
+              <td class="py-2 px-4"><div v-html="qrCode"></div></td>
+          </tr>
+      </tbody>
   </table>
-  <div v-html="qrCode"></div>
 </template>

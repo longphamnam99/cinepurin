@@ -125,7 +125,7 @@ const isOpen = ref(false)
         <img src="/images/background-header.png" alt="Top header">
       </div>
       <div
-          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-4">
+          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4">
         <nuxt-link to="/" class="logo flex items-center w-[220px] h-[110px] cursor-pointer">
           <img src="/images/logo.png" class="z-10" alt="Flowbite Logo"/>
         </nuxt-link>
@@ -139,8 +139,8 @@ const isOpen = ref(false)
           </svg>
         </button>
         <div :class="{'hidden': !isOpen, 'w-full relative': isOpen}"
-             class="xl:flex flex-col gap-y-3 py-2 md:w-auto justify-between items-end z-10">
-          <div class="lg:flex hidden gap-5">
+             class="flex flex-col gap-y-3 py-2 w-auto justify-between items-end z-10">
+          <div class="flex gap-5">
             <form @click.prevent class="relative">
               <input
                   class="rounded-[30px] bg-[#000000] opacity-[0.7] border-0 pr-28 pl-[20px] py-3 placeholder-[#d1d1d1] text-sm text-[#d1d1d1] focus:ring-0 focus:placeholder-transparent placeholder:font-avantgarde"
@@ -170,28 +170,27 @@ const isOpen = ref(false)
 
 
     <div class="bg-[url('/images/pattern.png')] bg-repeat bg-top max-w-full flex items-center justify-center">
-      <div class="lg:w-[90%] w-full items-center flex flex-wrap lg:justify-between justify-center gap-x-10">
-        <div class="flex items-center sm:gap-x-10 gap-x-8">
+      <div class="w-full items-center flex flex-wrap justify-center gap-x-10">
+        <div class="flex items-center gap-x-8">
           <div class="flex items-center gap-x-2 cursor-pointer" @click="isShowModalRegister = true">
-            <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-register.png" alt="icon register">
+            <img class="w-auto h-auto" src="/images/icon-register.png" alt="icon register">
             <span class="cursor-pointer">
               <span v-if="isShowLogin" @click="useRouter().push('/register')"
-                    class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs font-avantgarde-demi">
+                    class="uppercase text-[#e00d7a] font-bold text-base ">
                 Đăng ký thành viên
               </span>
-              <span v-else class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs font-avantgarde-demi">
+              <span v-else class="uppercase text-[#e00d7a] font-bold  text-base ">
                                            {{ JSON.parse(userData)?.hoTen }}
               </span>
             </span>
           </div>
           <div class="flex items-center gap-x-2 cursor-pointer" @click="isShowModalLogin = true">
-            <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-login.png" alt="icon login">
+            <img class="w-auto h-auto" src="/images/icon-login.png" alt="icon login">
             <span v-if="isShowLogin"
-                  class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs font-avantgarde-demi">
+                  class="uppercase text-[#e00d7a] font-bold text-base ">
               Đăng nhập
             </span>
-            <span v-else @click="logout" class="uppercase text-[#e00d7a] font-bold sm:text-base text-xs
-              font-avantgarde-demi">
+            <span v-else @click="logout" class="uppercase text-[#e00d7a] font-bold text-base">
               Đăng xuất
             </span>
           </div>
@@ -199,7 +198,7 @@ const isOpen = ref(false)
         <div class="flex items-center">
           <div class="flex items-center gap-x-2 cursor-pointer">
             <img class="sm:w-auto sm:h-auto w-[30px]" src="/images/icon-call.png" alt="icon call">
-            <p class="uppercase text-[#f37520] font-bold sm:text-[30px] text-2xl font-Futurab">
+            <p class="uppercase text-[#f37520] text-[30px] font-Futurab">
               +84 89010316
             </p>
           </div>

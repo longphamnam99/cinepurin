@@ -92,9 +92,9 @@ const redirectFilm = (value: any) => {
     <div class="relative w-full">
       <img class="w-full" src="/images/background-header.png" alt="Top header">
     </div>
-    <div class="flex flex-wrap lg:gap-x-32 gap-5 justify-center items-center py-5">
+    <div class="flex flex-wrap gap-x-32 gap-5 justify-center items-center py-5">
       <div class="flex items-center justify-between gap-x-10 relative">
-        <div class="w-[114px] h-[130px] sm:block hidden">
+        <div class="w-[114px] h-[130px] ">
           <img class="absolute -top-10 left-0" :src="useAsset('images/home/icon-ticket.png')" alt="ticket banner">
         </div>
         <h2 class="uppercase font-bold text-[#e00d7a] leading-[32px] text-[32px] text-shadow-xs text-shadow font-Futurab">
@@ -102,18 +102,18 @@ const redirectFilm = (value: any) => {
           online
         </h2>
       </div>
-      <div class="grid grid-cols-2 gap-5">
+      <div class="grid grid-cols-2 gap-5 ">
         <select-search model-value="" @update:modelValue="chooseFilm"
-                       class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                       class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] w-[300px] py-[10px] border-0 uppercase"
                        :options="films" placeholder="Chọn phim"/>
         <select-search model-value="" @update:modelValue="chooseRap"
-                       class="rounded-tl-[24px] rounded-bl-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                       class="rounded-tl-[24px] rounded-bl-[24px] rounded-br-[24px] w-[300px] py-[10px] border-0 uppercase"
                        :options="rap" placeholder="Chọn rạp"/>
         <select-search model-value=""
-                       class="rounded-tl-[24px] rounded-tr-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                       class="rounded-tl-[24px] rounded-tr-[24px] rounded-br-[24px] w-[300px] py-[10px] border-0 uppercase"
                        :options="ngay" placeholder="Chọn ngày"/>
         <select-search model-value="" @update:modelValue="redirectFilm"
-                       class="rounded-tl-[24px] rounded-tr-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
+                       class="rounded-tl-[24px] rounded-tr-[24px] rounded-bl-[24px] w-[300px] py-[10px] border-0 uppercase"
                        :options="suatchieu" placeholder="Chọn suất chiếu"/>
       </div>
     </div>

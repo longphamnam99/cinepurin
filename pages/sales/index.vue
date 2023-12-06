@@ -52,7 +52,7 @@ useAsyncData("fetch", async () => {
                         <Slide v-for="slide in 10" :key="slide">
                             <div
                                 class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
-                                <img src="/images/c_monday.jpg" alt=""
+                                <img src="/images/thevip.jpg" alt=""
                                     class="w-120 h-120 rounded-lg object-cover mr-[16px]">
                             </div>
                         </Slide>
