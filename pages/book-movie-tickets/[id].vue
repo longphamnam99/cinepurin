@@ -102,7 +102,7 @@ const thanhtoan = async () => {
           // Xử lý mảng danhSachVe thành chuỗi JSON
           const veQueryStrings = data[key].map((ve, index) => {
             const veData = ['maGhe', 'tenDayDu', 'giaVe']
-                .map((veKey) => `${veKey}:${JSON.stringify(ve[veKey])}`)
+                .map((veKey) => `"${veKey}":${JSON.stringify(ve[veKey])}`)
                 .join(',');
             return `${encodeURIComponent(`${key}[${index}]`)}=${encodeURIComponent(`{${veData}}`)}`;
           });

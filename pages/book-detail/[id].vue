@@ -3,6 +3,8 @@ const route = useRoute()
 
 const id = route.params.id
 
+const query = route.query
+
 const dataApi = reactive({})
 
 const qrCode = ref()
@@ -16,13 +18,42 @@ useAsyncData("fetch", async () => {
     dataApi.value = response.thongTinPhim
 
     qrCode.value = await useApiBridge({
-      url: "create_qr?url=http://localhost:3000/book-detail/" + id,
+      url: "create_qr?url=http://45.117.177.116/book-detail/" + id,
       method: "get",
     });
   } catch (error) {
     console.error(error);
   }
 })
+
+const danhSachVe = ref(null);
+
+const danhSachVeArray = computed(() => {
+  const data = Object.keys(query)
+      .filter((key) => key.startsWith('danhSachVe'))
+      .map((key) => {
+        const danhSachVeString = query[key];
+        try {
+          return JSON.parse(JSON.stringify(danhSachVeString));
+        } catch (error) {
+          console.error(`Error parsing JSON for key ${key}:`, error);
+          console.log('Invalid JSON string:', danhSachVeString);
+          return null;
+        }
+      })
+      .filter((danhSachVe) => danhSachVe !== null);
+  return data;
+});
+
+
+const parseValue = (data: string) => {
+  try {
+    return JSON.parse(data)
+  } catch (e) {
+    console.log(e)
+  }
+}
+
 </script>
 
 <template>
@@ -44,6 +75,12 @@ useAsyncData("fetch", async () => {
       <td>
         Ghế
       </td>
+      <td>
+        Giá tiền
+      </td>
+      <td>
+        Người mua
+      </td>
     </tr>
     </thead>
     <tbody>
@@ -61,7 +98,17 @@ useAsyncData("fetch", async () => {
         {{ dataApi?.value?.tenRap }}
       </td>
       <td>
-        <!--        {{ JSON.parse(query['danhSachVe[0]']).tenDayDu }}-->
+        <div class="flex gap-5">
+          <template v-for="(data, index) in danhSachVeArray" :key="index">
+            {{ parseValue(data)?.tenDayDu }}
+          </template>
+        </div>
+      </td>
+      <td>
+        {{ query.vnp_Amount }}
+      </td>
+      <td>
+        {{ query.taiKhoanNguoiDung }}
       </td>
     </tr>
     </tbody>

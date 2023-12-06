@@ -3,7 +3,7 @@ import {ref} from "vue";
 import {Carousel, Navigation, Pagination, Slide} from "vue3-carousel";
 import 'vue3-carousel/dist/carousel.css'
 import useAsset from "~/helpers/useAsset";
-import { useMoviesStore } from '~/stores/movies';
+import {useMoviesStore} from '~/stores/movies';
 
 const moviesStore = useMoviesStore();
 
@@ -47,14 +47,17 @@ const ngay = ref([])
 
 const suatchieu = ref([])
 
+const rapChon = ref()
+
 const chooseRap = (value: string) => {
   const find = filmDachon.value.heThongRapChieu.flatMap(heThongRap => heThongRap.cumRapChieu)
       .find(cumRap => cumRap.maCumRap === value);
+  rapChon.value = find
   find.lichChieuPhim.forEach(e => {
     const dateTimeString = e.ngayChieuGioChieu;
     const dateTimeObject = new Date(dateTimeString);
     const ngayChieu = dateTimeObject.toISOString().split('T')[0];
-    const gioChieu = dateTimeObject.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+    const gioChieu = dateTimeObject.toLocaleTimeString('en-US', {hour12: false, hour: '2-digit', minute: '2-digit'});
     ngay.value.push({
       value: e.maLichChieu,
       label: ngayChieu
@@ -66,17 +69,22 @@ const chooseRap = (value: string) => {
     })
   })
 }
+
+const redirectFilm = (value: any) => {
+  useRouter().push('/book-movie-tickets/' + value)
+}
 </script>
 
 <template>
-  <carousel v-if="dataSlide?.data?.content?.length" :autoplay="3000" :wrap-around="true" class="relative slideshow w-full"
+  <carousel v-if="dataSlide?.data?.content?.length" :autoplay="3000" :wrap-around="true"
+            class="relative slideshow w-full"
             ref="slideshow">
     <slide class="w-full" v-for="(item, index) in dataSlide?.data?.content" :key="index">
-      <img class="w-full" :src="item?.hinhAnh" :alt="item?.hinhAnh" />
+      <img class="w-full" :src="item?.hinhAnh" :alt="item?.hinhAnh"/>
     </slide>
     <template #addons>
-      <navigation />
-      <pagination class="sm:block hidden" />
+      <navigation/>
+      <pagination class="sm:block hidden"/>
     </template>
   </carousel>
   <div
@@ -97,16 +105,16 @@ const chooseRap = (value: string) => {
       <div class="grid grid-cols-2 gap-5">
         <select-search model-value="" @update:modelValue="chooseFilm"
                        class="rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                       :options="films" placeholder="Chọn phim" />
+                       :options="films" placeholder="Chọn phim"/>
         <select-search model-value="" @update:modelValue="chooseRap"
                        class="rounded-tl-[24px] rounded-bl-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                       :options="rap" placeholder="Chọn rạp" />
+                       :options="rap" placeholder="Chọn rạp"/>
         <select-search model-value=""
                        class="rounded-tl-[24px] rounded-tr-[24px] rounded-br-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                       :options="ngay" placeholder="Chọn ngày" />
-        <select-search model-value=""
+                       :options="ngay" placeholder="Chọn ngày"/>
+        <select-search model-value="" @update:modelValue="redirectFilm"
                        class="rounded-tl-[24px] rounded-tr-[24px] rounded-bl-[24px] sm:w-[300px] w-[45vw] py-[10px] border-0 uppercase"
-                       :options="suatchieu" placeholder="Chọn suất chiếu" />
+                       :options="suatchieu" placeholder="Chọn suất chiếu"/>
       </div>
     </div>
   </div>
