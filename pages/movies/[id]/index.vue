@@ -126,7 +126,7 @@ const actionSlide = (status: boolean): void => {
               <div class="flex flex-col-2 pt-3 gap-5 pl-5">
                 <h3 class="pt-2 w-20 text-white font-MyriadLight text-[16px]">Diễn viên:</h3>
                 <h3
-                    class="bg-white w-[200px] h-[40px] text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
+                    class="bg-white w-full h-full text-left px-4 pt-2 rounded-tl-2xl rounded-br-2xl font-MyriadBold text-[22px]">
                   {{
                     dataApi?.value?.dienVien }}</h3>
               </div>
