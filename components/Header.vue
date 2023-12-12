@@ -72,6 +72,7 @@ const formRegister = ref({
 const isShowLogin = ref(true)
 
 watch(token, (newToken) => {
+  console.log(newToken)
   if (token.length) {
     isShowLogin.value = false
   }
@@ -129,10 +130,6 @@ const isOpen = ref(false)
         <nuxt-link to="/" class="logo flex items-center w-[220px] h-[110px] cursor-pointer">
           <img src="/images/logo.png" class="z-10" alt="Flowbite Logo"/>
         </nuxt-link>
-        <!-- <button class="sm:hidden block text-white">menu mobile</button>
-        <div class="text-white sm:block hidden">
-          menu ul
-        </div> -->
         <button @click="isOpen = !isOpen" data-collapse-toggle="navbar-default" type="button"
                 class="items-center z-10 p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg inline-flex lg:hidden hover:bg-[#e00d7a] focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:focus:ring-gray-600"
                 aria-controls="navbar-default" aria-expanded="false">
@@ -159,7 +156,7 @@ const isOpen = ref(false)
                 class="nav z-20 bg-[#e00d7a] rounded-[30px] flex font-avantgarde-demi text-shadow">
               <li v-for="item in router" :key="item.name"
                   class="hover:bg-[#f37520] transition-all duration-300 ease-in-out text-[18px] leading-[24px]">
-                <nuxt-link :to="item.path" class="block py-2 pl-3 pr-4 text-white uppercase">{{
+                <nuxt-link @click="isOpen = false" :to="item.path" class="block py-2 pl-3 pr-4 text-white uppercase">{{
                     item.name
                   }}
                 </nuxt-link>

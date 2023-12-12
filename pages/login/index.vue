@@ -50,7 +50,8 @@ const submitForm = async () => {
   <!-- gioi thieu -->
   <Header :showBannerAndSearch="false"/>
 
-  <div class="flex bg-[url('/images/bgAuth.a1f0f6cc05af1af82f9b.jpg')] px-[360px] py-[100px]">
+  <div
+      class="flex justify-center items-center bg-[url('/images/bgAuth.a1f0f6cc05af1af82f9b.jpg')] px-[360px] py-[100px]">
     <div class="flex">
       <div>
         <img src="/images/th1.jpg" alt="" class="w-[384px] h-[606px]">

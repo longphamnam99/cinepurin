@@ -2,7 +2,7 @@
 import useAsset from "@/helpers/useAsset"
 import {Carousel, Slide, Pagination, Navigation} from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
-import {ref} from 'vue'
+import {ref, onMounted} from 'vue'
 import {Tabs, Tab} from 'flowbite-vue'
 import {useMoviesStore} from '~/stores/movies';
 
@@ -18,10 +18,10 @@ const getDataMovie = async (): Promise<void> => {
   await moviesStore.getMovies();
   resultMovie.value = moviesStore.movies;
 }
+const dataSlide = ref()
 
 useAsyncData("fetch", async () => {
   try {
-    await getDataMovie()
     dataSlide.value = await useFetchApiByUrl('http://movieapi.cyberlearn.vn/api/QuanLyPhim/LayDanhSachBanner')
     dangChieu.value = await useFetchApi('QuanLyPhim/LayDanhSachPhim?dangchieu=1')
     sapChieu.value = await useFetchApi('QuanLyPhim/LayDanhSachPhim?sapchieu=1')
@@ -31,11 +31,11 @@ useAsyncData("fetch", async () => {
   }
 })
 
+onMounted(async () => await getDataMovie())
+
 const config = useRuntimeConfig();
 
 const activeTab = ref('first')
-
-const dataSlide = ref()
 
 useHead({title: "Trang chủ"})
 
@@ -252,6 +252,10 @@ const tabActive = ref(1)
   margin-left: -30px;
   border-radius: 0 30px 0 0;
   -webkit-border-radius: 0 50px 50px 0;
+}
+
+body {
+  overflow-x: hidden;
 }
 </style>
 

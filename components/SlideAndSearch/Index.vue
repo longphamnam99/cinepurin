@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref} from "vue";
+import {ref, onMounted} from "vue";
 import {Carousel, Navigation, Pagination, Slide} from "vue3-carousel";
 import 'vue3-carousel/dist/carousel.css'
 import useAsset from "~/helpers/useAsset";
@@ -12,16 +12,19 @@ const dataSlide = ref()
 useAsyncData("fetch", async () => {
   try {
     dataSlide.value = await useFetchApiByUrl('http://movieapi.cyberlearn.vn/api/QuanLyPhim/LayDanhSachBanner')
-    await moviesStore.getMovies();
-    moviesStore.movies.forEach(e => {
-      films.value.push({
-        label: e.tenPhim,
-        value: e.maPhim
-      })
-    })
   } catch (error) {
     console.error(error);
   }
+})
+
+onMounted(async () => {
+  await moviesStore.getMovies();
+  moviesStore.movies.forEach(e => {
+    films.value.push({
+      label: e.tenPhim,
+      value: e.maPhim
+    })
+  })
 })
 
 const films = ref([])

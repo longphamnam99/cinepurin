@@ -163,27 +163,27 @@
         <div class="flex flex-col-5 justify-center items-center pt-5 gap-4">
             <div>
                 <nuxt-link to="#">
-                    <img src="../public/images/dolby2.png" alt="">
+                    <img src="/images/dolby2.png" alt="">
                 </nuxt-link>
             </div>
             <div>
                 <nuxt-link to="#">
-                    <img src="../public/images/crhistie.png" alt="">
+                    <img src="/images/crhistie.png" alt="">
                 </nuxt-link>
             </div>
             <div>
                 <nuxt-link to="#">
-                    <img src="../public/images/2d.jpg" alt="">
+                    <img src="/images/2d.jpg" alt="">
                 </nuxt-link>
             </div>
             <div>
                 <nuxt-link to="#">
-                    <img src="../public/images/3d.png" alt="">
+                    <img src="/images/3d.png" alt="">
                 </nuxt-link>
             </div>    
             <div>
                 <nuxt-link to="#">
-                    <img src="../public/images/cinestar-coffee-02.png" alt="">
+                    <img src="/images/cinestar-coffee-02.png" alt="">
                 </nuxt-link>
             </div>
         </div>
@@ -194,22 +194,22 @@
             <div class="flex flex-col-4 gap-2 pt-2" >
                 <div>
                     <nuxt-link to="#">
-                        <img src="../public/images/napas-40.png" alt="">
+                        <img src="/images/napas-40.png" alt="">
                     </nuxt-link>
                 </div>
                 <div>
                     <nuxt-link to="#">
-                        <img src="../public/images/momo.jpg" alt="">
+                        <img src="/images/momo.jpg" alt="">
                     </nuxt-link>
                 </div>
                 <div>
                     <nuxt-link to="#">
-                        <img src="../public/images/payment-mastercard.png" alt="">
+                        <img src="/images/payment-mastercard.png" alt="">
                     </nuxt-link>
                 </div>
                 <div>
                     <nuxt-link to="#">
-                        <img src="../public/images/payment-visa.png" alt="">
+                        <img src="/images/payment-visa.png" alt="">
                     </nuxt-link>
                 </div>
             </div>
