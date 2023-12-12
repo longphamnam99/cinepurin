@@ -35,6 +35,12 @@ watch(selectedValue, async (newQuestion) => {
 <style lang="scss">
 .vs__dropdown-toggle {
   border: none;
+  border: 0;
+
+  input[type=search] {
+    background-color: transparent;
+    border: 0;
+  }
 
   .vs__selected {
     color: #fff;
