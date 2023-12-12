@@ -26,7 +26,7 @@ const dataSlide = ref([
       </div>
       <nuxt-link to="/sales">
         <div>
-          <carousel class="slideshow" :autoplay="3000" :wrapAround="true" :itemsToShow="4">
+          <carousel class="slideshow-sales" :autoplay="3000" :wrapAround="true" :itemsToShow="4">
             <Slide v-for="slide in dataSlide" :key="slide">
               <div
                   class="p-2 bg-white border-[5px] rounded-tl-3xl rounded-br-3xl h-[170px] w-full border-[#723369] shadow-[7px 7px 0 rgba(0,0,0,0.2)]">
@@ -127,7 +127,7 @@ const dataSlide = ref([
 </template>
 
 <style>
-.slideshow ol li {
+.slideshow-sales ol li {
   margin-left: 10px;
 }
 </style>
