@@ -73,7 +73,7 @@ const submitForm = async () => {
 
             <button type="submit"
                     class="bg-rose-500 text-white px-4 py-2 rounded-full hover:bg-rose-700 focus:outline-none focus:shadow-outline-rose">
-              Đăng Ký
+              Đăng Nhập
             </button>
           </form>
         </div>

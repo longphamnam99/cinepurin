@@ -129,8 +129,12 @@ const isOpen = ref(false)
         <nuxt-link to="/" class="logo flex items-center w-[220px] h-[110px] cursor-pointer">
           <img src="/images/logo.png" class="z-10" alt="Flowbite Logo"/>
         </nuxt-link>
+        <!-- <button class="sm:hidden block text-white">menu mobile</button>
+        <div class="text-white sm:block hidden">
+          menu ul
+        </div> -->
         <button @click="isOpen = !isOpen" data-collapse-toggle="navbar-default" type="button"
-                class="inline-flex items-center z-10 p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#e00d7a] focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:focus:ring-gray-600"
+                class="items-center z-10 p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg inline-flex lg:hidden hover:bg-[#e00d7a] focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:focus:ring-gray-600"
                 aria-controls="navbar-default" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -138,9 +142,9 @@ const isOpen = ref(false)
                   d="M1 1h15M1 7h15M1 13h15"/>
           </svg>
         </button>
-        <div :class="{'hidden': !isOpen, 'w-full relative': isOpen}"
-             class="flex flex-col gap-y-3 py-2 w-auto justify-between items-end z-10">
-          <div class="flex gap-5">
+        <div :class="{'lg:block hidden': !isOpen, 'w-full relative': isOpen}"
+             class="flex flex-col gap-y-3 py-2 w-auto justify-between items-start z-10">
+          <div class="flex justify-end items-end gap-5 my-3">
             <form @click.prevent class="relative">
               <input
                   class="rounded-[30px] bg-[#000000] opacity-[0.7] border-0 pr-28 pl-[20px] py-3 placeholder-[#d1d1d1] text-sm text-[#d1d1d1] focus:ring-0 focus:placeholder-transparent placeholder:font-avantgarde"
@@ -150,7 +154,7 @@ const isOpen = ref(false)
               </button>
             </form>
           </div>
-          <div :class="{'absolute top-2 left-0 w-full': isOpen}" class="rounded-[30px] border border-[#e00d7a] p-1">
+          <div :class="{'md:absolute top-2 left-0 w-full': isOpen}" class="rounded-[30px] border border-[#e00d7a] p-1">
             <ul :class="{'flex-col flex-1': isOpen}"
                 class="nav z-20 bg-[#e00d7a] rounded-[30px] flex font-avantgarde-demi text-shadow">
               <li v-for="item in router" :key="item.name"

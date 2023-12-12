@@ -29,14 +29,14 @@ module.exports = {
         'hero-pattern': "url('/image/footer.jpg')",
       }
     },
-    screens: {
-      'laptop': '1440px',
-      // => @media (min-width: 1440px) { ... }
-      'dtnho': '375px',
-      // => @media (min-width: 1440px) { ... }
-      'PC lon': '1680px',
-      // => @media (min-width: 1680px) { ... }
-    },
+    // screens: {
+    //   'laptop': '1440px',
+    //   // => @media (min-width: 1440px) { ... }
+    //   'dtnho': '375px',
+    //   // => @media (min-width: 1440px) { ... }
+    //   'PC lon': '1680px',
+    //   // => @media (min-width: 1680px) { ... }
+    // },
   },
   plugins: [require("flowbite/plugin")],
 };
