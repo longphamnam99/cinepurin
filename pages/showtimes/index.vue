@@ -42,9 +42,9 @@ const getThoiGian = (dateTimeString: string) => {
 
 
   <!-- lich chieu -->
-  <div class="bg-purple-400 px-40 py-5 grid grid-cols-2 justify-center">
+  <div class="bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative px-40 py-5 justify-center items-center">
     <div v-for="movie in resultMovie.value" class="flex px-3 lg:px-32 pt-3 pb-3 xl:flex-row flex-col">
-      <div class="flex bg-orange-600 w-[550px] lg:w-[full] h-[315px]">
+      <div class="flex bg-[#f18720] w-[550px] lg:w-[full] h-[315px]">
         <div class="w-[200px]">
           <div>
             <img :src="movie?.hinhAnh" alt="live-1" class="w-[full] h-[300px] pl-2 pt-3">
@@ -69,7 +69,7 @@ const getThoiGian = (dateTimeString: string) => {
           </div>
         </div>
         <div class="pt-2.5 lg:pt-[117.5px]">
-          <div class="flex bg-violet-300 w-[460px] lg:w-[600px] h-[85px]">
+          <div class="flex bg-violet-300 w-[460px] lg:w-[500px] h-[85px]">
             <div class="pt-2 px-2">
               <nuxt-link :to="`/booking/${movie?.maPhim}`">
                 <h3 class="w-[70px] h-[70px] bg-purple-700 flex justify-center items-center hover:bg-[#f5c549] hover:text-black text-white font-Futurab">

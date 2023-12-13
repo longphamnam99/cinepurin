@@ -126,7 +126,7 @@ const isOpen = ref(false)
         <img src="/images/background-header.png" alt="Top header">
       </div>
       <div
-          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4">
+          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:px-0 px-4">
         <nuxt-link to="/" class="logo flex items-center w-[220px] h-[110px] cursor-pointer">
           <img src="/images/logo.png" class="z-10" alt="Flowbite Logo"/>
         </nuxt-link>

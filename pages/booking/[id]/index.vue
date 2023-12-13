@@ -67,11 +67,14 @@ const getGio = (ngaychieu: string) => {
 
   <div class="flex justify-center bg-gradient-to-tr from-[#4E0045] to-[#23001C] relative">
     <div class=" flex flex-col-2  bg-[#f37520] gap-5 p-10">
-      <div class="border-[9px] border-solid border-[#fae2a2] lg:border-[0px] w-[30%] h-[450px] ">
-        <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
+      <div class="xl:border-[9px] border-solid border-[#fae2a2] lg:border-[0px] md:border-0 w-[40%] md:w-[400px] h-full hidden sm:block ">
+        <img :src="dataApi?.value?.hinhAnh" alt="" class="md:h-[420px] sm:h-full object-cover">
       </div>
 
       <div class="relative w-full h-auto overflow-hidden mb-5 flex-1">
+        <div class="image-container sm:hidden ">
+          <img :src="dataApi?.value?.hinhAnh" alt="" class="w-full h-full object-cover">
+        </div>
         <h3 class="text-[28px] uppercase text-white pb-3 font-Futurab cinema-item">{{ dataApi?.value?.tenPhim }}</h3>
         <template v-for="rapchieu in dataApi?.value?.heThongRapChieu" :key="rapchieu?.maHeThongRap">
           <div v-for="cumchieu in rapchieu?.cumRapChieu" :key="cumchieu?.maHeThongRap"
